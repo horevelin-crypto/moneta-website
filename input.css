@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+body { color: #0B1F3A; background: #fff; }
+.grid-fade { background-image: linear-gradient(rgba(11,31,58,.035) 1px,transparent 1px), linear-gradient(90deg,rgba(11,31,58,.035) 1px,transparent 1px); background-size: 32px 32px; }
+.glow:before { content: ""; position: absolute; width: 520px; height: 520px; border-radius: 50%; background: rgba(34,181,115,.13); filter: blur(80px); z-index: -1; }
+.browser-dots span { width: 7px; height: 7px; border-radius: 99px; display: block; }
+.feature-card, .step-card { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.feature-card:hover, .step-card:hover { transform: translateY(-5px); box-shadow: 0 20px 45px rgba(11,31,58,.09); border-color: #b9ead3; }
+.business-node { animation: float 5s ease-in-out infinite; }
+.business-node:nth-child(2n) { animation-delay: -2.4s; }
+@keyframes float { 50% { transform: translateY(-7px); } }
+details summary::-webkit-details-marker { display: none; }
+details[open] .faq-icon { transform: rotate(45deg); }
+.faq-icon { transition: transform .2s ease; }
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+  .business-node { animation: none; }
+  .feature-card, .step-card { transition: none; }
+}

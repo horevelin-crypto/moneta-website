@@ -1,0 +1,16 @@
+{
+  "name": "moneta-website",
+  "version": "1.0.0",
+  "description": "MonEta landing page (static site, GitHub Pages)",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -i ./input.css -o ./styles.css --minify"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "tailwindcss": "^3.4.19"
+  }
+}
