@@ -12,11 +12,32 @@ body { color: #0B1F3A; background: #fff; }
 .business-node { animation: float 5s ease-in-out infinite; }
 .business-node:nth-child(2n) { animation-delay: -2.4s; }
 @keyframes float { 50% { transform: translateY(-7px); } }
+.hero-dashboard { animation: dashboardFloat 7s cubic-bezier(.45,0,.55,1) infinite; will-change: transform; }
+.result-float { animation: resultFloat 4.8s cubic-bezier(.45,0,.55,1) infinite; will-change: transform; }
+.hero-cta { transition: transform .28s ease, box-shadow .28s ease, background-color .28s ease; }
+.hero-cta:hover { transform: translateY(-4px) scale(1.015); box-shadow: 0 18px 38px rgba(34,181,115,.34); }
+.hero-cta:active { transform: translateY(-1px) scale(.99); }
+.nav-buy { background: #22B573; box-shadow: 0 8px 22px rgba(34,181,115,.22); transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease; }
+.nav-buy:hover { background: #18a467; transform: translateY(-3px); box-shadow: 0 14px 30px rgba(34,181,115,.38); }
+.nav-buy:active { transform: translateY(0) scale(.98); }
+.feature-card.feature-green { border-color: rgba(34,181,115,.48); box-shadow: 0 0 0 1px rgba(34,181,115,.05), 0 12px 34px rgba(34,181,115,.08); }
+.feature-card.feature-purple { border-color: rgba(139,92,246,.48); box-shadow: 0 0 0 1px rgba(139,92,246,.05), 0 12px 34px rgba(139,92,246,.08); }
+.feature-card.feature-blue { border-color: rgba(59,130,246,.48); box-shadow: 0 0 0 1px rgba(59,130,246,.05), 0 12px 34px rgba(59,130,246,.08); }
+.feature-card.feature-orange { border-color: rgba(245,158,11,.52); box-shadow: 0 0 0 1px rgba(245,158,11,.05), 0 12px 34px rgba(245,158,11,.08); }
+.feature-card.feature-red { border-color: rgba(244,63,94,.46); box-shadow: 0 0 0 1px rgba(244,63,94,.05), 0 12px 34px rgba(244,63,94,.08); }
+.feature-card.feature-green:hover { border-color: rgba(34,181,115,.88); box-shadow: 0 0 22px rgba(34,181,115,.18), 0 20px 45px rgba(11,31,58,.08); }
+.feature-card.feature-purple:hover { border-color: rgba(139,92,246,.88); box-shadow: 0 0 22px rgba(139,92,246,.18), 0 20px 45px rgba(11,31,58,.08); }
+.feature-card.feature-blue:hover { border-color: rgba(59,130,246,.88); box-shadow: 0 0 22px rgba(59,130,246,.18), 0 20px 45px rgba(11,31,58,.08); }
+.feature-card.feature-orange:hover { border-color: rgba(245,158,11,.9); box-shadow: 0 0 22px rgba(245,158,11,.18), 0 20px 45px rgba(11,31,58,.08); }
+.feature-card.feature-red:hover { border-color: rgba(244,63,94,.86); box-shadow: 0 0 22px rgba(244,63,94,.18), 0 20px 45px rgba(11,31,58,.08); }
+@keyframes dashboardFloat { 0%,100% { transform: translateY(0) rotate(.01deg); } 50% { transform: translateY(-7px) rotate(-.12deg); } }
+@keyframes resultFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
 details summary::-webkit-details-marker { display: none; }
 details[open] .faq-icon { transform: rotate(45deg); }
 .faq-icon { transition: transform .2s ease; }
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior: auto !important; }
-  .business-node { animation: none; }
+  .business-node, .hero-dashboard, .result-float { animation: none; }
   .feature-card, .step-card { transition: none; }
+  .hero-cta:hover { transform: none; }
 }
