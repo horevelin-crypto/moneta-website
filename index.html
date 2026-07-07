@@ -33,7 +33,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.css?v=3">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="font-sans antialiased">
@@ -48,8 +48,21 @@
         <a href="#mukodes" class="transition hover:text-mint">Így működik</a>
         <a href="#gyik" class="transition hover:text-mint">GYIK</a>
       </div>
-      <a href="#vasarlas" class="nav-buy rounded-xl px-5 py-3 text-sm font-semibold text-white">Megvásárlom</a>
+      <div class="flex items-center gap-2">
+        <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="relative grid h-10 w-10 place-items-center rounded-lg text-ink md:hidden" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="mobileMenu">
+          <i data-lucide="menu" class="h-6 w-6" id="menuIconOpen"></i>
+          <i data-lucide="x" class="hidden h-6 w-6" id="menuIconClose"></i>
+        </button>
+        <a href="#vasarlas" class="nav-buy rounded-xl px-5 py-3 text-sm font-semibold text-white">Megvásárlom</a>
+      </div>
     </nav>
+    <div id="mobileMenu" class="hidden absolute inset-x-0 top-full border-b border-slate-100 bg-white/95 shadow-lg backdrop-blur-xl md:hidden">
+      <div class="flex flex-col gap-1 px-5 py-4 text-sm font-medium text-slate-600">
+        <a href="#funkciok" onclick="closeMobileMenu()" class="rounded-lg px-3 py-2.5 transition hover:bg-mist hover:text-mint">Funkciók</a>
+        <a href="#mukodes" onclick="closeMobileMenu()" class="rounded-lg px-3 py-2.5 transition hover:bg-mist hover:text-mint">Így működik</a>
+        <a href="#gyik" onclick="closeMobileMenu()" class="rounded-lg px-3 py-2.5 transition hover:bg-mist hover:text-mint">GYIK</a>
+      </div>
+    </div>
   </header>
 
   <main>
@@ -106,16 +119,16 @@
               <path d="M500 250 C620 160 735 100 845 92"/><path d="M500 250 C650 250 765 250 890 250"/><path d="M500 250 C620 350 715 405 835 414"/>
             </g>
           </svg>
-          <div class="absolute left-1/2 top-1/2 z-10 w-48 -translate-x-1/2 -translate-y-1/2 rounded-3xl border border-emerald-200 bg-white p-5 text-center shadow-soft">
-            <span class="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-mint text-white"><i data-lucide="layout-dashboard" class="h-7 w-7"></i></span>
-            <p class="mt-3 font-bold">A te dashboardod</p><p class="mt-1 text-xs text-slate-400">Minden egy helyen</p>
+          <div class="absolute left-1/2 top-1/2 z-10 w-32 -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-emerald-200 bg-white p-3 text-center shadow-soft sm:w-48 sm:rounded-3xl sm:p-5">
+            <span class="mx-auto grid h-9 w-9 place-items-center rounded-xl bg-mint text-white sm:h-14 sm:w-14 sm:rounded-2xl"><i data-lucide="layout-dashboard" class="h-4 w-4 sm:h-7 sm:w-7"></i></span>
+            <p class="mt-2 text-xs font-bold sm:mt-3 sm:text-base">A te dashboardod</p><p class="mt-1 hidden text-xs text-slate-400 sm:block">Minden egy helyen</p>
           </div>
-          <div class="business-node absolute left-[7%] top-[10%] flex items-center gap-3 rounded-2xl border border-slate-100 bg-white p-3 pr-5 shadow-card"><span class="grid h-11 w-11 place-items-center rounded-xl bg-pink-50 text-pink-500"><i data-lucide="scissors"></i></span><span class="font-semibold">Fodrász</span></div>
-          <div class="business-node absolute left-[3%] top-[44%] flex items-center gap-3 rounded-2xl border border-slate-100 bg-white p-3 pr-5 shadow-card"><span class="grid h-11 w-11 place-items-center rounded-xl bg-blue-50 text-blue-500"><i data-lucide="car-taxi-front"></i></span><span class="font-semibold">Taxis</span></div>
-          <div class="business-node absolute bottom-[8%] left-[9%] flex items-center gap-3 rounded-2xl border border-slate-100 bg-white p-3 pr-5 shadow-card"><span class="grid h-11 w-11 place-items-center rounded-xl bg-amber-50 text-amber-500"><i data-lucide="wrench"></i></span><span class="font-semibold">Szerelő</span></div>
-          <div class="business-node absolute right-[7%] top-[10%] flex items-center gap-3 rounded-2xl border border-slate-100 bg-white p-3 pr-5 shadow-card"><span class="grid h-11 w-11 place-items-center rounded-xl bg-violet-50 text-violet-500"><i data-lucide="shopping-bag"></i></span><span class="font-semibold">Webshop</span></div>
-          <div class="business-node absolute right-[3%] top-[44%] flex items-center gap-3 rounded-2xl border border-slate-100 bg-white p-3 pr-5 shadow-card"><span class="grid h-11 w-11 place-items-center rounded-xl bg-orange-50 text-orange-500"><i data-lucide="coffee"></i></span><span class="font-semibold">Kávézó</span></div>
-          <div class="business-node absolute bottom-[8%] right-[8%] flex items-center gap-3 rounded-2xl border border-slate-100 bg-white p-3 pr-5 shadow-card"><span class="grid h-11 w-11 place-items-center rounded-xl bg-emerald-50 text-emerald-600"><i data-lucide="briefcase-business"></i></span><span class="font-semibold">Szolgáltató</span></div>
+          <div class="business-node node-fodrasz absolute flex items-center gap-1.5 rounded-xl border border-slate-100 bg-white p-1.5 pr-2.5 shadow-card sm:gap-3 sm:rounded-2xl sm:p-3 sm:pr-5"><span class="grid h-7 w-7 place-items-center rounded-lg bg-pink-50 text-pink-500 sm:h-11 sm:w-11 sm:rounded-xl"><i data-lucide="scissors" class="h-3.5 w-3.5 sm:h-[18px] sm:w-[18px]"></i></span><span class="text-xs font-semibold sm:text-base">Fodrász</span></div>
+          <div class="business-node node-taxis absolute flex items-center gap-1.5 rounded-xl border border-slate-100 bg-white p-1.5 pr-2.5 shadow-card sm:gap-3 sm:rounded-2xl sm:p-3 sm:pr-5"><span class="grid h-7 w-7 place-items-center rounded-lg bg-blue-50 text-blue-500 sm:h-11 sm:w-11 sm:rounded-xl"><i data-lucide="car-taxi-front" class="h-3.5 w-3.5 sm:h-[18px] sm:w-[18px]"></i></span><span class="text-xs font-semibold sm:text-base">Taxis</span></div>
+          <div class="business-node node-szerelo absolute flex items-center gap-1.5 rounded-xl border border-slate-100 bg-white p-1.5 pr-2.5 shadow-card sm:gap-3 sm:rounded-2xl sm:p-3 sm:pr-5"><span class="grid h-7 w-7 place-items-center rounded-lg bg-amber-50 text-amber-500 sm:h-11 sm:w-11 sm:rounded-xl"><i data-lucide="wrench" class="h-3.5 w-3.5 sm:h-[18px] sm:w-[18px]"></i></span><span class="text-xs font-semibold sm:text-base">Szerelő</span></div>
+          <div class="business-node node-webshop absolute flex items-center gap-1.5 rounded-xl border border-slate-100 bg-white p-1.5 pr-2.5 shadow-card sm:gap-3 sm:rounded-2xl sm:p-3 sm:pr-5"><span class="grid h-7 w-7 place-items-center rounded-lg bg-violet-50 text-violet-500 sm:h-11 sm:w-11 sm:rounded-xl"><i data-lucide="shopping-bag" class="h-3.5 w-3.5 sm:h-[18px] sm:w-[18px]"></i></span><span class="text-xs font-semibold sm:text-base">Webshop</span></div>
+          <div class="business-node node-kavezo absolute flex items-center gap-1.5 rounded-xl border border-slate-100 bg-white p-1.5 pr-2.5 shadow-card sm:gap-3 sm:rounded-2xl sm:p-3 sm:pr-5"><span class="grid h-7 w-7 place-items-center rounded-lg bg-orange-50 text-orange-500 sm:h-11 sm:w-11 sm:rounded-xl"><i data-lucide="coffee" class="h-3.5 w-3.5 sm:h-[18px] sm:w-[18px]"></i></span><span class="text-xs font-semibold sm:text-base">Kávézó</span></div>
+          <div class="business-node node-szolgaltato absolute flex items-center gap-1.5 rounded-xl border border-slate-100 bg-white p-1.5 pr-2.5 shadow-card sm:gap-3 sm:rounded-2xl sm:p-3 sm:pr-5"><span class="grid h-7 w-7 place-items-center rounded-lg bg-emerald-50 text-emerald-600 sm:h-11 sm:w-11 sm:rounded-xl"><i data-lucide="briefcase-business" class="h-3.5 w-3.5 sm:h-[18px] sm:w-[18px]"></i></span><span class="text-xs font-semibold sm:text-base">Szolgáltató</span></div>
         </div>
       </div>
     </section>
@@ -198,6 +211,23 @@
       <p class="text-sm text-slate-400">© 2026 MonEta</p>
     </div>
   </footer>
-  <script>lucide.createIcons();</script>
+  <script>
+    lucide.createIcons();
+    function toggleMobileMenu(){
+      const menu = document.getElementById('mobileMenu');
+      const btn = document.getElementById('mobileMenuBtn');
+      const isOpen = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden');
+      document.getElementById('menuIconOpen').classList.toggle('hidden');
+      document.getElementById('menuIconClose').classList.toggle('hidden');
+      btn.setAttribute('aria-expanded', String(!isOpen));
+    }
+    function closeMobileMenu(){
+      document.getElementById('mobileMenu').classList.add('hidden');
+      document.getElementById('menuIconOpen').classList.remove('hidden');
+      document.getElementById('menuIconClose').classList.add('hidden');
+      document.getElementById('mobileMenuBtn').setAttribute('aria-expanded', 'false');
+    }
+  </script>
 </body>
 </html>

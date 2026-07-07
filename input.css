@@ -12,6 +12,24 @@ body { color: #0B1F3A; background: #fff; }
 .business-node { animation: float 5s ease-in-out infinite; }
 .business-node:nth-child(2n) { animation-delay: -2.4s; }
 @keyframes float { 50% { transform: translateY(-7px); } }
+/* Kézzel írt pozíciók (nem Tailwind arbitrary %-osztály), mert a Tailwind CLI
+   hibásan generálja a "sm:top-[x%]" típusú, sm: prefixes + %-os szögletes zárójeles
+   értékeket: a responsive verzió mellett egy nem media-query-be csomagolt,
+   globálisan érvényes, prefix nélküli szabályt is kiad, ami felülírja a mobil értéket. */
+.node-fodrasz { left: 0; top: 6%; }
+.node-taxis { left: 0; top: 46%; }
+.node-szerelo { left: 0; bottom: 4%; }
+.node-webshop { right: 0; top: 6%; }
+.node-kavezo { right: 0; top: 46%; }
+.node-szolgaltato { right: 0; bottom: 4%; }
+@media (min-width: 640px) {
+  .node-fodrasz { left: 7%; top: 10%; }
+  .node-taxis { left: 3%; top: 44%; }
+  .node-szerelo { left: 9%; top: auto; bottom: 8%; }
+  .node-webshop { right: 7%; top: 10%; }
+  .node-kavezo { right: 3%; top: 44%; }
+  .node-szolgaltato { right: 8%; top: auto; bottom: 8%; }
+}
 .hero-dashboard { animation: dashboardFloat 7s cubic-bezier(.45,0,.55,1) infinite; will-change: transform; }
 .result-float { animation: resultFloat 4.8s cubic-bezier(.45,0,.55,1) infinite; will-change: transform; }
 .hero-cta { transition: transform .28s ease, box-shadow .28s ease, background-color .28s ease; }
