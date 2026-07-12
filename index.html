@@ -34,7 +34,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css?v=5">
+  <link rel="stylesheet" href="/styles.css?v=6">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="font-sans antialiased">
@@ -66,10 +66,16 @@
     </div>
   </header>
 
-  <!-- IDEIGLENES: "fejlesztés alatt" jelvény — cseréld le az animációra, amint kész, ugyanide (fixed, jobb alsó sarok) -->
-  <div id="devBadge" class="fixed bottom-4 right-4 z-40 flex items-center gap-3 rounded-2xl border-2 border-amber-400 bg-amber-50/95 px-6 py-4 text-lg font-extrabold text-ink shadow-2xl shadow-amber-300/40 backdrop-blur sm:bottom-6 sm:right-6 sm:text-xl">
-    <span class="text-3xl motion-safe:animate-bounce sm:text-4xl">🚧</span>
-    Fejlesztés alatt
+  <!-- IDEIGLENES: "fejlesztés alatt" videó jelvény — távolítsd el, amint élesedik a fizetés/a végleges oldal -->
+  <div id="devBadge" class="fixed bottom-4 right-4 z-40 sm:bottom-6 sm:right-6">
+    <div class="w-[150px] overflow-hidden rounded-2xl border-2 border-amber-400 bg-white shadow-2xl shadow-amber-300/40 sm:w-[240px]">
+      <video class="block h-auto w-full" autoplay loop muted playsinline>
+        <source src="/dev-badge.mp4" type="video/mp4">
+      </video>
+      <div class="flex items-center gap-2 bg-amber-50 px-3 py-2 text-xs font-extrabold text-ink sm:text-sm">
+        <span class="text-base sm:text-lg">🚧</span> Fejlesztés alatt
+      </div>
+    </div>
   </div>
 
   <main>
