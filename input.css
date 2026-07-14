@@ -5,6 +5,10 @@
 * { box-sizing: border-box; }
 body { color: #0B1F3A; background: #fff; }
 .grid-fade { background-image: linear-gradient(rgba(11,31,58,.035) 1px,transparent 1px), linear-gradient(90deg,rgba(11,31,58,.035) 1px,transparent 1px); background-size: 32px 32px; }
+/* Átlós áthúzás a régi árhoz — sima line-through helyett, mert az vízszintesen
+   pont a számjegyek közepén megy át, és összetéveszthető más számjeggyel. */
+.price-strike { position: relative; display: inline-block; }
+.price-strike::after { content: ""; position: absolute; left: -6%; right: -6%; top: 50%; height: 2px; background: currentColor; opacity: .7; transform: rotate(-12deg); transform-origin: center; }
 .glow:before { content: ""; position: absolute; width: 520px; height: 520px; border-radius: 50%; background: rgba(34,181,115,.13); filter: blur(80px); z-index: -1; }
 .browser-dots span { width: 7px; height: 7px; border-radius: 99px; display: block; }
 .feature-card, .step-card { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
