@@ -95,6 +95,9 @@
     .submit{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:12px 18px;border:0;border-radius:13px;background:#22B573;color:#fff;cursor:pointer;font-weight:700;box-shadow:0 8px 22px rgba(34,181,115,.22);transition:.25s ease}
     .submit:hover{background:#18a467;transform:translateY(-2px);box-shadow:0 14px 30px rgba(34,181,115,.34)}
     .prototype-message{display:none;margin-top:18px;padding:14px 16px;border:1px solid #cbeedd;border-radius:14px;background:#eef9f3;color:#16895b;font-size:13px;line-height:1.6}.prototype-message.show{display:block}
+    .send-options{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .send-options a{display:inline-flex;align-items:center;gap:7px;padding:9px 14px;border-radius:11px;background:#fff;border:1px solid #cbeedd;color:#16895b;text-decoration:none;font-weight:700;font-size:13px}
+    .send-options a:hover{background:#16895b;color:#fff}
     .process{margin-top:64px}.section-heading{max-width:730px}.section-heading p{margin:0 0 12px;color:#22B573;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.16em}.section-heading h2{margin:0;font-size:32px;line-height:1.15;font-weight:800;letter-spacing:-.025em}
     .process-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:30px}
     .process-step{position:relative;padding:26px 28px 28px;border:1px solid #dfe9e3;border-radius:22px;background:#fff}.process-number{display:block;margin-bottom:16px;color:#22B573;font-size:13px;font-weight:800;letter-spacing:.12em}.process-step h3{margin:0 0 10px;font-size:20px;line-height:1.4;font-weight:700}.process-step p{margin:0;color:#64748b;font-size:15px;line-height:1.7}
@@ -192,10 +195,20 @@
         'Igény:',
         val('need')
       ].join('\n');
-      window.location.href='mailto:'+to+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+      var mailtoUrl='mailto:'+to+'?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+      var gmailUrl='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(to)+'&su='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+      var yahooUrl='https://compose.mail.yahoo.com/?to='+encodeURIComponent(to)+'&subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+      var outlookWebUrl='https://outlook.live.com/mail/0/deeplink/compose?to='+encodeURIComponent(to)+'&subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
       var msg=document.getElementById('prototypeMessage');
-      msg.textContent='Megnyitottuk a levelezőprogramodat a kész üzenettel - küldd el, és hamarosan válaszolunk. Ha nem nyílt meg magától, írj közvetlenül: '+to;
+      msg.innerHTML='Az üzeneted összeállt. Válaszd ki, mivel küldenéd el:'
+        +'<div class="send-options">'
+        +'<a href="'+gmailUrl+'" target="_blank" rel="noopener"><i data-lucide="mail"></i>Gmail</a>'
+        +'<a href="'+yahooUrl+'" target="_blank" rel="noopener"><i data-lucide="mail"></i>Yahoo Mail</a>'
+        +'<a href="'+outlookWebUrl+'" target="_blank" rel="noopener"><i data-lucide="mail"></i>Outlook.com (webes)</a>'
+        +'<a href="'+mailtoUrl+'"><i data-lucide="send"></i>Másik levelezőprogram</a>'
+        +'</div>';
       msg.classList.add('show');
+      lucide.createIcons();
     });
     lucide.createIcons();
   </script>
