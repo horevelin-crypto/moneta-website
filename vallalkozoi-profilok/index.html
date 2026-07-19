@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Vállalkozói profilok | MonEta</title>
+  <meta name="description" content="Válaszd ki a vállalkozásodhoz illő MonEta nézetet: termékértékesítő, szolgáltató vagy vegyes profil. A profil később adatvesztés nélkül átváltható.">
+  <link rel="canonical" href="https://moneta-system.hu/vallalkozoi-profilok/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="hu_HU">
+  <meta property="og:site_name" content="MonEta">
+  <meta property="og:title" content="Vállalkozói profilok | MonEta">
+  <meta property="og:description" content="A MonEta a vállalkozásod működéséhez igazítja a megjelenő modulokat.">
+  <meta property="og:url" content="https://moneta-system.hu/vallalkozoi-profilok/">
+  <meta property="og:image" content="https://moneta-system.hu/og-image.png">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#22B573">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "MonEta vállalkozói profilok",
+    "url": "https://moneta-system.hu/vallalkozoi-profilok/",
+    "description": "A MonEta termékértékesítő, szolgáltató és vegyes vállalkozói profiljainak összehasonlítása.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "MonEta",
+      "url": "https://moneta-system.hu/"
+    }
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=10">
+  <link rel="stylesheet" href="/moneta-kozos-navigacio.css">
+  <script src="/moneta-kozos-navigacio.js" defer></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root { --mint:#22B573; --ink:#102A2A; --mist:#F5FAF7; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; background:#f8faf9; color:#102A2A; font-family:Inter,system-ui,sans-serif; }
+    button, a { font:inherit; }
+    .demo-shell { min-height:100vh; display:grid; grid-template-columns:250px minmax(0,1fr); }
+    .demo-sidebar { position:sticky; top:0; height:100vh; display:flex; flex-direction:column; background:#fff; border-right:1px solid #e8efeb; }
+    .demo-brand { display:flex; align-items:center; gap:12px; padding:22px 20px; border-bottom:1px solid #eef3f0; text-decoration:none; color:#102A2A; }
+    .demo-brand-mark { width:42px; height:42px; border-radius:13px; display:grid; place-items:center; color:#fff; font-weight:800; background:linear-gradient(135deg,#34d399,#16a36a); box-shadow:0 8px 20px rgba(34,181,115,.2); }
+    .demo-brand small { display:block; margin-top:2px; color:#94a3b8; font-size:11px; font-weight:500; }
+    .demo-nav { padding:18px 12px; display:grid; gap:4px; }
+    .demo-nav a { display:flex; align-items:center; gap:12px; min-height:48px; padding:8px 12px; border-radius:13px; color:#64748b; text-decoration:none; font-size:14px; font-weight:600; }
+    .demo-nav a:hover { background:#f2faf6; color:#138557; }
+    .demo-nav a.active { background:#22B573; color:#fff; box-shadow:0 8px 20px rgba(34,181,115,.18); }
+    .demo-nav-icon { width:30px; height:30px; border-radius:9px; display:grid; place-items:center; background:#eefaf4; color:#22B573; }
+    .demo-nav a.active .demo-nav-icon { background:rgba(255,255,255,.18); color:#fff; }
+    .demo-sidebar-bottom { margin-top:auto; padding:14px 12px 18px; border-top:1px solid #eef3f0; }
+    .demo-back { display:flex; align-items:center; gap:10px; padding:11px 12px; border-radius:12px; color:#64748b; text-decoration:none; font-size:13px; font-weight:600; }
+    .demo-back:hover { background:#f8faf9; color:#102A2A; }
+    .demo-mobilebar { display:none; position:sticky; top:0; z-index:20; background:rgba(255,255,255,.94); border-bottom:1px solid #e8efeb; backdrop-filter:blur(16px); }
+    .demo-mobilebar-row { height:70px; display:flex; align-items:center; justify-content:space-between; padding:0 18px; }
+    .demo-mobile-menu { display:none; padding:0 14px 14px; }
+    .demo-mobile-menu.open { display:grid; gap:4px; }
+    .demo-mobile-menu a { padding:11px 12px; border-radius:11px; color:#64748b; text-decoration:none; font-size:14px; font-weight:600; }
+    .demo-mobile-menu a.active { background:#ecf9f2; color:#16895b; }
+    .demo-main { min-width:0; padding:42px clamp(22px,5vw,72px) 72px; }
+    .demo-topline { display:flex; align-items:center; justify-content:space-between; gap:20px; margin-bottom:36px; }
+    .demo-topline p { margin:0; color:#94a3b8; font-size:13px; font-weight:600; }
+    .demo-buy { display:inline-flex; align-items:center; gap:8px; padding:12px 20px; border-radius:12px; background:#22B573; color:#fff; text-decoration:none; font-size:14px; font-weight:600; box-shadow:0 8px 22px rgba(34,181,115,.22); transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease; }
+    .demo-buy:hover { background:#18a467; transform:translateY(-3px); box-shadow:0 14px 30px rgba(34,181,115,.38); }
+    .demo-heading { max-width:760px; }
+    .demo-eyebrow { margin:0 0 12px; color:#22B573; font-size:13px; font-weight:800; text-transform:uppercase; letter-spacing:.16em; }
+    .demo-heading h1 { margin:0; max-width:720px; font-size:36px; line-height:1.111; font-weight:800; letter-spacing:-.025em; }
+    .demo-heading-lead { margin:22px 0 0; max-width:720px; color:#64748b; font-size:18px; line-height:1.75; }
+    .demo-note { display:inline-flex; align-items:center; gap:8px; margin-top:22px; padding:9px 13px; border:1px solid #cbeedd; border-radius:999px; background:#fff; color:#16895b; font-size:13px; font-weight:700; }
+    .profile-tabs { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:38px 0 18px; }
+    .profile-tab { display:flex; align-items:center; justify-content:center; gap:10px; min-height:58px; padding:12px 16px; border:1px solid; border-radius:16px; background:#fff; color:#475569; cursor:pointer; font-weight:700; transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,background-color .25s ease; }
+    .profile-tab:nth-child(1) { border-color:rgba(59,130,246,.48); box-shadow:0 0 0 1px rgba(59,130,246,.05),0 12px 34px rgba(59,130,246,.08); }
+    .profile-tab:nth-child(2) { border-color:rgba(34,181,115,.48); box-shadow:0 0 0 1px rgba(34,181,115,.05),0 12px 34px rgba(34,181,115,.08); }
+    .profile-tab:nth-child(3) { border-color:rgba(139,92,246,.48); box-shadow:0 0 0 1px rgba(139,92,246,.05),0 12px 34px rgba(139,92,246,.08); }
+    .profile-tab:nth-child(1) svg { color:#3b82f6; }
+    .profile-tab:nth-child(2) svg { color:#22B573; }
+    .profile-tab:nth-child(3) svg { color:#8b5cf6; }
+    .profile-tab:hover { transform:translateY(-4px); }
+    .profile-tab:nth-child(1):hover,.profile-tab:nth-child(1)[aria-selected="true"] { border-color:rgba(59,130,246,.88); background:#f1f6ff; box-shadow:0 0 22px rgba(59,130,246,.18),0 20px 45px rgba(11,31,58,.08); }
+    .profile-tab:nth-child(2):hover,.profile-tab:nth-child(2)[aria-selected="true"] { border-color:rgba(34,181,115,.88); background:#f0fbf5; box-shadow:0 0 22px rgba(34,181,115,.18),0 20px 45px rgba(11,31,58,.08); }
+    .profile-tab:nth-child(3):hover,.profile-tab:nth-child(3)[aria-selected="true"] { border-color:rgba(139,92,246,.88); background:#f7f3ff; box-shadow:0 0 22px rgba(139,92,246,.18),0 20px 45px rgba(11,31,58,.08); }
+    .profile-screen { overflow:hidden; border:1px solid #dfe9e3; border-radius:28px; background:#fff; box-shadow:0 24px 70px rgba(16,42,42,.08); }
+    .profile-screen-head { display:flex; align-items:flex-start; justify-content:space-between; gap:20px; padding:28px 30px; border-bottom:1px solid #edf2ef; background:linear-gradient(180deg,#fbfefc,#fff); }
+    .profile-identity { display:flex; align-items:center; gap:14px; }
+    .profile-icon { width:48px; height:48px; border-radius:16px; display:grid; place-items:center; }
+    .profile-icon-product { color:#22B573; background:#ecfdf5; }
+    .profile-icon-service { color:#3b82f6; background:#eff6ff; }
+    .profile-icon-mixed { color:#8b5cf6; background:#f5f3ff; }
+    .profile-identity h2 { margin:0; font-size:20px; line-height:1.4; font-weight:700; letter-spacing:0; }
+    .profile-identity p { margin:5px 0 0; color:#64748b; line-height:1.5; }
+    .profile-body { display:grid; grid-template-columns:minmax(0,1fr) 230px; }
+    .profile-modules { padding:30px; }
+    .section-label { margin:0 0 14px; color:#94a3b8; font-size:12px; font-weight:800; text-transform:uppercase; letter-spacing:.12em; }
+    .module-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    .module-card { height:254px; padding:28px; border:1px solid #e6ece9; border-radius:24px; background:#fff; box-shadow:0 12px 34px rgba(11,31,58,.05); transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease; box-sizing:border-box; }
+    .module-card:hover { transform:translateY(-5px); box-shadow:0 20px 45px rgba(11,31,58,.09); }
+    .module-icon { width:48px; height:48px; border-radius:16px; display:grid; place-items:center; }
+    .module-card h3 { margin:24px 0 12px; font-size:20px; line-height:1.4; font-weight:700; }
+    .module-card p { margin:0; color:#64748b; font-size:16px; line-height:1.75; }
+    .profile-side { padding:30px; border-left:1px solid #edf2ef; background:#f8fbf9; }
+    .profile-side h3 { margin:0 0 17px; font-size:16px; }
+    .fit-list { display:grid; gap:13px; }
+    .fit-row { display:flex; align-items:flex-start; gap:10px; color:#475569; font-size:13px; line-height:1.55; }
+    .fit-check { flex:0 0 auto; width:21px; height:21px; border-radius:50%; display:grid; place-items:center; background:#dff5e9; color:#16895b; }
+    .profile-example { margin:24px 0 0; padding-top:20px; border-top:1px solid #e3ebe6; color:#64748b; font-size:12px; line-height:1.65; }
+    .profile-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+    .profile-actions a { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:14px 18px; border-radius:14px; text-decoration:none; font-size:14px; font-weight:700; }
+    .action-primary { background:#22B573; color:#fff; box-shadow:0 8px 22px rgba(34,181,115,.22); transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease; }
+    .action-primary:hover { background:#18a467; transform:translateY(-3px); box-shadow:0 14px 30px rgba(34,181,115,.38); }
+    .action-secondary { border:1px solid #dfe9e3; background:#fff; color:#475569; }
+    .seo-answer { max-width:900px; margin:42px auto 0; padding:26px 28px; border-left:4px solid #22B573; border-radius:0 18px 18px 0; background:#eef9f3; }
+    .seo-answer h2 { margin:0 0 9px; font-size:18px; }
+    .seo-answer p { margin:0; color:#475569; line-height:1.7; }
+    @media (min-width:640px) {
+      .demo-heading h1 { font-size:48px; line-height:1; }
+    }
+    @media (min-width:961px) {
+      .profile-side { margin-top:62px; }
+    }
+    @media (max-width:960px) {
+      .demo-shell { grid-template-columns:210px minmax(0,1fr); }
+      .demo-main { padding-left:28px; padding-right:28px; }
+      .profile-body { grid-template-columns:1fr; }
+      .profile-side { border-left:0; border-top:1px solid #edf2ef; }
+    }
+    @media (max-width:760px) {
+      .demo-shell { display:block; }
+      .demo-sidebar { display:none; }
+      .demo-mobilebar { display:block; }
+      .demo-main { padding:28px 16px 54px; }
+      .demo-topline { display:none; }
+      .profile-tabs { grid-template-columns:1fr; margin-top:28px; }
+      .profile-tab { justify-content:flex-start; min-height:52px; }
+      .profile-screen-head { display:block; padding:23px 20px; }
+      .profile-modules, .profile-side { padding:22px 20px; }
+      .module-grid { grid-template-columns:1fr; }
+      .seo-answer { margin-top:28px; padding:22px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-mobilebar">
+    <div class="demo-mobilebar-row">
+      <a href="/" class="demo-brand" style="padding:0;border:0"><span class="demo-brand-mark">M</span><strong>MonEta</strong></a>
+      <button type="button" id="mobileMenuButton" aria-expanded="false" aria-controls="mobileMenu" style="border:1px solid #dfe9e3;background:#fff;border-radius:11px;padding:10px;display:grid;place-items:center"><i data-lucide="menu"></i></button>
+    </div>
+    <nav id="mobileMenu" class="demo-mobile-menu" aria-label="Bemutató modulok mobilon">
+      <a href="/">Áttekintés</a>
+      <a href="/funkciok/">Funkciók</a>
+      <a href="/vallalkozoi-profilok/" class="active">Vállalkozói profilok</a>
+      <a href="/igy-mukodik/">Így működik</a>
+      <a href="/egyedi-modul/">Egyedi modul</a>
+    </nav>
+  </div>
+
+  <div class="demo-shell">
+    <aside class="demo-sidebar">
+      <a href="/" class="demo-brand" aria-label="Vissza a MonEta főoldalára">
+        <span class="demo-brand-mark">M</span>
+        <span><strong>MonEta</strong><small>Pénzügyi tisztánlátás</small></span>
+      </a>
+      <nav class="demo-nav" aria-label="MonEta bemutató modulok">
+        <a href="/" data-label="Áttekintés"><span class="demo-nav-icon"><i data-lucide="home"></i></span>Áttekintés</a>
+        <a href="/funkciok/" data-label="Funkciók"><span class="demo-nav-icon"><i data-lucide="blocks"></i></span>Funkciók</a>
+        <a href="/vallalkozoi-profilok/" class="active" aria-current="page" data-label="Vállalkozói profilok"><span class="demo-nav-icon"><i data-lucide="users"></i></span>Vállalkozói profilok</a>
+        <a href="/igy-mukodik/" data-label="Így működik"><span class="demo-nav-icon"><i data-lucide="play-circle"></i></span>Így működik</a>
+        <a href="/egyedi-modul/" data-label="Egyedi modul"><span class="demo-nav-icon"><i data-lucide="puzzle"></i></span>Egyedi modul</a>
+      </nav>
+      <div class="preview-help"><span class="preview-help-icon"><i data-lucide="circle-help"></i></span><p><strong>Kérdésed van?</strong><br>Írj nekünk:<br><a href="mailto:info@moneta-system.hu">info@moneta-system.hu</a></p></div>
+    </aside>
+
+    <main class="demo-main">
+      <div class="demo-topline"><p>Vállalkozói profilok</p><a href="/#vasarlas" class="demo-buy">Megvásárolom <i data-lucide="arrow-right"></i></a></div>
+      <header class="demo-heading">
+        <p class="demo-eyebrow">A te működésedhez igazítva</p>
+        <h1>Válaszd ki, hogyan vállalkozol.</h1>
+        <p class="demo-heading-lead">A MonEta minden profilban ugyanazt az átlátható pénzügyi alapot adja, de csak azokat a speciális modulokat helyezi előtérbe, amelyekre valóban szükséged van.</p>
+        <span class="demo-note"><i data-lucide="refresh-cw"></i>A profil később bármikor átváltható. Az adataid megmaradnak.</span>
+      </header>
+
+      <div class="profile-tabs" role="tablist" aria-label="Vállalkozói profil kiválasztása">
+        <button class="profile-tab" role="tab" aria-selected="true" data-profile="service"><i data-lucide="briefcase-business"></i>Szolgáltató</button>
+        <button class="profile-tab" role="tab" aria-selected="false" data-profile="product"><i data-lucide="package-open"></i>Termékértékesítő</button>
+        <button class="profile-tab" role="tab" aria-selected="false" data-profile="mixed"><i data-lucide="shuffle"></i>Vegyes</button>
+      </div>
+
+      <section class="profile-screen" aria-live="polite">
+        <div class="profile-screen-head">
+          <div class="profile-identity"><span class="profile-icon" id="profileIcon"></span><div><h2 id="profileTitle"></h2><p id="profileSubtitle"></p></div></div>
+        </div>
+        <div class="profile-body">
+          <div class="profile-modules">
+            <p class="section-label">Kiemelt modulok</p>
+            <div class="module-grid" id="moduleGrid"></div>
+            <div class="profile-actions"><a href="/#vasarlas" class="action-primary">Ezt a nézetet választanám <i data-lucide="arrow-right"></i></a><a href="#profilvalasz" class="action-secondary">Profilok összehasonlítása</a></div>
+          </div>
+          <aside class="profile-side">
+            <h3>Neked való, ha...</h3>
+            <div class="fit-list" id="fitList"></div>
+            <p class="profile-example" id="profileExample"></p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="seo-answer" id="profilvalasz">
+        <h2 id="answerTitle"></h2>
+        <p id="answerText"></p>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const profiles = {
+      product: {
+        title: 'Termékértékesítő profil', state: 'Termékes nézet', icon: 'package-open',
+        subtitle: 'Tudd, mi van raktáron, és melyik termék mennyit hoz.',
+        modules: [
+          ['pie-chart','Árak és árrés','Beszerzési és eladási árak, árrés és alacsony árrésű termékek.'],
+          ['package','Raktárkészlet','Aktuális készletszintek, minimumszint és készletjelzések.'],
+          ['truck','Úton lévő rendelések','Várható beérkezések, szállítók, dátumok és rendelési állapotok.'],
+          ['shield','Marzs','A normál és akciós értékesítések által termelt fedezet.']
+        ],
+        fits: ['Fizikai termékeket értékesítesz.','Fontos a készletszint és a beszerzési ár.','Termékenként szeretnéd látni az eredményt.'],
+        example: 'Például webshopoknak, üzleteknek, viszonteladóknak és saját terméket értékesítő vállalkozóknak.',
+        answerTitle: 'Mire való a termékértékesítő profil?',
+        answer: 'A MonEta termékértékesítő profilja azoknak a kisvállalkozásoknak való, amelyek a bevételek és kiadások mellett termékárakat, árrést, készletet és várható beérkezéseket is szeretnének követni.'
+      },
+      service: {
+        title: 'Szolgáltató profil', state: 'Szolgáltatói nézet', icon: 'briefcase-business',
+        subtitle: 'A bevételeid, kiadásaid és pénzügyi mozgástered készletmodulok nélkül.',
+        modules: [
+          ['trending-up','Bevételi források','Lásd, melyik bevételi kategória hozta a legtöbbet.'],
+          ['trending-down','Kiadási kategóriák','Vedd észre, melyik kiadási terület viszi el a legtöbb pénzt.'],
+          ['wallet','Cashflow','Kövesd a pénzkészlet változását és a pénzfelhasználási ütemet.'],
+          ['calculator','Szolgáltatástervező','Fedezet, valós óradíj, havi bevétel és időigény tervezéséhez.']
+        ],
+        fits: ['Főként a saját munkádat vagy idődet értékesíted.','Nincs szükséged termék- és készletmodulokra.','A bevételi forrásaidat és kiadásaidat szeretnéd átlátni.'],
+        example: 'Például fodrászoknak, szerelőknek, taxisoknak, tanácsadóknak, oktatóknak és szabadúszóknak.',
+        answerTitle: 'Mire való a szolgáltatói profil?',
+        answer: 'A MonEta szolgáltatói profilja a készletkezelés helyett a bevételi forrásokra, a kiadásokra és a cashflow-ra összpontosít. A Szolgáltatástervező az óradíj, a fedezet és az időigény tervezésében segít.'
+      },
+      mixed: {
+        title: 'Vegyes profil', state: 'Vegyes nézet', icon: 'shuffle',
+        subtitle: 'Termékek és szolgáltatások egy közös pénzügyi képben.',
+        modules: [
+          ['package','Termékes modulok','Árak, árrés, készlet, beérkezések és marzs.'],
+          ['calculator','Szolgáltatástervező','Szolgáltatási díj, költség, óradíj és időigény tervezése.'],
+          ['pen-line','Közös adatbevitel','A termékes és szolgáltatói bevételek egy rendszerben.'],
+          ['layout-dashboard','Közös áttekintés','Árbevétel, havi eredmény, ÁFA és cashflow egy helyen.']
+        ],
+        fits: ['Terméket is árulsz és szolgáltatást is nyújtasz.','Mindkét területet külön is szeretnéd vizsgálni.','Egyetlen rendszerben akarod látni a teljes képet.'],
+        example: 'Például terméket is értékesítő szalonoknak, alkatrészt eladó szerelőknek és szolgáltatást is kínáló webshopoknak.',
+        answerTitle: 'Mire való a vegyes profil?',
+        answer: 'A MonEta vegyes profiljában a termékes modulok és a Szolgáltatástervező egyszerre érhető el, miközben a bevételek, kiadások, cashflow és havi eredmény közös pénzügyi képet alkotnak.'
+      }
+    };
+
+    const ICONCOLOR={home:['#10b981','#ecfdf5'],'layout-dashboard':['#10b981','#ecfdf5'],'pen-line':['#3b82f6','#eff6ff'],'pie-chart':['#a855f7','#faf5ff'],'package':['#6366f1','#eef2ff'],'truck':['#f59e0b','#fffbeb'],'shield':['#0891b2','#ecfeff'],'calculator':['#7c3aed','#f5f3ff'],'bar-chart-3':['#6366f1','#eef2ff'],wallet:['#14b8a6','#f0fdfa'],'file-text':['#f97316','#fff7ed'],banknote:['#16a34a','#f0fdf4'],'trending-up':['#16a34a','#f0fdf4'],'trending-down':['#f97316','#fff7ed'],'pen-line-2':['#3b82f6','#eff6ff']};
+    function iconColor(name){return ICONCOLOR[name]||['#22B573','#ecfdf5'];}
+    function hexA(h,a){var n=parseInt(h.slice(1),16);return 'rgba('+((n>>16)&255)+','+((n>>8)&255)+','+(n&255)+','+a+')';}
+    function renderProfile(key) {
+      const data = profiles[key];
+      document.querySelectorAll('[data-profile]').forEach(button => button.setAttribute('aria-selected', String(button.dataset.profile === key)));
+      document.getElementById('profileIcon').className = 'profile-icon profile-icon-' + key;
+      document.getElementById('profileIcon').innerHTML = '<i data-lucide="' + data.icon + '"></i>';
+      document.getElementById('profileTitle').textContent = data.title;
+      document.getElementById('profileSubtitle').textContent = data.subtitle;
+      document.getElementById('moduleGrid').innerHTML = data.modules.map(function(item){var c=iconColor(item[0]);return '<article class="module-card" style="border-color:'+hexA(c[0],.5)+';box-shadow:0 0 0 1px '+hexA(c[0],.05)+',0 12px 34px '+hexA(c[0],.09)+'"><span class="module-icon" style="color:'+c[0]+';background:'+c[1]+'"><i data-lucide="' + item[0] + '"></i></span><h3>' + item[1] + '</h3><p>' + item[2] + '</p></article>';}).join('');
+      document.getElementById('fitList').innerHTML = data.fits.map(text => '<div class="fit-row"><span class="fit-check"><i data-lucide="check"></i></span><span>' + text + '</span></div>').join('');
+      document.getElementById('profileExample').textContent = data.example;
+      document.getElementById('answerTitle').textContent = data.answerTitle;
+      document.getElementById('answerText').textContent = data.answer;
+      lucide.createIcons();
+    }
+
+    document.querySelectorAll('[data-profile]').forEach(button => button.addEventListener('click', () => renderProfile(button.dataset.profile)));
+    document.getElementById('mobileMenuButton').addEventListener('click', function() {
+      const menu = document.getElementById('mobileMenu');
+      const open = menu.classList.toggle('open');
+      this.setAttribute('aria-expanded', String(open));
+    });
+    renderProfile('service');
+  </script>
+</body>
+</html>
+

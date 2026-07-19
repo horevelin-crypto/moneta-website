@@ -97,22 +97,87 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css?v=10">
   <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Állandó oldalsó navigáció a főoldalon (2026-07-18, Evelin jóváhagyásával) */
+    :root{--home-sidebar:230px}
+    .home-sidebar{position:fixed;top:80px;left:0;bottom:0;width:var(--home-sidebar);background:#fff;
+      border-right:1px solid #e8edf2;z-index:40;display:none;flex-direction:column;
+      overflow-y:auto;font-family:Inter,ui-sans-serif,system-ui,sans-serif}
+    .header-brand-corner{position:absolute;top:0;left:0;width:var(--home-sidebar);height:100%;
+      display:none;align-items:center;justify-content:center;gap:10px;text-decoration:none;
+      color:#102A2A;border-right:1px solid #e8edf2}
+    .home-brand-mark{width:40px;height:40px;flex:0 0 auto;border-radius:13px;display:grid;
+      place-items:center;color:#fff;font-weight:800;font-size:17px;
+      background:linear-gradient(135deg,#34d399,#16a36a);box-shadow:0 8px 20px rgba(34,181,115,.2)}
+    .home-brand-text{font-size:19px;font-weight:800;letter-spacing:-.025em;
+      font-family:Inter,ui-sans-serif,system-ui,sans-serif}
+    .home-sidebar nav{padding:16px 12px;display:grid;gap:5px}
+    .home-sidebar nav a{display:flex;align-items:center;gap:12px;min-height:56px;
+      padding:8px 4px 8px 12px;border-radius:14px;color:#475569;text-decoration:none;
+      white-space:nowrap;font-size:14px;font-weight:700;transition:.2s ease}
+    .home-sidebar nav a:hover{background:#f2faf6;color:#16895b}
+    .home-sidebar nav a.active{background:#16be86;color:#fff;box-shadow:0 10px 25px rgba(22,190,134,.24)}
+    .home-nav-icon{width:38px;height:38px;flex:0 0 auto;border-radius:11px;display:grid;place-items:center}
+    .home-nav-icon svg{width:19px;height:19px}
+    .home-sidebar nav a.active .home-nav-icon{background:rgba(255,255,255,.22)!important;color:#fff!important}
+    .icon-home{background:#e4faf0;color:#10b981}.icon-blocks{background:#eaf2ff;color:#2563eb}
+    .icon-users{background:#f1ebff;color:#7c3aed}.icon-play{background:#fff0e3;color:#f97316}
+    .icon-puzzle{background:#e4faf6;color:#0d9488}
+    .home-sidebar-help{margin-top:auto;padding:18px 20px;border-top:1px solid #eef1f4;
+      color:#475569;font-size:13px;line-height:1.55}
+    .home-sidebar-help a{color:#16a36a;text-decoration:none}
+    @media(min-width:761px){
+      .home-sidebar{display:flex}
+      body>main,body>footer{margin-left:var(--home-sidebar)}
+      header nav.mx-auto{padding-left:calc(1.25rem + var(--home-sidebar))}
+      .header-brand-corner{display:flex}
+      .header-inline-logo{display:none}
+    }
+    @media(min-width:761px) and (max-width:1200px){
+      :root{--home-sidebar:82px}
+      .home-brand-text{display:none}
+      .home-sidebar nav{padding:16px 10px}
+      .home-sidebar nav a{width:58px;justify-content:center;gap:0;padding:9px;font-size:0}
+      .home-sidebar nav a span:last-child{display:none}
+      .home-sidebar-help{display:none}
+    }
+    @media(max-width:760px){
+      .home-sidebar{display:none!important}
+      body>main,body>footer{margin-left:0!important}
+      header nav.mx-auto{padding-left:1.25rem!important}
+    }
+  </style>
 </head>
 <body class="font-sans antialiased">
+  <aside class="home-sidebar">
+    <nav class="home-nav-top" aria-label="Állandó navigáció">
+      <a href="#" class="active" aria-current="page"><span class="home-nav-icon icon-home"><i data-lucide="home"></i></span><span>Áttekintés</span></a>
+      <a href="/funkciok/"><span class="home-nav-icon icon-blocks"><i data-lucide="blocks"></i></span><span>Funkciók</span></a>
+      <a href="/vallalkozoi-profilok/"><span class="home-nav-icon icon-users"><i data-lucide="users"></i></span><span>Vállalkozói profilok</span></a>
+      <a href="/igy-mukodik/"><span class="home-nav-icon icon-play"><i data-lucide="play-circle"></i></span><span>Így működik</span></a>
+      <a href="/egyedi-modul/"><span class="home-nav-icon icon-puzzle"><i data-lucide="puzzle"></i></span><span>Egyedi modul</span></a>
+    </nav>
+    <div class="home-sidebar-help">Kérdésed van?<br>Írj nekünk:<br><a href="mailto:info@moneta-system.hu">info@moneta-system.hu</a></div>
+  </aside>
+
   <header class="fixed inset-x-0 top-0 z-50 border-b border-slate-100/80 bg-white/90 backdrop-blur-xl">
+    <a href="#" class="header-brand-corner" aria-label="MonEta főoldal">
+      <span class="home-brand-mark">M</span>
+      <span class="home-brand-text">MonEta</span>
+    </a>
     <nav class="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8" aria-label="Fő navigáció">
       <div class="flex items-center gap-2">
         <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="relative grid h-10 w-10 place-items-center rounded-lg text-ink md:hidden" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="mobileMenu">
           <i data-lucide="menu" class="h-6 w-6" id="menuIconOpen"></i>
           <i data-lucide="x" class="hidden h-6 w-6" id="menuIconClose"></i>
         </button>
-        <a href="#" class="flex items-center gap-3" aria-label="MonEta főoldal">
+        <a href="#" class="header-inline-logo flex items-center gap-3" aria-label="MonEta főoldal">
           <span class="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-emerald-400 to-emerald-600 text-lg font-extrabold text-white shadow-lg shadow-emerald-200/70">M</span>
           <span class="text-xl font-extrabold tracking-tight">MonEta</span>
         </a>
       </div>
       <div class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
-        <a href="#funkciok" class="transition hover:text-mint">Funkciók</a>
+        <a href="#funkciok" class="transition hover:text-mint">Előnyök</a>
         <a href="#mukodes" class="transition hover:text-mint">Így működik</a>
         <a href="#gyik" class="transition hover:text-mint">GYIK</a>
       </div>
@@ -120,9 +185,14 @@
     </nav>
     <div id="mobileMenu" class="hidden absolute inset-x-0 top-full border-b border-slate-100 bg-white/95 shadow-lg backdrop-blur-xl md:hidden">
       <div class="flex flex-col gap-1 px-5 py-4 text-sm font-medium text-slate-600">
-        <a href="#funkciok" onclick="closeMobileMenu()" class="rounded-lg px-3 py-2.5 transition hover:bg-mist hover:text-mint">Funkciók</a>
+        <a href="#funkciok" onclick="closeMobileMenu()" class="rounded-lg px-3 py-2.5 transition hover:bg-mist hover:text-mint">Előnyök</a>
         <a href="#mukodes" onclick="closeMobileMenu()" class="rounded-lg px-3 py-2.5 transition hover:bg-mist hover:text-mint">Így működik</a>
         <a href="#gyik" onclick="closeMobileMenu()" class="rounded-lg px-3 py-2.5 transition hover:bg-mist hover:text-mint">GYIK</a>
+        <div class="mt-2 border-t border-slate-100 pt-3 text-xs font-bold uppercase tracking-wide text-slate-400">MonEta modulok</div>
+        <a href="/funkciok/" onclick="closeMobileMenu()" class="rounded-lg px-3 py-2.5 transition hover:bg-mist hover:text-mint">Funkciók</a>
+        <a href="/vallalkozoi-profilok/" onclick="closeMobileMenu()" class="rounded-lg px-3 py-2.5 transition hover:bg-mist hover:text-mint">Vállalkozói profilok</a>
+        <a href="/igy-mukodik/" onclick="closeMobileMenu()" class="rounded-lg px-3 py-2.5 transition hover:bg-mist hover:text-mint">Így működik</a>
+        <a href="/egyedi-modul/" onclick="closeMobileMenu()" class="rounded-lg px-3 py-2.5 transition hover:bg-mist hover:text-mint">Egyedi modul</a>
       </div>
     </div>
   </header>

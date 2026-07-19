@@ -1,0 +1,45 @@
+:root{--preview-sidebar:214px}
+html,body{overflow-x:hidden}
+.demo-shell,.shell{grid-template-columns:var(--preview-sidebar) minmax(0,1fr)!important}
+.demo-main,.main{min-width:0;overflow-x:clip;padding-top:122px!important}
+.demo-topline,.topline{position:fixed!important;z-index:55;left:var(--preview-sidebar);right:0;top:0;height:80px;margin:0!important;padding:0 30px;background:rgba(255,255,255,.94);border-bottom:1px solid #edf1f4;backdrop-filter:blur(16px)}
+.demo-topline p,.topline p{color:#102A2A!important;font-size:18px!important;font-weight:700!important;letter-spacing:-.01em}
+.demo-sidebar,.sidebar{width:var(--preview-sidebar);font-family:Inter,system-ui,sans-serif}
+.demo-sidebar .demo-brand,.sidebar .brand{min-height:110px;padding:0 18px!important;gap:13px!important}
+.demo-sidebar .demo-brand-mark,.sidebar .brand-mark{width:50px!important;height:50px!important;border-radius:15px!important;font-size:19px!important}
+.demo-sidebar .demo-brand strong,.sidebar .brand strong{font-size:20px;font-weight:800;letter-spacing:-.025em;font-family:Inter,ui-sans-serif,system-ui,sans-serif}
+.demo-sidebar .demo-brand small,.sidebar .brand small{margin-top:5px!important;font-size:12px!important}
+.demo-sidebar .demo-nav,.sidebar .side-nav{gap:5px!important;padding:28px 12px!important}
+.demo-sidebar .demo-nav a,.sidebar .side-nav a{min-height:60px!important;gap:12px!important;padding:8px 4px 8px 12px!important;border-radius:15px!important;white-space:nowrap;font-size:14px!important;font-weight:700!important}
+.demo-sidebar .demo-nav-icon,.sidebar .nav-icon{width:40px!important;height:40px!important;border-radius:11px!important}
+.demo-sidebar .demo-nav-icon svg,.sidebar .nav-icon svg{width:20px;height:20px}
+.demo-sidebar .demo-nav a:nth-child(1) .demo-nav-icon,.sidebar .side-nav a:nth-child(1) .nav-icon{background:#e4faf0;color:#10b981}
+.demo-sidebar .demo-nav a:nth-child(2) .demo-nav-icon,.sidebar .side-nav a:nth-child(2) .nav-icon{background:#eaf2ff;color:#2563eb}
+.demo-sidebar .demo-nav a:nth-child(3) .demo-nav-icon,.sidebar .side-nav a:nth-child(3) .nav-icon{background:#f1ebff;color:#7c3aed}
+.demo-sidebar .demo-nav a:nth-child(4) .demo-nav-icon,.sidebar .side-nav a:nth-child(4) .nav-icon{background:#fff0e3;color:#f97316}
+.demo-sidebar .demo-nav a:nth-child(5) .demo-nav-icon,.sidebar .side-nav a:nth-child(5) .nav-icon{background:#e4faf6;color:#0d9488}
+.demo-sidebar .demo-nav a.active .demo-nav-icon,.sidebar .side-nav a.active .nav-icon{background:rgba(255,255,255,.22)!important;color:#fff!important}
+.preview-help{margin-top:auto;display:flex;align-items:flex-start;gap:12px;padding:24px 20px;border-top:1px solid #edf1f4;font-family:Inter,system-ui,sans-serif}
+.preview-help-icon{display:none}
+.preview-help p{margin:0;color:#475569;font-size:13px;line-height:1.55}.preview-help a{color:#16a36a;text-decoration:none}
+@media(min-width:761px) and (max-width:1200px){
+  :root{--preview-sidebar:82px}
+  .demo-sidebar .demo-brand,.sidebar .brand{min-height:96px;justify-content:center;padding:0!important}
+  .demo-sidebar .demo-brand-mark,.sidebar .brand-mark{width:46px!important;height:46px!important}
+  .demo-sidebar .demo-brand>span:last-child,.sidebar .brand>span:last-child{display:none}
+  .demo-sidebar .demo-nav,.sidebar .side-nav{padding:22px 10px!important}
+  .demo-sidebar .demo-nav a,.sidebar .side-nav a{position:relative;width:62px;min-height:58px!important;justify-content:center;gap:0!important;padding:9px!important;font-size:0!important}
+  .demo-sidebar .demo-nav a:after,.sidebar .side-nav a:after{content:attr(data-label);position:absolute;z-index:80;left:70px;top:50%;display:none;width:max-content;transform:translateY(-50%);padding:9px 11px;border:1px solid #dfe9e3;border-radius:10px;background:#fff;color:#334155;font-size:13px;font-weight:700;box-shadow:0 12px 30px rgba(15,23,42,.14)}
+  .demo-sidebar .demo-nav a:hover:after,.demo-sidebar .demo-nav a:focus-visible:after,.sidebar .side-nav a:hover:after,.sidebar .side-nav a:focus-visible:after{display:block}
+  .preview-help{justify-content:center;padding:20px 0}.preview-help p{display:none}
+  .demo-main,.main{padding-left:28px!important;padding-right:28px!important}
+  .demo-topline,.topline{padding-left:22px;padding-right:22px}
+}
+@media(max-width:760px){
+  :root{--preview-sidebar:0px}
+  .demo-shell,.shell{display:block!important}
+  .demo-sidebar,.sidebar{display:none!important}
+  .demo-main,.main{overflow-x:hidden;padding-top:28px!important}
+}
+
+
