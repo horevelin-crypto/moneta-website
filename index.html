@@ -98,6 +98,12 @@
   <link rel="stylesheet" href="/styles.css?v=10">
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
+    /* Ár-sor (a "Vállalkozz tisztábban" zöld dobozban): "Ft" soha ne törjön külön
+       sorra a szám mögül. FIGYELEM: a .price-strike osztály MÁSHOL is előfordul
+       (a hero "Egyszeri vásárlás" jelvényében) - ezért a szelektor a .price-row
+       szülőn keresztül pontosít, hogy csak a zöld dobozra hasson. */
+    .price-row{flex-wrap:wrap}
+    .price-row .price-strike,.price-row .price-main{white-space:nowrap}
     /* Állandó oldalsó navigáció a főoldalon (2026-07-18, Evelin jóváhagyásával) */
     :root{--home-sidebar:230px}
     .home-sidebar{position:fixed;top:80px;left:0;bottom:0;width:var(--home-sidebar);background:#fff;
@@ -146,6 +152,10 @@
       .home-sidebar{display:none!important}
       body>main,body>footer{margin-left:0!important}
       header nav.mx-auto{padding-left:1.25rem!important}
+      .dash-frame{padding:6px!important}
+      .dash-float{width:auto!important;min-width:0!important;max-width:145px!important}
+      .price-row .price-strike{font-size:20px!important}
+      .price-row .price-main{font-size:30px!important}
     }
   </style>
 </head>
@@ -334,8 +344,8 @@
       <div class="mx-auto max-w-7xl px-5 lg:px-8">
         <div class="mx-auto max-w-2xl text-center"><p class="text-sm font-bold uppercase tracking-[.18em] text-mint">A te irányítópultod</p><h2 class="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">Minden fontos szám a helyén.</h2><p class="mt-5 text-lg leading-8 text-slate-600">Letisztult felület, ami nem áll közéd és a döntéseid közé.</p></div>
         <div class="relative mx-auto mt-16 max-w-6xl pb-16">
-          <div class="rounded-[32px] border border-slate-200 bg-slate-900 p-3 shadow-soft"><div class="overflow-hidden rounded-[22px] bg-white"><img src="moneta-dashboard-clean.png" alt="MonEta asztali felület" class="w-full"></div></div>
-          <div class="absolute -bottom-4 right-3 w-[28%] min-w-[180px] rounded-[32px] border-[8px] border-slate-900 bg-white p-3 shadow-soft sm:right-10">
+          <div class="dash-frame rounded-[32px] border border-slate-200 bg-slate-900 p-3 shadow-soft"><div class="overflow-hidden rounded-[22px] bg-white"><img src="moneta-dashboard-clean.png" alt="MonEta asztali felület" class="w-full"></div></div>
+          <div class="dash-float absolute -bottom-4 right-3 w-[28%] min-w-[180px] rounded-[32px] border-[8px] border-slate-900 bg-white p-3 shadow-soft sm:right-10">
             <div class="mx-auto mb-3 h-1.5 w-12 rounded-full bg-slate-200"></div>
             <div class="rounded-2xl bg-mist p-3"><p class="text-[10px] text-slate-400">Havi eredmény</p><p class="mt-1 text-lg font-extrabold text-mint">+441 100 Ft</p><div class="mt-4 h-14 rounded-xl bg-white p-2"><svg viewBox="0 0 120 35" class="h-full w-full"><path d="M2 29 C18 27 22 15 38 19 S62 5 76 13 S96 9 118 3" fill="none" stroke="#22B573" stroke-width="3"/></svg></div></div>
           </div>
@@ -370,7 +380,7 @@
         <div class="absolute -right-20 -top-32 h-96 w-96 rounded-full border-[70px] border-white/10"></div><div class="absolute -bottom-40 left-1/3 h-80 w-80 rounded-full bg-white/10 blur-3xl"></div>
         <div class="relative flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-center">
           <div><p class="font-semibold text-emerald-50">Itt az ideje tisztán látni.</p><h2 class="mt-3 text-4xl font-extrabold tracking-tight sm:text-6xl">Vállalkozz tisztábban.</h2><p class="mt-5 max-w-xl text-lg leading-8 text-emerald-50">Egyetlen rendszer a napi pénzügyi áttekintéshez. Egyszer fizetsz, utána csak használod.</p></div>
-          <div class="w-full rounded-3xl bg-white p-7 text-ink shadow-soft sm:w-auto sm:min-w-[330px]"><p class="text-sm font-semibold text-slate-400">MonEta teljes verzió</p><div class="mt-2 flex items-baseline gap-3"><p class="price-strike text-2xl font-semibold text-slate-400">29 900 Ft</p><p class="text-4xl font-extrabold text-mint">24 900 Ft</p></div><p class="mt-1 text-sm text-slate-400">egyszeri díj · bevezető ár, az első 50 vásárlónak</p><!-- TODO: a fizetési szolgáltató kiválasztása után ide kerül a beágyazott checkout widget/gomb (nem Lemon Squeezy) --><a href="#" onclick="alert('Hamarosan itt tudsz majd közvetlenül vásárolni. Addig is írj nekünk: info@moneta-system.hu'); return false;" class="hero-cta group mt-6 flex w-full items-center justify-center gap-2 rounded-2xl bg-mint px-6 py-4 font-bold text-white hover:bg-emerald-600">Megvásárlom <i data-lucide="arrow-right" class="h-5 w-5 transition group-hover:translate-x-1"></i></a><p class="mt-4 flex items-center justify-center gap-2 text-xs text-slate-400"><i data-lucide="lock-keyhole" class="h-3.5 w-3.5"></i> Biztonságos fizetés</p></div>
+          <div class="w-full rounded-3xl bg-white p-7 text-ink shadow-soft sm:w-auto sm:min-w-[330px]"><p class="text-sm font-semibold text-slate-400">MonEta teljes verzió</p><div class="price-row mt-2 flex items-baseline gap-3"><p class="price-strike text-2xl font-semibold text-slate-400">29 900 Ft</p><p class="price-main text-4xl font-extrabold text-mint">24 900 Ft</p></div><p class="mt-1 text-sm text-slate-400">egyszeri díj · bevezető ár, az első 50 vásárlónak</p><!-- TODO: a fizetési szolgáltató kiválasztása után ide kerül a beágyazott checkout widget/gomb (nem Lemon Squeezy) --><a href="#" onclick="alert('Hamarosan itt tudsz majd közvetlenül vásárolni. Addig is írj nekünk: info@moneta-system.hu'); return false;" class="hero-cta group mt-6 flex w-full items-center justify-center gap-2 rounded-2xl bg-mint px-6 py-4 font-bold text-white hover:bg-emerald-600">Megvásárlom <i data-lucide="arrow-right" class="h-5 w-5 transition group-hover:translate-x-1"></i></a><p class="mt-4 flex items-center justify-center gap-2 text-xs text-slate-400"><i data-lucide="lock-keyhole" class="h-3.5 w-3.5"></i> Biztonságos fizetés</p></div>
         </div>
       </div>
     </section>
