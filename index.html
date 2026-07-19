@@ -153,7 +153,12 @@
       body>main,body>footer{margin-left:0!important}
       header nav.mx-auto{padding-left:1.25rem!important}
       .dash-frame{padding:6px!important}
-      .dash-float{width:auto!important;min-width:0!important;max-width:145px!important}
+      .dash-float{width:135px!important;min-width:0!important;max-width:none!important;
+        padding:8px!important;border-width:6px!important}
+      .dash-float-inner{padding:8px!important}
+      .dash-float-label{font-size:9px!important;white-space:nowrap!important}
+      .dash-float-amount{font-size:14px!important;white-space:nowrap!important}
+      .dash-float-chart{height:36px!important;margin-top:8px!important}
       .price-row .price-strike{font-size:20px!important}
       .price-row .price-main{font-size:30px!important}
     }
@@ -347,7 +352,7 @@
           <div class="dash-frame rounded-[32px] border border-slate-200 bg-slate-900 p-3 shadow-soft"><div class="overflow-hidden rounded-[22px] bg-white"><img src="moneta-dashboard-clean.png" alt="MonEta asztali felület" class="w-full"></div></div>
           <div class="dash-float absolute -bottom-4 right-3 w-[28%] min-w-[180px] rounded-[32px] border-[8px] border-slate-900 bg-white p-3 shadow-soft sm:right-10">
             <div class="mx-auto mb-3 h-1.5 w-12 rounded-full bg-slate-200"></div>
-            <div class="rounded-2xl bg-mist p-3"><p class="text-[10px] text-slate-400">Havi eredmény</p><p class="mt-1 text-lg font-extrabold text-mint">+441 100 Ft</p><div class="mt-4 h-14 rounded-xl bg-white p-2"><svg viewBox="0 0 120 35" class="h-full w-full"><path d="M2 29 C18 27 22 15 38 19 S62 5 76 13 S96 9 118 3" fill="none" stroke="#22B573" stroke-width="3"/></svg></div></div>
+            <div class="dash-float-inner rounded-2xl bg-mist p-3"><p class="dash-float-label text-[10px] text-slate-400">Havi eredmény</p><p class="dash-float-amount mt-1 text-lg font-extrabold text-mint">+441 100 Ft</p><div class="dash-float-chart mt-4 h-14 rounded-xl bg-white p-2"><svg viewBox="0 0 120 35" class="h-full w-full"><path d="M2 29 C18 27 22 15 38 19 S62 5 76 13 S96 9 118 3" fill="none" stroke="#22B573" stroke-width="3"/></svg></div></div>
           </div>
         </div>
       </div>
