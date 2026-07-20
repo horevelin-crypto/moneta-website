@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Így működik a MonEta | Beállítástól az átlátható kimutatásokig</title>
-  <meta name="description" content="Ismerd meg, hogyan állíthatod be a MonEtát, hogyan rögzítheted a vállalkozásod pénzügyi adatait, és hogyan készülnek el az átlátható kimutatások.">
+  <meta name="description" content="Ismerd meg, hogyan állíthatod be a MonEtát, hogyan rögzítheted a vállalkozásod pénzügyi adatait és hogyan készülnek el az átlátható kimutatások.">
   <link rel="canonical" href="https://moneta-system.hu/igy-mukodik/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="hu_HU">
@@ -66,7 +66,8 @@
     .heading h1{margin:0;font-size:36px;line-height:1.111;font-weight:800;letter-spacing:-.025em}
     .lead{margin:22px 0 0;max-width:760px;color:#64748b;font-size:18px;line-height:1.75}
     .video-section{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(270px,.55fr);gap:24px;margin-top:38px}
-    .video-frame{position:relative;overflow:hidden;aspect-ratio:16/9;border:1px solid rgba(34,181,115,.42);border-radius:28px;background:radial-gradient(circle at 50% 35%,rgba(34,181,115,.14),transparent 34%),linear-gradient(145deg,#f8fffb,#eef9f3);box-shadow:0 24px 70px rgba(16,42,42,.08)}
+    .video-frame{position:relative;overflow:hidden;aspect-ratio:2132/1080;border:1px solid rgba(34,181,115,.42);border-radius:28px;background:radial-gradient(circle at 50% 35%,rgba(34,181,115,.14),transparent 34%),linear-gradient(145deg,#f8fffb,#eef9f3);box-shadow:0 24px 70px rgba(16,42,42,.08)}
+    .video-frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0;display:block;background:#0b1f1a}
     .video-grid{position:absolute;inset:0;opacity:.32;background-image:linear-gradient(#dceee4 1px,transparent 1px),linear-gradient(90deg,#dceee4 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.75),transparent)}
     .video-content{position:absolute;inset:0;display:grid;place-items:center;padding:30px;text-align:center}
     .play{width:76px;height:76px;margin:0 auto 20px;border:0;border-radius:24px;display:grid;place-items:center;background:#22B573;color:#fff;box-shadow:0 18px 38px rgba(34,181,115,.3);cursor:default}
@@ -100,6 +101,44 @@
     .result a{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:12px;background:#fff;color:#16895b;text-decoration:none;font-size:14px;font-weight:700;box-shadow:0 8px 22px rgba(34,181,115,.12)}
     .answer{margin-top:38px;padding:26px 28px;border-left:4px solid #22B573;border-radius:0 18px 18px 0;background:#eef9f3}
     .answer h2{margin:0 0 9px;font-size:18px}.answer p{margin:0;color:#475569;line-height:1.7}
+    .section-heading .section-lead{margin:14px 0 0;color:#64748b;font-size:16px;line-height:1.7;font-weight:500;text-transform:none;letter-spacing:normal}
+    .demo{margin-top:30px;display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:24px;align-items:start}
+    .rail{display:flex;flex-direction:column;gap:12px}
+    .sel{position:relative;display:flex;align-items:flex-start;gap:14px;width:100%;text-align:left;padding:16px;border:1px solid #e7efeb;border-radius:18px;background:#fff;cursor:pointer;font:inherit;color:inherit;transition:.2s ease;box-shadow:0 6px 18px rgba(16,42,42,.05)}
+    .sel:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(16,42,42,.09)}
+    .sel:focus-visible{outline:3px solid rgba(34,181,115,.5);outline-offset:3px}
+    .sel-ic{flex:0 0 auto;width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:color-mix(in srgb,var(--acc) 12%,#fff);color:var(--acc)}
+    .sel-ic svg{width:21px;height:21px}
+    .sel-body{flex:1;min-width:0}
+    .sel-top{display:flex;align-items:center;gap:9px}
+    .sel-n{color:#cbd5e1;font-size:12px;font-weight:800;letter-spacing:.1em}
+    .sel-t{font-size:15.5px;font-weight:700}
+    .sel-d{display:block;margin-top:5px;color:#64748b;font-size:13px;line-height:1.55}
+    .sel-go{flex:0 0 auto;align-self:center;color:#cbd5e1;opacity:0;transform:translateX(-4px);transition:.2s ease}
+    .sel-go svg{width:20px;height:20px}
+    .sel:hover .sel-go{opacity:.7;transform:none}
+    .sel.active{border-color:var(--acc);background:color-mix(in srgb,var(--acc) 6%,#fff);box-shadow:0 14px 30px color-mix(in srgb,var(--acc) 22%,transparent)}
+    .sel.active .sel-go{opacity:1;color:var(--acc);transform:none}
+    .sel.active .sel-n{color:var(--acc)}
+    .stage{position:sticky;top:20px;border:1px solid #e3ece8;border-radius:22px;background:#fff;overflow:hidden;box-shadow:0 24px 60px rgba(16,42,42,.10)}
+    .stage-bar{display:flex;align-items:center;gap:12px;padding:13px 16px;border-bottom:1px solid #eef3f0;background:#fbfdfc}
+    .dots{display:flex;gap:6px}.dots i{width:11px;height:11px;border-radius:50%;display:block}
+    .dots i:nth-child(1){background:#ffbdb0}.dots i:nth-child(2){background:#ffe08a}.dots i:nth-child(3){background:#b8ecc9}
+    .stage-label{font-size:12.5px;font-weight:700;color:#64748b}.stage-label b{color:#102A2A}
+    .seg{margin-left:auto;display:flex;gap:4px;padding:3px;border-radius:10px;background:#eef3f0}
+    .seg button{border:0;background:transparent;padding:6px 11px;border-radius:8px;font-size:12px;font-weight:700;color:#64748b;cursor:pointer;font-family:inherit}
+    .seg button.on{background:#fff;color:#102A2A;box-shadow:0 2px 6px rgba(16,42,42,.12)}
+    .canvas{position:relative;min-height:470px;display:grid;place-items:center;padding:26px;background:radial-gradient(circle at 50% 0%,#f2faf6,#eef4f1 60%)}
+    .canvas::before{content:"";position:absolute;inset:0;opacity:.5;background-image:linear-gradient(#e2efe9 1px,transparent 1px),linear-gradient(90deg,#e2efe9 1px,transparent 1px);background-size:30px 30px;-webkit-mask-image:radial-gradient(circle at 50% 40%,#000,transparent 80%);mask-image:radial-gradient(circle at 50% 40%,#000,transparent 80%)}
+    .frame{position:relative;max-width:100%;border:1px solid #e6efeb;border-radius:14px;background:#fff;padding:8px;box-shadow:0 20px 46px rgba(16,42,42,.16)}
+    .shotwrap{position:relative;display:inline-block;max-width:100%;overflow:hidden;border-radius:8px;line-height:0}
+    .shotwrap img{display:block;max-width:100%;max-height:400px;width:auto;height:auto}
+    .hl{position:absolute;border:2.5px solid var(--acc,#22B573);border-radius:9px;box-shadow:0 0 0 9999px rgba(48,62,58,.30)}
+    .hl::after{content:"";position:absolute;inset:-4px;border-radius:11px;box-shadow:0 0 0 4px color-mix(in srgb,var(--acc,#22B573) 25%,transparent);animation:hlpulse 2.1s ease-in-out infinite}
+    @keyframes hlpulse{0%,100%{opacity:.25}50%{opacity:.7}}
+    @media(prefers-reduced-motion:reduce){.hl::after{animation:none}}
+    .cap{position:relative;text-align:center;padding:14px 16px 18px;color:#64748b;font-size:13px;font-weight:600;background:#fff;border-top:1px solid #eef3f0}
+    @media(max-width:900px){.demo{grid-template-columns:1fr;gap:18px}.stage{position:static;order:2}.rail{order:1;flex-direction:row;flex-wrap:nowrap;overflow-x:auto;gap:10px;padding-bottom:4px}.sel{flex:0 0 80%;scroll-snap-align:start}.sel-d{display:none}.canvas{min-height:320px;padding:18px}.shotwrap img{max-height:300px}}
     @media(min-width:640px){.heading h1{font-size:48px;line-height:1}}
     @media(max-width:1120px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:960px){.shell{grid-template-columns:210px minmax(0,1fr)}.main{padding-left:28px;padding-right:28px}.video-section{grid-template-columns:1fr}.result{grid-template-columns:auto minmax(0,1fr)}.result a{grid-column:2;justify-self:start}}
@@ -131,26 +170,35 @@
         <p class="lead">A MonEta használatához nem kell pénzügyi szakértőnek lenned. A saját vállalkozói profilod kiválasztásától néhány egyszerű lépés vezet az átlátható kimutatásokig.</p>
       </header>
 
-      <section class="video-section" aria-label="Onboarding videó helye">
+      <section class="video-section" aria-label="Onboarding videó">
         <div class="video-frame">
-          <div class="video-grid"></div>
-          <div class="video-content"><div><span class="play"><i data-lucide="play"></i></span><h2>MonEta onboarding videó</h2><p>Itt kap majd helyet a rövid bemutató, amely végigvezet a profil kiválasztásától az első kimutatásig.</p></div></div>
+          <video controls preload="none" playsinline poster="/ONBOARDING/ONBOARDING-poster.jpg">
+            <source src="/ONBOARDING/ONBOARDING.mp4" type="video/mp4">
+            A böngésződ nem támogatja a videó lejátszását.
+          </video>
         </div>
         <aside class="video-info">
           <span class="info-icon"><i data-lucide="clapperboard"></i></span>
-          <h2>Gyors indulás, érthetően</h2>
-          <p>A videó ugyanazt a négy lépést mutatja majd be a valódi MonEta felületén, amelyeket lent szövegesen is végigkövethetsz.</p>
-          <span class="video-note"><i data-lucide="construction"></i>A videó külön körben készül el</span>
+          <h2>Ismerd meg a MonEta logikáját</h2>
+          <p>A videó a MonEta működésének logikáját mutatja be: hogyan lesz egyetlen rögzített adatból automatikusan kész kimutatás.</p>
+          <span class="video-note" style="background:#eef9f3;color:#16895b"><i data-lucide="clock"></i>Nézési idő: kb. 2 perc</span>
         </aside>
       </section>
 
       <section class="process">
-        <header class="section-heading"><p>A használat folyamata</p><h2>Négy egyszerű lépés, és már látod is a lényeget.</h2></header>
-        <div class="steps">
-          <article class="step"><div class="step-top"><span class="step-icon"><i data-lucide="users"></i></span><span class="step-number">01</span></div><h3>Válaszd ki a profilodat</h3><p>Jelöld meg, hogy szolgáltatást nyújtasz, terméket értékesítesz, vagy mindkettővel foglalkozol. A MonEta ehhez igazítja a kiemelt modulokat.</p></article>
-          <article class="step"><div class="step-top"><span class="step-icon"><i data-lucide="settings-2"></i></span><span class="step-number">02</span></div><h3>Állítsd be az alapokat</h3><p>Add meg a vállalkozásod működéséhez és a pénzügyi számításokhoz szükséges alapadatokat és beállításokat.</p></article>
-          <article class="step"><div class="step-top"><span class="step-icon"><i data-lucide="pen-line"></i></span><span class="step-number">03</span></div><h3>Rögzítsd az adatokat</h3><p>Vidd fel vagy importáld a bevételeket és kiadásokat. A rögzített tételek a kapcsolódó nézetekben automatikusan megjelennek.</p></article>
-          <article class="step"><div class="step-top"><span class="step-icon"><i data-lucide="chart-no-axes-combined"></i></span><span class="step-number">04</span></div><h3>Nézd meg a teljes képet</h3><p>Kövesd a havi eredményt, a cashflow-t és a profilodhoz tartozó fontos mutatókat egy átlátható rendszerben.</p></article>
+        <header class="section-heading"><p>A használat folyamata</p><h2>Négy egyszerű lépés és már látod is a lényeget.</h2><p class="section-lead">Válaszd ki a lépést és nézd meg a MonEta valódi felületén, hogyan néz ki.</p></header>
+        <div class="demo">
+          <div class="rail" role="tablist" aria-label="A használat lépései">
+            <button class="sel" type="button" data-i="0" style="--acc:#3b82f6"><span class="sel-ic"><i data-lucide="users"></i></span><span class="sel-body"><span class="sel-top"><span class="sel-n">01</span><span class="sel-t">Válaszd ki a profilodat</span></span><span class="sel-d">Szolgáltató, termékértékesítő vagy vegyes – a MonEta ehhez igazítja a modulokat.</span></span><span class="sel-go"><i data-lucide="arrow-right"></i></span></button>
+            <button class="sel" type="button" data-i="1" style="--acc:#22B573"><span class="sel-ic"><i data-lucide="settings-2"></i></span><span class="sel-body"><span class="sel-top"><span class="sel-n">02</span><span class="sel-t">Állítsd be az alapokat</span></span><span class="sel-d">Add meg a vállalkozás alapadatait és a pénzügyi számításokhoz szükséges beállításokat.</span></span><span class="sel-go"><i data-lucide="arrow-right"></i></span></button>
+            <button class="sel" type="button" data-i="2" style="--acc:#8b5cf6"><span class="sel-ic"><i data-lucide="pen-line"></i></span><span class="sel-body"><span class="sel-top"><span class="sel-n">03</span><span class="sel-t">Rögzítsd az adatokat</span></span><span class="sel-d">Vidd fel kézzel vagy importáld a bevételeket és kiadásokat – automatikusan megjelennek.</span></span><span class="sel-go"><i data-lucide="arrow-right"></i></span></button>
+            <button class="sel" type="button" data-i="3" style="--acc:#f59e0b"><span class="sel-ic"><i data-lucide="chart-no-axes-combined"></i></span><span class="sel-body"><span class="sel-top"><span class="sel-n">04</span><span class="sel-t">Nézd meg a teljes képet</span></span><span class="sel-d">Havi eredmény, cashflow és a fontos mutatók egy átlátható rendszerben.</span></span><span class="sel-go"><i data-lucide="arrow-right"></i></span></button>
+          </div>
+          <div class="stage" id="stage" style="--acc:#3b82f6">
+            <div class="stage-bar"><span class="dots"><i></i><i></i><i></i></span><span class="stage-label">MonEta · <b id="stLabel">Válaszd ki a profilodat</b></span><div class="seg" id="stSeg"></div></div>
+            <div class="canvas"><div class="frame"><div class="shotwrap"><img id="stImg" alt=""><div id="stHl" class="hl" hidden></div></div></div></div>
+            <div class="cap" id="stCap"></div>
+          </div>
         </div>
       </section>
 
@@ -170,6 +218,34 @@
     const menuButton=document.getElementById('menuButton');
     const mobileMenu=document.getElementById('mobileMenu');
     menuButton.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')==='true';menuButton.setAttribute('aria-expanded',String(!open));mobileMenu.classList.toggle('open',!open)});
+
+    const BASE='/ONBOARDING/kartya-kepek/';
+    const stepData=[
+      {n:'01',title:'Válaszd ki a profilodat',accent:'#3b82f6',shots:[{src:BASE+'beallitasok.png',cap:'Beállítások – profil kiválasztása',hl:{l:58.5,t:64.5,w:32.5,h:15.5}}]},
+      {n:'02',title:'Állítsd be az alapokat',accent:'#22B573',shots:[{src:BASE+'beallitasok.png',cap:'Beállítások – alapadatok megadása',hl:{l:16.5,t:18.2,w:82.0,h:47.0}}]},
+      {n:'03',title:'Rögzítsd az adatokat',accent:'#8b5cf6',shots:[{src:BASE+'rogzites-1.png',cap:'Kézi rögzítés'},{src:BASE+'rogzites-2.png',cap:'Excel / CSV import'}]},
+      {n:'04',title:'Nézd meg a teljes képet',accent:'#f59e0b',shots:[{src:BASE+'fomenu.png',cap:'Főmenü – az összkép'},{src:BASE+'cashflow.png',cap:'Cashflow – előrejelzés'}]}
+    ];
+    const sels=[...document.querySelectorAll('.rail .sel')];
+    const stage=document.getElementById('stage'),stImg=document.getElementById('stImg'),
+          stCap=document.getElementById('stCap'),stSeg=document.getElementById('stSeg'),
+          stLabel=document.getElementById('stLabel'),stHl=document.getElementById('stHl');
+    let cur=0,sub=0;
+    function paint(){
+      const d=stepData[cur],s=d.shots[sub];
+      stage.style.setProperty('--acc',d.accent);
+      stImg.src=s.src;stImg.alt=d.title+' – '+s.cap;stCap.textContent=s.cap;stLabel.textContent=d.title;
+      if(s.hl){stHl.hidden=false;stHl.style.left=s.hl.l+'%';stHl.style.top=s.hl.t+'%';stHl.style.width=s.hl.w+'%';stHl.style.height=s.hl.h+'%';}
+      else{stHl.hidden=true;}
+      if(d.shots.length>1){stSeg.style.display='flex';
+        stSeg.innerHTML=d.shots.map((sh,k)=>`<button type="button" data-k="${k}" class="${k===sub?'on':''}">${sh.cap}</button>`).join('');
+        [...stSeg.children].forEach(b=>b.addEventListener('click',()=>{sub=+b.dataset.k;paint();}));
+      }else{stSeg.style.display='none';stSeg.innerHTML='';}
+      sels.forEach((el,i)=>{el.classList.toggle('active',i===cur);el.setAttribute('aria-selected',String(i===cur));});
+    }
+    sels.forEach((el,i)=>{el.setAttribute('role','tab');el.addEventListener('click',()=>{cur=i;sub=0;paint();});});
+    paint();
+
     lucide.createIcons();
   </script>
 </body>
