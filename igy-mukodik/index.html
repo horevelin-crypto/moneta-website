@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- Biztonsagi fejlec (CSP): korlatozza, honnan tolthet be szkript/stilus. Uj kulso forras eseten ide kell felvenni. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com; base-uri 'self'; form-action 'self'; object-src 'none'">
   <title>Így működik a MonEta | Beállítástól az átlátható kimutatásokig</title>
   <meta name="description" content="Ismerd meg, hogyan állíthatod be a MonEtát, hogyan rögzítheted a vállalkozásod pénzügyi adatait és hogyan készülnek el az átlátható kimutatások.">
   <link rel="canonical" href="https://moneta-system.hu/igy-mukodik/">
@@ -33,7 +35,7 @@
   <link rel="stylesheet" href="/styles.css?v=10">
   <link rel="stylesheet" href="/moneta-kozos-navigacio.css">
   <script src="/moneta-kozos-navigacio.js" defer></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="/lucide.min.js"></script>
   <style>
     *{box-sizing:border-box}
     body{margin:0;min-height:100vh;background:#f8faf9;color:#102A2A;font-family:Inter,system-ui,sans-serif}

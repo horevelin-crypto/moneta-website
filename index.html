@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Biztonsagi fejlec (CSP): korlatozza, honnan tolthet be szkript/stilus. Uj kulso forras eseten ide kell felvenni. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com; base-uri 'self'; form-action 'self'; object-src 'none'">
   <meta name="description" content="A MonEta egyszerű pénzügyi áttekintő rendszer vállalkozóknak. Bevétel, kiadás, készlet és nyereség egy helyen.">
   <title>MonEta — Tisztábban látod a vállalkozásod</title>
   <link rel="canonical" href="https://moneta-system.hu/">
@@ -96,7 +98,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css?v=10">
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="/lucide.min.js"></script>
   <style>
     /* Ár-sor (a "Vállalkozz tisztábban" zöld dobozban): "Ft" soha ne törjön külön
        sorra a szám mögül. FIGYELEM: a .price-strike osztály MÁSHOL is előfordul

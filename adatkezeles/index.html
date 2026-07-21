@@ -3,6 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Biztonsagi fejlec (CSP): korlatozza, honnan tolthet be szkript/stilus. Uj kulso forras eseten ide kell felvenni. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com; base-uri 'self'; form-action 'self'; object-src 'none'">
 <title>Adatkezelési tájékoztató – MonEta</title>
 <style>
   :root{--zold:#22B573;--sotet:#0f2233;--szurke:#5b6b78;--vonal:#e5ebf0;}
