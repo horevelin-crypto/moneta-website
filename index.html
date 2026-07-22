@@ -106,8 +106,14 @@
        szülőn keresztül pontosít, hogy csak a zöld dobozra hasson. */
     .price-row{flex-wrap:wrap}
     .price-row .price-strike,.price-row .price-main{white-space:nowrap}
-    /* A fixált fejléc (80px) alá ne csússzon a horgony-cél teteje kattintáskor/görgetéskor */
-    #funkciok,#mukodes,#gyik{scroll-margin-top:96px}
+    /* A fixált fejléc (80px) alá ne csússzon a horgony-cél teteje kattintáskor/görgetéskor.
+       FIGYELEM: nem egységes érték - a #funkciok (Előnyök) és #gyik szakasznak saját
+       bőséges felső belső margója (py-24/py-32) már önmagában elég a fejléc alóli
+       kibújáshoz; extra scroll-margin csak feleslegesen tolná lejjebb (és vágná le alul)
+       a magasabb, 2-soros kártyarácsukat. A #mukodes (Egyszerűség) rövidebb tartalmú,
+       ott kér(t) Evelin kifejezetten több légteret felül. */
+    #funkciok,#gyik{scroll-margin-top:88px}
+    #mukodes{scroll-margin-top:96px}
     /* Állandó oldalsó navigáció a főoldalon (2026-07-18, Evelin jóváhagyásával) */
     :root{--home-sidebar:230px}
     .home-sidebar{position:fixed;top:80px;left:0;bottom:0;width:var(--home-sidebar);background:#fff;
