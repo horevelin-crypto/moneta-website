@@ -103,6 +103,33 @@
     .result-icon{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:#22B573;color:#fff}
     .result h2{margin:0 0 6px;font-size:20px;line-height:1.4;font-weight:700}.result p{margin:0;color:#475569;line-height:1.65}
     .result a{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:12px;background:#fff;color:#16895b;text-decoration:none;font-size:14px;font-weight:700;box-shadow:0 8px 22px rgba(34,181,115,.12)}
+    .probald{margin-top:64px}
+    .pk-card{max-width:640px;margin-top:28px;background:#fff;border:1px solid #e2e8f0;border-radius:20px;box-shadow:0 12px 34px rgba(16,42,42,.08);padding:28px}
+    .pk-field{margin-bottom:16px}
+    .pk-field label{display:block;font-size:13px;font-weight:700;color:#334155;margin-bottom:7px}
+    .pk-input-wrap{position:relative}
+    .pk-input-wrap input{width:100%;border:1.5px solid #e2e8f0;border-radius:12px;padding:13px 46px 13px 15px;font-size:18px;font-weight:700;color:#102A2A;font-family:inherit;outline:none;transition:border-color .15s,box-shadow .15s;text-align:right}
+    .pk-input-wrap input:focus{border-color:#22B573;box-shadow:0 0 0 3px rgba(34,181,115,.15)}
+    .pk-input-wrap .pk-ft{position:absolute;right:15px;top:50%;transform:translateY(-50%);color:#94a3b8;font-size:14px;font-weight:700;pointer-events:none}
+    .pk-result{margin-top:8px;border-top:1px dashed #e2e8f0;padding-top:20px;opacity:0;max-height:0;overflow:hidden;transition:opacity .25s}
+    .pk-result.pk-lathato{opacity:1;max-height:1200px}
+    .pk-main-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    .pk-main-row .pk-cimke{font-size:13px;color:#64748b;font-weight:700}
+    .pk-nyereseg{font-size:34px;font-weight:800;letter-spacing:-.02em;line-height:1;font-family:inherit}
+    .pk-nyereseg.pk-poz{color:#22B573}.pk-nyereseg.pk-neg{color:#ef4444}
+    .pk-rata-row{margin-top:14px}
+    .pk-pill{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:800;padding:6px 13px;border-radius:999px}
+    .pk-pill.pk-poz{background:#ecfdf5;color:#16895b}.pk-pill.pk-neg{background:#fef2f2;color:#dc2626}
+    .pk-magyarazat{font-size:14px;color:#334155;line-height:1.6;margin-top:14px;background:#f8faf9;border:1px solid #e2e8f0;border-radius:12px;padding:13px 15px}
+    .pk-magyarazat b{color:#102A2A}
+    .pk-bovit-gomb{margin-top:16px;width:100%;background:#fff;border:1.5px dashed #22B573;color:#16895b;font-size:13px;font-weight:800;padding:12px;border-radius:12px;cursor:pointer;font-family:inherit;transition:background .15s}
+    .pk-bovit-gomb:hover{background:#ecfdf5}
+    .pk-bovit{margin-top:14px;display:none}.pk-bovit.pk-nyitva{display:block}
+    .pk-runway{font-size:14px;color:#334155;line-height:1.6;margin-top:12px;background:#ecfdf5;border:1px solid #bbf0d4;border-radius:12px;padding:13px 15px}
+    .pk-runway b{color:#16895b}
+    .pk-privat{display:flex;gap:8px;align-items:flex-start;font-size:12px;color:#94a3b8;line-height:1.55;margin-top:20px}
+    .pk-jogi{font-size:12px;color:#94a3b8;margin-top:10px}
+    @media(max-width:640px){.pk-card{padding:22px 20px}.pk-nyereseg{font-size:28px}}
     .answer{margin-top:38px;padding:26px 28px;border-left:4px solid #22B573;border-radius:0 18px 18px 0;background:#eef9f3}
     .answer h2{margin:0 0 9px;font-size:18px}.answer p{margin:0;color:#475569;line-height:1.7}
     .section-heading .section-lead{margin:14px 0 0;color:#64748b;font-size:16px;line-height:1.7;font-weight:500;text-transform:none;letter-spacing:normal}
@@ -206,6 +233,55 @@
         </div>
       </section>
 
+      <section class="probald">
+        <header class="section-heading"><p>Próbáld ki</p><h2>Mennyi marad nálad a hónap végén?</h2><p class="section-lead">Írj be két számot a saját vállalkozásodból, és élőben megmutatjuk ugyanazt a mutatót, amivel a MonEta is dolgozik.</p></header>
+        <div class="pk-card">
+          <div class="pk-field">
+            <label for="pkBevetel">Havi bevétel</label>
+            <div class="pk-input-wrap">
+              <input id="pkBevetel" type="text" inputmode="numeric" placeholder="pl. 800 000" autocomplete="off">
+              <span class="pk-ft">Ft</span>
+            </div>
+          </div>
+          <div class="pk-field">
+            <label for="pkKiadas">Havi kiadás</label>
+            <div class="pk-input-wrap">
+              <input id="pkKiadas" type="text" inputmode="numeric" placeholder="pl. 620 000" autocomplete="off">
+              <span class="pk-ft">Ft</span>
+            </div>
+          </div>
+
+          <div class="pk-result" id="pkEredmeny">
+            <div class="pk-main-row">
+              <span class="pk-cimke">Ennyi marad nálad havonta:</span>
+              <span class="pk-nyereseg" id="pkNyereseg">–</span>
+            </div>
+            <div class="pk-rata-row">
+              <span class="pk-pill" id="pkRataPill">Haszonráta: –</span>
+            </div>
+            <div class="pk-magyarazat" id="pkMagyarazat"></div>
+
+            <button class="pk-bovit-gomb" id="pkBovitGomb" type="button">+ Meddig elég a pénzed? (még 1 szám)</button>
+            <div class="pk-bovit" id="pkBovit">
+              <div class="pk-field" style="margin-top:4px">
+                <label for="pkPenz">Mennyi pénzed van most összesen?</label>
+                <div class="pk-input-wrap">
+                  <input id="pkPenz" type="text" inputmode="numeric" placeholder="pl. 1 500 000" autocomplete="off">
+                  <span class="pk-ft">Ft</span>
+                </div>
+              </div>
+              <div class="pk-runway" id="pkRunway"></div>
+            </div>
+          </div>
+
+          <div class="pk-privat">
+            <span>🔒</span>
+            <span>Semmit nem kérünk és semmit nem küldünk el. Minden szám itt, a böngésződben számolódik - pont, ahogy a MonEta is a te gépeden dolgozik.</span>
+          </div>
+        </div>
+        <p class="pk-jogi">Tájékoztató kalkulátor, nem pénzügyi tanácsadás.</p>
+      </section>
+
       <section class="result">
         <span class="result-icon"><i data-lucide="sparkles"></i></span>
         <div><h2>A beállítás után a MonEta veled dolgozik</h2><p>Ha később változik a vállalkozásod, profilt válthatsz. A korábban rögzített adataid megmaradnak.</p></div>
@@ -249,6 +325,71 @@
     }
     sels.forEach((el,i)=>{el.setAttribute('role','tab');el.addEventListener('click',()=>{cur=i;sub=0;paint();});});
     paint();
+
+    (function(){
+      function pkFmt(n){ return Math.round(n).toLocaleString('hu-HU').replace(/,/g,' ').replace(/ /g,' '); }
+      function pkParse(str){ var d=(str||'').replace(/[^\d]/g,''); return d ? parseInt(d,10) : NaN; }
+      function pkFormatInput(el){
+        var pos=el.selectionStart, len=el.value.length;
+        var n=pkParse(el.value);
+        el.value = isNaN(n) ? '' : pkFmt(n);
+        var d=el.value.length-len;
+        try{ el.setSelectionRange(pos+d, pos+d); }catch(e){}
+      }
+      var pkBevetelEl=document.getElementById('pkBevetel');
+      var pkKiadasEl=document.getElementById('pkKiadas');
+      var pkPenzEl=document.getElementById('pkPenz');
+      if(!pkBevetelEl) return;
+
+      function pkSzamol(){
+        var bev=pkParse(pkBevetelEl.value), kiad=pkParse(pkKiadasEl.value);
+        var er=document.getElementById('pkEredmeny');
+        if(isNaN(bev) || isNaN(kiad) || bev<=0){ er.classList.remove('pk-lathato'); return; }
+        er.classList.add('pk-lathato');
+
+        var eredmeny=bev-kiad;
+        var rata= bev>0 ? (eredmeny/bev*100) : 0;
+        var poz=eredmeny>=0;
+
+        var nyEl=document.getElementById('pkNyereseg');
+        nyEl.textContent=(poz?'':'−')+pkFmt(Math.abs(eredmeny))+' Ft';
+        nyEl.className='pk-nyereseg '+(poz?'pk-poz':'pk-neg');
+
+        var pill=document.getElementById('pkRataPill');
+        pill.textContent='Haszonráta: '+(poz?'':'−')+Math.abs(rata).toFixed(0).replace('-','')+'%';
+        pill.className='pk-pill '+(poz?'pk-poz':'pk-neg');
+
+        var mag=document.getElementById('pkMagyarazat');
+        if(poz){
+          var szazbol=Math.round(rata);
+          mag.innerHTML='Minden <b>100 Ft</b> bevételből nagyjából <b>'+szazbol+' Ft</b> marad nálad, miután a kiadásaid kifizetted. <b>Nyereséges</b> hónap.';
+        } else {
+          mag.innerHTML='A kiadásaid jelenleg <b>'+pkFmt(Math.abs(eredmeny))+' Ft-tal</b> meghaladják a bevételeidet. <b>Veszteséges</b> hónap - 100 Ft bevételre most több mint 100 Ft kiadás jut.';
+        }
+
+        var penz=pkParse(pkPenzEl.value);
+        var rw=document.getElementById('pkRunway');
+        if(isNaN(penz) || penz<0){
+          rw.innerHTML='Írd be, mennyi pénzed van most, és megmutatjuk, meddig elég.';
+        } else if(eredmeny>0){
+          rw.innerHTML='Jó hír: a pénzed nem fogy, hanem <b>havonta ~'+pkFmt(eredmeny)+' Ft-tal gyarapszik</b> a mostani ütemmel.';
+        } else if(eredmeny===0){
+          rw.innerHTML='A pénzed <b>szinten marad</b> a mostani bevétel-kiadás mellett.';
+        } else {
+          var honap=Math.floor(penz/Math.abs(eredmeny));
+          rw.innerHTML='A jelenlegi pénzed a mostani havi hiányt kb. <b>'+honap+' hónapig</b> fedezi. Ez a MonEta Cashflow-előrejelzésének a lényege.';
+        }
+      }
+
+      [pkBevetelEl, pkKiadasEl, pkPenzEl].forEach(function(el){
+        el.addEventListener('input', function(){ pkFormatInput(el); pkSzamol(); });
+      });
+      document.getElementById('pkBovitGomb').addEventListener('click', function(){
+        document.getElementById('pkBovit').classList.toggle('pk-nyitva');
+        this.style.display='none';
+        pkPenzEl.focus();
+      });
+    })();
 
     lucide.createIcons();
   </script>
