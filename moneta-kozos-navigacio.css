@@ -18,6 +18,9 @@ html,body{overflow-x:hidden}
 .demo-sidebar .demo-nav a:nth-child(3) .demo-nav-icon,.sidebar .side-nav a:nth-child(3) .nav-icon{background:#f1ebff;color:#7c3aed}
 .demo-sidebar .demo-nav a:nth-child(4) .demo-nav-icon,.sidebar .side-nav a:nth-child(4) .nav-icon{background:#fff0e3;color:#f97316}
 .demo-sidebar .demo-nav a:nth-child(5) .demo-nav-icon,.sidebar .side-nav a:nth-child(5) .nav-icon{background:#e4faf6;color:#0d9488}
+/* Nev szerinti szinek (nem sorrend szerint), hogy uj menupont beszurasakor ne csusszon el semmi */
+.demo-sidebar .demo-nav a[href="/technikai-adatok/"] .demo-nav-icon,.sidebar .side-nav a[href="/technikai-adatok/"] .nav-icon{background:#eef2ff;color:#4f46e5}
+.demo-sidebar .demo-nav a[href="/egyedi-modul/"] .demo-nav-icon,.sidebar .side-nav a[href="/egyedi-modul/"] .nav-icon{background:#e4faf6;color:#0d9488}
 .demo-sidebar .demo-nav a.active .demo-nav-icon,.sidebar .side-nav a.active .nav-icon{background:rgba(255,255,255,.22)!important;color:#fff!important}
 .preview-help{margin-top:auto;display:flex;align-items:flex-start;gap:12px;padding:24px 20px;border-top:1px solid #edf1f4;font-family:Inter,system-ui,sans-serif}
 .preview-help-icon{display:none}
