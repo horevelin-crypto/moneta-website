@@ -341,10 +341,29 @@
       var pkPenzEl=document.getElementById('pkPenz');
       if(!pkBevetelEl) return;
 
+      var pkAnimId=0;
+      function pkAnimateNumber(el, poz, targetAbs, duration){
+        pkAnimId++;
+        var myId=pkAnimId;
+        var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if(reduced){ el.textContent=(poz?'':'−')+pkFmt(targetAbs)+' Ft'; return; }
+        var start=null;
+        function step(ts){
+          if(myId!==pkAnimId) return; // közben új animáció indult, ez elavult
+          if(start===null) start=ts;
+          var t=Math.min((ts-start)/duration, 1);
+          var eased=1-Math.pow(1-t, 3);
+          el.textContent=(poz?'':'−')+pkFmt(Math.round(targetAbs*eased))+' Ft';
+          if(t<1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      }
+
       function pkSzamol(){
         var bev=pkParse(pkBevetelEl.value), kiad=pkParse(pkKiadasEl.value);
         var er=document.getElementById('pkEredmeny');
         if(isNaN(bev) || isNaN(kiad) || bev<=0){ er.classList.remove('pk-lathato'); return; }
+        var voltLathato=er.classList.contains('pk-lathato');
         er.classList.add('pk-lathato');
 
         var eredmeny=bev-kiad;
@@ -352,8 +371,13 @@
         var poz=eredmeny>=0;
 
         var nyEl=document.getElementById('pkNyereseg');
-        nyEl.textContent=(poz?'':'−')+pkFmt(Math.abs(eredmeny))+' Ft';
         nyEl.className='pk-nyereseg '+(poz?'pk-poz':'pk-neg');
+        if(voltLathato){
+          pkAnimId++; // megszakít egy esetleg még futó animációt, mert innentől azonnali frissítés kell
+          nyEl.textContent=(poz?'':'−')+pkFmt(Math.abs(eredmeny))+' Ft';
+        } else {
+          pkAnimateNumber(nyEl, poz, Math.abs(eredmeny), 500);
+        }
 
         var pill=document.getElementById('pkRataPill');
         pill.textContent='Haszonráta: '+(poz?'':'−')+Math.abs(rata).toFixed(0).replace('-','')+'%';
