@@ -376,7 +376,7 @@
           pkAnimId++; // megszakít egy esetleg még futó animációt, mert innentől azonnali frissítés kell
           nyEl.textContent=(poz?'':'−')+pkFmt(Math.abs(eredmeny))+' Ft';
         } else {
-          pkAnimateNumber(nyEl, poz, Math.abs(eredmeny), 500);
+          pkAnimateNumber(nyEl, poz, Math.abs(eredmeny), 1200);
         }
 
         var pill=document.getElementById('pkRataPill');
