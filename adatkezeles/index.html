@@ -59,7 +59,9 @@
     </tr>
     <tr>
       <td>Számla kiállítása, könyvviteli kötelezettség</td>
-      <td>Név, cím, adószám (ha van), vásárlás adatai</td>
+      <td>Számlázási név, számlázási cím, e-mail-cím, adószám (ha a Vásárló rendelkezik adószámmal
+        és annak feltüntetése szükséges), a megvásárolt termék, a fizetett összeg, a fizetés és a
+        rendelés adatai</td>
       <td>Jogi kötelezettség (GDPR 6. cikk (1) c); Számv. tv.)</td>
       <td>8 év (számviteli bizonylatok)</td>
     </tr>
@@ -70,52 +72,89 @@
       <td>A megkeresés elintézését követő észszerű ideig</td>
     </tr>
     <tr>
-      <td>Weboldal működése, biztonság, statisztika</td>
-      <td>Sütik (cookie-k), IP-cím, böngészőadatok</td>
-      <td>Hozzájárulás, illetve jogos érdek (GDPR 6. cikk (1) a) / f))</td>
-      <td>Lásd a Sütikről szóló pontot</td>
+      <td>Fogyasztói panasz kivizsgálása és megválaszolása</td>
+      <td>Név, e-mail-cím vagy más kapcsolattartási adat, rendelési azonosító, a panasz és az igény
+        tartalma, a panaszhoz csatolt dokumentumok, valamint a panaszra adott válasz</td>
+      <td>Jogi kötelezettség teljesítése (GDPR 6. cikk (1) c); 1997. évi CLV. törvény)</td>
+      <td>A panasz és az arra adott válasz tekintetében 3 év</td>
+    </tr>
+    <tr>
+      <td>Weboldal és vásárlási rendszer működtetése, informatikai biztonság, hibakeresés és
+        sütimentes teljesítménymérés</td>
+      <td>IP-cím, eszköz- és böngészőadatok, technikai naplóadatok, valamint összesített
+        oldalbetöltési és teljesítményadatok</td>
+      <td>A szolgáltatás biztonságos működtetéséhez fűződő jogos érdek (GDPR 6. cikk (1) f)),
+        illetve a vásárlási folyamatban a szerződés teljesítése (GDPR 6. cikk (1) b))</td>
+      <td>A biztonsági és technikai célhoz szükséges ideig, a szolgáltatók mindenkori megőrzési
+        szabályai szerint</td>
     </tr>
   </table>
 
-  <h2>3. Adatfeldolgozók</h2>
-  <p>A Szolgáltató az adatkezelés során az alábbi adatfeldolgozókat veszi igénybe:</p>
+  <h2>3. Adatfeldolgozók és egyéb címzettek</h2>
+  <p>A Szolgáltató az adatkezelés során az alábbi szolgáltatókat veszi igénybe, illetve az alábbi
+  címzettek részére továbbíthat személyes adatokat:</p>
   <table>
-    <tr><th>Adatfeldolgozó</th><th>Tevékenység</th><th>Továbbított adatok</th></tr>
+    <tr><th>Szolgáltató / címzett</th><th>Tevékenység és szerep</th><th>Érintett adatok</th></tr>
     <tr><td>GitHub, Inc.</td><td>Weboldal tárhely</td><td>A weboldalon megadott, illetve naplózott adatok</td></tr>
-    <tr><td>OTP Mobil Kft. (SimplePay)</td><td>Online bankkártyás fizetés</td><td>Név, e-mail, számlázási cím, a vásárlás adatai</td></tr>
-    <tr><td>Barion Payment Zrt.</td><td>Online fizetés (bankkártya, tárca)</td><td>Név, e-mail, a vásárlás adatai</td></tr>
-    <tr><td><span class="fill">KITÖLTENDŐ – számlázó (pl. Számlázz.hu / Billingo)</span></td><td>Számlázás</td><td>Számlázási név, cím, adószám, tétel</td></tr>
+    <tr>
+      <td>Cloudflare, Inc.<br>101 Townsend Street, San Francisco, CA 94107, Amerikai Egyesült Államok</td>
+      <td>DNS-szolgáltatás, biztonsági és teljesítményfunkciók, a vásárlási backend működtetése,
+        rendelések technikai tárolása, a digitális termék tárolása és sütimentes webanalitika</td>
+      <td>IP-cím, eszköz- és böngészőadatok, technikai naplóadatok, rendelési és letöltési adatok,
+        valamint a weboldal teljesítményére vonatkozó összesített mérési adatok</td>
+    </tr>
+    <tr>
+      <td>Stripe Payments Europe, Limited és a fizetésben közreműködő Stripe-csoporttagok<br>
+        1 Grand Canal Street Lower, Grand Canal Dock, Dublin, D02 H210, Írország</td>
+      <td>Online bankkártyás fizetés lebonyolítása, csalásmegelőzés és a fizetési művelethez kapcsolódó
+        jogi kötelezettségek teljesítése. A Stripe a konkrét adatkezelési művelettől függően
+        adatfeldolgozóként vagy önálló adatkezelőként járhat el.</td>
+      <td>Név, e-mail-cím, számlázási cím, adóazonosító vagy adószám, a rendelés és a fizetési
+        tranzakció adatai, IP-cím, eszköz- és böngészőadatok. A bankkártya teljes adatait közvetlenül
+        a Stripe kezeli, azokhoz a Szolgáltató nem fér hozzá.</td>
+    </tr>
+    <tr>
+      <td>Nemzeti Adó- és Vámhivatal (NAV) - Online Számlázó program</td>
+      <td>A számla kézi kiállítása, a számlaadatok jogszabály szerinti kezelése és továbbítása.
+        A NAV hatósági címzettként, jogszabályban meghatározott feladatai ellátása érdekében kezeli
+        a számlaadatokat.</td>
+      <td>Számlázási név és cím, e-mail-cím, adószám (ha alkalmazandó), a megvásárolt termék
+        megnevezése, a számla összege, kelte és egyéb kötelező számlaadatok</td>
+    </tr>
   </table>
-  <p><em>A fenti listából a ténylegesen használt szolgáltatók maradjanak, a többi törölhető.</em></p>
+  <p>A Stripe saját adatkezeléséről, az adatkezelés jogalapjairól, az esetleges nemzetközi
+  adattovábbításokról és az érintetti jogok gyakorlásáról a
+  <a href="https://stripe.com/en-hu/privacy" target="_blank" rel="noopener noreferrer">Stripe adatvédelmi szabályzata</a>
+  tartalmaz további tájékoztatást.</p>
+  <p>A Szolgáltató a számlát a sikeres fizetést követően kézzel állítja ki a NAV Online Számlázó
+  programjában, majd elektronikus úton küldi meg a Vásárló részére. A számlázás magánszemély és
+  vállalkozás Vásárló esetén is lehetséges; adószámot csak akkor kezelünk, ha a Vásárló rendelkezik
+  vele, és annak megadása a számla kiállításához szükséges.</p>
 
-  <h2>4. SimplePay adattovábbítási nyilatkozat</h2>
-  <div class="warn">
-    <strong>Kötelező elem SimplePay használata esetén.</strong> A fizetéskor (a megrendelőlapon,
-    jelölőnégyzettel) a Vásárlónak el kell fogadnia az alábbi nyilatkozatot:
-  </div>
-  <p style="background:#fff;border:1px solid var(--vonal);border-radius:8px;padding:12px 14px;font-style:italic;">
-    „Tudomásul veszem, hogy a(z) Horváth Evelin egyéni vállalkozó
-    (1038 Budapest, Lukács György utca 4. X/91.) adatkezelő által a moneta-system.hu
-    felhasználói adatbázisában tárolt alábbi személyes adataim átadásra kerülnek az OTP Mobil Kft.
-    (1143 Budapest, Hungária krt. 17–19.), mint adatfeldolgozó részére. Az adatkezelő által továbbított
-    adatok köre az alábbi: név, e-mail cím, számlázási cím. Az adatfeldolgozó által végzett
-    adatfeldolgozási tevékenység jellege és célja a SimplePay Adatkezelési tájékoztatóban, az alábbi
-    linken tekinthető meg: <a href="https://simplepay.hu/adatkezelesi-tajekoztatok/">https://simplepay.hu/adatkezelesi-tajekoztatok/</a>”
-  </p>
+  <h2>4. Online fizetés a Stripe rendszerében</h2>
+  <p>A bankkártyás fizetés a Stripe biztonságos fizetési felületén történik. A fizetéshez szükséges
+  adatokat a Vásárló közvetlenül a Stripe rendszerében adja meg. A Szolgáltató nem ismeri meg és nem
+  tárolja a bankkártya teljes számát, lejárati idejét vagy biztonsági kódját. A Stripe a fizetési
+  tranzakció végrehajtása, hitelesítése, a visszaélések megelőzése, a visszatérítések kezelése és a rá
+  vonatkozó jogi kötelezettségek teljesítése érdekében kezeli a részére átadott, illetve a fizetési
+  folyamat során keletkező adatokat.</p>
 
-  <h2>5. Barion – kiegészítő tájékoztatás</h2>
-  <p>Barion fizetés esetén az adatkezelő a Barion Payment Zrt. (1117 Budapest, Infopark sétány 1.).
-  Amennyiben a weboldal a Barion Pixel eszközt használja, arról a Sütikről szóló pont és a
-  hozzájárulás-kezelő (cookie-sáv) ad tájékoztatást, a Barion vonatkozó követelményei szerint.
-  <span class="fill">KITÖLTENDŐ – csak akkor tartsd meg ezt a pontot, ha ténylegesen használsz Barion Pixelt.</span></p>
+  <h2>5. Sütik (cookie-k)</h2>
+  <p>A MonEta weboldal saját célú marketing sütiket nem használ. A weboldal teljesítményének mérésére
+  a Cloudflare Web Analytics szolgáltatást használjuk. A Cloudflare tájékoztatása szerint ez a
+  szolgáltatás sütik és a látogatók személyes adatainak gyűjtése nélkül készít összesített
+  teljesítményméréseket.</p>
+  <p>A vásárlási folyamatban a Stripe a fizetés biztonságos lebonyolításához, a munkamenet
+  fenntartásához, a hitelesítéshez és a csalások megelőzéséhez technikailag szükséges, ideiglenes
+  vagy tartós sütiket és hasonló technológiákat alkalmazhat. Ezek nélkül az online bankkártyás
+  fizetés nem vagy nem biztonságosan működne. A Stripe által használt sütikről és azok élettartamáról
+  a <a href="https://stripe.com/cookies-policy/legal" target="_blank" rel="noopener noreferrer">Stripe sütikre vonatkozó szabályzata</a>
+  ad részletes tájékoztatást.</p>
+  <p>Ha a weboldalon a későbbiekben hozzájárulást igénylő statisztikai vagy marketingtechnológia
+  kerül bevezetésre, annak használata előtt a látogató külön tájékoztatást és választási lehetőséget
+  kap.</p>
 
-  <h2>6. Sütik (cookie-k)</h2>
-  <p>A weboldal a működéshez szükséges, valamint – hozzájárulás esetén – statisztikai és marketing
-  célú sütiket használhat. A látogató a sütikről a weboldalon megjelenő hozzájárulás-kezelő sávban
-  rendelkezhet, és hozzájárulását bármikor visszavonhatja.
-  <span class="fill">KITÖLTENDŐ – a ténylegesen használt sütik felsorolása (működési, statisztikai, marketing).</span></p>
-
-  <h2>7. Az érintett jogai</h2>
+  <h2>6. Az érintett jogai</h2>
   <ul>
     <li>Tájékoztatáshoz és hozzáféréshez való jog</li>
     <li>Helyesbítéshez való jog</li>
@@ -128,7 +167,7 @@
   <p>Jogai gyakorlását a <a href="mailto:info@moneta-system.hu">info@moneta-system.hu</a>
   címen kezdeményezheti. A Szolgáltató a kérelmet legkésőbb 1 hónapon belül megválaszolja.</p>
 
-  <h2>8. Jogorvoslat</h2>
+  <h2>7. Jogorvoslat</h2>
   <p>Az érintett panaszával a felügyeleti hatósághoz fordulhat:</p>
   <table>
     <tr><td><strong>Hatóság</strong></td><td>Nemzeti Adatvédelmi és Információszabadság Hatóság (NAIH)</td></tr>
@@ -139,9 +178,7 @@
   <p>Az érintett jogainak megsértése esetén bírósághoz is fordulhat.</p>
 
   <div class="note">
-    Ez a dokumentum a MonEta digitális termékhez készült gyakorlati sablon. A megmaradt
-    <span class="fill">KITÖLTENDŐ</span> mezőket a fizetési szolgáltató és a számlázó program
-    kiválasztása után kell véglegesíteni; a nem használt adatfeldolgozókat / pontokat töröld.
+    Ez a dokumentum a MonEta digitális termékhez készült adatkezelési tájékoztató.
     A tartalom nem minősül jogi tanácsadásnak; élesítés előtt javasolt jogi szakértővel egyeztetni.
   </div>
 </div>

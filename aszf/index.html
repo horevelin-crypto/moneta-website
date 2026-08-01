@@ -27,6 +27,14 @@
   td.k{width:42%;color:var(--szurke);font-weight:600;}
   a{color:var(--zold);}
   ul{margin:8px 0;padding-left:22px;}
+  @media print{
+    @page{size:A4;margin:16mm 15mm;}
+    body{background:#fff;}
+    .wrap{max-width:none;margin:0;padding:0;}
+    h1,h2,h3{break-after:avoid;}
+    table,.warn,.note{break-inside:avoid;}
+    a{color:var(--sotet);text-decoration:none;}
+  }
 </style>
 </head>
 <body>
@@ -48,8 +56,15 @@
   <h2>2. Általános rendelkezések</h2>
   <p>A jelen ÁSZF a Szolgáltató és a MonEta terméket megvásárló Felhasználó (a továbbiakban: Vásárló)
   között létrejövő szerződés feltételeit tartalmazza. A weboldalon történő vásárlással a Vásárló
-  elfogadja a jelen ÁSZF-et. A szerződés nyelve magyar, a megkötött szerződés írásbeli szerződésnek
-  minősül, amelyet a Szolgáltató iktat.</p>
+  elfogadja a jelen ÁSZF-et.</p>
+  <p>A szerződés nyelve magyar. A szerződés elektronikus úton jön létre, nem minősül írásba foglalt
+  szerződésnek, és a Szolgáltató külön szerződésdokumentumként nem iktatja. A Szolgáltató a rendelés,
+  a feltételek elfogadása és a fizetés lényeges adatait elektronikus rendszerében megőrzi, a
+  szerződés létrejöttéről pedig visszaigazoló e-mailt küld. A Vásárló az ÁSZF-et a szerződéskötés
+  előtt letöltheti, elmentheti vagy kinyomtathatja. A rendelés adatai a Szolgáltatótól a
+  <a href="mailto:info@moneta-system.hu">info@moneta-system.hu</a> címen kérhetők ki.</p>
+  <p>A Szolgáltató nem vetette alá magát a jelen szolgáltatásra vonatkozó külön magatartási
+  kódexnek.</p>
   <p>A szerződésre a magyar jog, különösen a Polgári Törvénykönyvről szóló 2013. évi V. törvény, valamint
   a fogyasztó és a vállalkozás közötti szerződések részletes szabályairól szóló 45/2014. (II. 26.)
   Korm. rendelet rendelkezései irányadók.</p>
@@ -73,71 +88,187 @@
   <h2>4. A megrendelés menete</h2>
   <ul>
     <li>A Vásárló a weboldalon a „Megvásárolom” gombra kattint.</li>
-    <li>Megadja a számlázáshoz és a termék átadásához szükséges adatokat.</li>
-    <li>Elfogadja a jelen ÁSZF-et és az Adatkezelési tájékoztatót.</li>
-    <li>Kiválasztja a fizetési módot, és teljesíti a fizetést.</li>
-    <li>Sikeres fizetés után a Szolgáltató visszaigazoló e-mailt küld, és biztosítja a termékhez való hozzáférést / letöltést.</li>
+    <li>Áttekinti a termék lényeges tulajdonságait, az aktuális árat és a vásárlási feltételeket.</li>
+    <li>Külön jelölőnégyzettel elfogadja a jelen ÁSZF-et és tudomásul veszi az Adatkezelési
+      tájékoztatót.</li>
+    <li>Külön jelölőnégyzettel kéri a digitális tartalom azonnali teljesítését, és tudomásul veszi az
+      elállási jog elvesztését.</li>
+    <li>A Stripe biztonságos fizetési felületén megadja és a fizetés véglegesítése előtt ellenőrzi a
+      számlázási, kapcsolattartási és bankkártyaadatait. Az adatbeviteli hibák a Stripe felületén a
+      mezők módosításával javíthatók.</li>
+    <li>A Stripe felületén található, fizetési kötelezettséget egyértelműen jelző végső fizetési gomb
+      megnyomásával elküldi a megrendelését és teljesíti a fizetést.</li>
+    <li>Sikeres fizetés után a Szolgáltató elektronikus visszaigazolást küld, és biztosítja a termék
+      letöltését.</li>
   </ul>
-  <p>A megrendelés elektronikus úton megkötött szerződésnek minősül. A visszaigazoló e-mail a
-  megrendelés beérkezését követően, de legkésőbb 48 órán belül megérkezik; ennek elmaradása esetén
-  a Vásárló mentesül az ajánlati kötöttség alól.</p>
+  <p>A fizetés véglegesítése előtt a Vásárló visszaléphet, és a megadott adatokat kijavíthatja. A
+  jelölőnégyzetek nincsenek előre bejelölve. A megrendelés elküldése fizetési kötelezettséget von maga
+  után.</p>
+  <p>A visszaigazoló e-mail a megrendelés beérkezését követően haladéktalanul, de legkésőbb 48 órán
+  belül megérkezik. Ha a visszaigazolás ezen időtartamon belül nem érkezik meg, a Vásárló mentesül az
+  ajánlati kötöttség vagy szerződéses kötelezettség alól. A szerződés akkor jön létre, amikor a
+  sikeres fizetésről és a termék hozzáférhetővé tételéről szóló visszaigazolás a Vásárló számára
+  hozzáférhetővé válik.</p>
 
   <h2>5. Fizetési módok</h2>
-  <p>A fizetés az alábbi szolgáltató(k) biztonságos felületén keresztül történik:</p>
-  <ul>
-    <li><strong>SimplePay (OTP Mobil Kft.)</strong> – bankkártyás fizetés. <span class="fill">KITÖLTENDŐ – ha ezt használod</span></li>
-    <li><strong>Barion (Barion Payment Zrt.)</strong> – bankkártyás és tárcás fizetés. <span class="fill">KITÖLTENDŐ – ha ezt használod</span></li>
-  </ul>
+  <p>A fizetés online bankkártyával, a Stripe biztonságos fizetési rendszerén keresztül történik.
+  A fizetés egyszeri terhelés, nem hoz létre előfizetést vagy ismétlődő fizetési kötelezettséget.</p>
   <p>A Szolgáltató a bankkártyaadatokhoz nem fér hozzá, azokat kizárólag a fizetési szolgáltató kezeli.
-  A fizetési szolgáltatónak történő adattovábbításról az Adatkezelési tájékoztató rendelkezik.</p>
+  A Stripe részére történő adattovábbításról és a fizetéshez kapcsolódó adatkezelésről az
+  Adatkezelési tájékoztató rendelkezik.</p>
+  <p>A megrendelés akkor minősül kifizetettnek, amikor a Stripe a fizetés sikerességét visszaigazolja
+  a Szolgáltató rendszerének. Sikertelen vagy megszakított fizetés esetén a termékhez való hozzáférés
+  nem válik elérhetővé.</p>
 
   <h2>6. Számlázás</h2>
-  <p>A Szolgáltató a sikeres fizetésről elektronikus számlát állít ki, amelyet a Vásárló e-mail címére
-  küld meg. <span class="fill">KITÖLTENDŐ – számlázó program neve (pl. Számlázz.hu / Billingo)</span></p>
+  <p>A Szolgáltató a sikeres fizetésről a NAV Online Számlázó programjában kézzel állít ki
+  elektronikus számlát, amelyet a Vásárló által megadott e-mail-címre küld meg. A számla kiállítása
+  nem automatikus, ezért a fizetési visszaigazolás és a számla külön időpontban érkezhet meg.</p>
+  <p>A számla kiállításához a Vásárló köteles valós és pontos számlázási adatokat megadni.
+  Magánszemély és vállalkozás egyaránt vásárolhat; adószámot akkor kell megadni, ha a Vásárló
+  rendelkezik adószámmal és annak feltüntetése a számlán szükséges.</p>
 
   <h2>7. Elállási jog – digitális termék</h2>
   <div class="warn">
-    <strong>Fontos:</strong> A 45/2014. (II. 26.) Korm. rendelet 29. § (1) m) pontja alapján a Vásárlót
-    <strong>nem illeti meg az elállási jog</strong> a nem tárgyi adathordozón nyújtott digitális
-    tartalom tekintetében, ha a Szolgáltató a Vásárló <strong>előzetes, kifejezett hozzájárulásával</strong>
-    kezdte meg a teljesítést (a letöltést / hozzáférés biztosítását), és a Vásárló e hozzájárulásával
-    egyidejűleg nyilatkozott arról, hogy tudomásul veszi, hogy a teljesítés megkezdését követően
-    <strong>elveszíti elállási jogát</strong>.
+    <strong>Fontos:</strong> A fogyasztónak minősülő Vásárlót főszabály szerint 14 napos elállási jog
+    illeti meg. A 45/2014. (II. 26.) Korm. rendelet 29. § (1) m) pontja alapján azonban elveszíti ezt
+    a jogát a nem tárgyi adathordozón nyújtott digitális tartalom tekintetében, ha a Szolgáltató a
+    teljesítést a Vásárló előzetes, kifejezett beleegyezésével kezdi meg, a Vásárló ezzel egyidejűleg
+    tudomásul veszi az elállási jog elvesztését, és a Szolgáltató a nyilatkozatról visszaigazolást küld.
   </div>
-  <p>Ennek megfelelően a vásárlási folyamat során a Vásárlónak kötelezően el kell fogadnia a következő
-  nyilatkozatot (jelölőnégyzettel):</p>
+  <p>A MonEta letöltését a Szolgáltató a sikeres fizetés után haladéktalanul hozzáférhetővé teszi.
+  Ezért a vásárlási folyamatban a Vásárlónak az ÁSZF elfogadásától elkülönülten, jelölőnégyzettel kell
+  megtennie a következő nyilatkozatot:</p>
   <p style="background:#fff;border:1px solid var(--vonal);border-radius:8px;padding:12px 14px;font-style:italic;">
-    „Kifejezetten hozzájárulok, hogy a MonEta digitális termékhez való hozzáférés / letöltés a
-    vásárlás után azonnal megkezdődjön. Tudomásul veszem, hogy ezzel a 45/2014. (II. 26.) Korm.
-    rendelet 29. § (1) m) pontja alapján elveszítem a 14 napos elállási jogomat.”
+    „Kifejezetten kérem, hogy a MonEta digitális tartalom teljesítése a vásárlás után azonnal
+    megkezdődjön. Tudomásul veszem, hogy a digitális tartalomhoz való hozzáférés biztosításával
+    elveszítem a 14 napos elállási jogomat.”
   </p>
+  <p>A nyilatkozat megtételét és a szerződés létrejöttét a Szolgáltató tartós adathordozón, a Vásárló
+  részére küldött visszaigazoló e-mailben megerősíti. Ha a teljesítés a fenti feltételek teljesülése
+  nélkül kezdődne meg, a fogyasztó jogait a mindenkor hatályos jogszabályok szerint gyakorolhatja.
+  A fogyasztónak nem minősülő Vásárlót a 45/2014. (II. 26.) Korm. rendelet szerinti 14 napos
+  fogyasztói elállási jog nem illeti meg.</p>
 
   <h2>8. Szavatosság, hibás teljesítés</h2>
-  <p>A Szolgáltató hibás teljesítése esetén a Vásárlót a Ptk. szerinti kellékszavatossági jogok illetik
-  meg. Ha a termék a rendeltetésszerű használat mellett nem működik, a Vásárló a
-  <a href="mailto:info@moneta-system.hu">info@moneta-system.hu</a> címen jelezheti a hibát,
-  és a Szolgáltató észszerű határidőn belül orvosolja azt (javítás, ismételt hozzáférés biztosítása,
-  vagy – ha ezek nem lehetségesek – a vételár visszatérítése).</p>
+  <p>A MonEta nem tárgyi adathordozón szolgáltatott digitális tartalom. A fogyasztónak minősülő
+  Vásárlóval kötött szerződésre a Ptk. mellett a fogyasztó és vállalkozás közötti, az áruk
+  adásvételére, valamint a digitális tartalom szolgáltatására és digitális szolgáltatások nyújtására
+  irányuló szerződések részletes szabályairól szóló 373/2021. (VI. 30.) Korm. rendelet rendelkezései
+  is irányadók.</p>
+  <p>A Szolgáltató a szerződéskötést követően indokolatlan késedelem nélkül a Vásárló rendelkezésére
+  bocsátja a MonEta szerződéskötéskor elérhető legfrissebb verzióját. A teljesítés akkor történik meg,
+  amikor a termék letöltésére alkalmas megoldás hozzáférhetővé válik a Vásárló számára.</p>
+  <p>A MonEtának meg kell felelnie az ÁSZF-ben, a termékoldalon és a technikai tájékoztatóban szereplő
+  leírásnak, funkcionalitásnak, kompatibilitási és egyéb vállalt tulajdonságoknak, valamint a hasonló
+  digitális tartalmaktól észszerűen elvárható minőségi, működési, hozzáférhetőségi, folyamatossági és
+  biztonsági követelményeknek.</p>
+  <p>A Szolgáltató tájékoztatja a fogyasztót, és elérhetővé teszi számára azokat a frissítéseket,
+  ideértve a biztonsági frissítéseket is, amelyek a digitális tartalom szerződésszerűségének
+  fenntartásához a digitális tartalom jellege és célja alapján észszerűen elvárható időtartam alatt
+  szükségesek. A Vásárló felelhet az abból eredő hibáért, hogy a megfelelő tájékoztatás és telepítési
+  útmutató ellenére észszerű időn belül nem telepítette a rendelkezésére bocsátott frissítést.</p>
+  <p>Hibás teljesítés esetén a fogyasztó elsősorban a digitális tartalom térítésmentes és észszerű
+  időn belüli szerződésszerűvé tételét kérheti. A jogszabályban meghatározott esetekben jogosult az ár
+  arányos csökkentésére vagy a szerződés megszüntetésére is, így különösen akkor, ha a hiba
+  kijavítása lehetetlen vagy aránytalan lenne, a Szolgáltató a hibát nem orvosolja észszerű időn
+  belül, a hiba ismételten jelentkezik, vagy a hiba olyan súlyú, hogy az azonnali árleszállítást vagy
+  szerződésmegszüntetést indokolja.</p>
+  <p>Egyszeri digitálistartalom-szolgáltatás esetén az ellenkező bizonyításáig vélelmezni kell, hogy a
+  teljesítéstől számított egy éven belül felismert hiba már a teljesítés időpontjában fennállt, kivéve,
+  ha ez a digitális tartalom vagy a hiba jellegével összeegyeztethetetlen, illetve ha a Vásárló
+  digitális környezete nem felel meg az előzetesen közölt műszaki követelményeknek.</p>
+  <p>A fogyasztónak nem minősülő Vásárló szavatossági jogaira a Ptk. és a jelen ÁSZF rendelkezései
+  irányadók. A hibát vagy a letöltési hozzáféréssel kapcsolatos problémát az
+  <a href="mailto:info@moneta-system.hu">info@moneta-system.hu</a> címen lehet bejelenteni. A
+  bejelentésben kérjük megadni a rendelési azonosítót, a hiba leírását, a használt operációs rendszer
+  verzióját és - ha lehetséges - a hibát bemutató képernyőképet. Bankkártyaadatot vagy jelszót a
+  hibabejelentéshez nem kérünk.</p>
 
   <h2>9. Panaszkezelés</h2>
-  <p>A Vásárló panaszát a fenti e-mail címen jelentheti be. A Szolgáltató a panaszt annak beérkezésétől
-  számított 30 napon belül kivizsgálja és megválaszolja.</p>
+  <p>A Vásárló a termékkel, a vásárlással, a fizetéssel, a letöltéssel vagy a Szolgáltató
+  tevékenységével kapcsolatos panaszát az
+  <a href="mailto:info@moneta-system.hu">info@moneta-system.hu</a> e-mail-címen jelentheti be.
+  A panasz gyors azonosítása érdekében kérjük megadni a Vásárló nevét, e-mail-címét, a rendelési
+  azonosítót, valamint a panasz és az igény részletes leírását.</p>
+  <p>A Szolgáltató az írásbeli panaszt a beérkezését követő 30 napon belül írásban, érdemben és
+  igazolható módon megválaszolja. A panasz elutasítását megindokolja, és tájékoztatást ad arról,
+  hogy a fogyasztó mely hatóság vagy békéltető testület eljárását kezdeményezheti. A Szolgáltató a
+  panaszt és az arra adott válasz másolatát három évig megőrzi.</p>
   <h3>Békéltető testület</h3>
-  <p>A fogyasztó a lakóhelye szerint illetékes békéltető testülethez fordulhat. A Szolgáltató székhelye
-  (Budapest) szerinti békéltető testület: Budapesti Békéltető Testület
-  (<span class="fill">cím ellenőrzendő – a beadvány elküldése előtt nézd meg a bekeltetes.hu oldalon</span>,
-  1016 Budapest, Krisztina krt. 99.).</p>
-  <h3>Online vitarendezés (ODR)</h3>
-  <p>Az Európai Bizottság online vitarendezési platformja elérhető:
-  <a href="https://ec.europa.eu/odr">https://ec.europa.eu/odr</a></p>
+  <p>A fogyasztó a panasz elutasítása vagy a panaszkezelés eredménytelensége esetén az illetékes
+  békéltető testülethez fordulhat. Főszabály szerint a fogyasztó lakóhelye vagy tartózkodási helye
+  szerinti békéltető testület illetékes. A Szolgáltató székhelye szerint illetékes testület:</p>
+  <ul>
+    <li><strong>Budapesti Békéltető Testület</strong></li>
+    <li>Székhely: 1016 Budapest, Krisztina krt. 99. I. em. 111.</li>
+    <li>Levelezési cím: 1253 Budapest, Pf. 10.</li>
+    <li>E-mail: <a href="mailto:bekelteto.testulet@bkik.hu">bekelteto.testulet@bkik.hu</a></li>
+    <li>Telefon: +36 1 488 2131</li>
+    <li>Weboldal: <a href="https://bekeltet.bkik.hu/" target="_blank" rel="noopener noreferrer">https://bekeltet.bkik.hu/</a></li>
+  </ul>
+  <p>A Szolgáltató a békéltető testületi eljárásban a jogszabályban előírt együttműködési
+  kötelezettségének eleget tesz. A békéltető testületek aktuális elérhetőségei a
+  <a href="https://bekeltetes.hu/" target="_blank" rel="noopener noreferrer">https://bekeltetes.hu/</a>
+  oldalon találhatók.</p>
   <h3>Fogyasztóvédelem</h3>
-  <p>Fogyasztóvédelmi panasz esetén a Vásárló a lakóhelye szerint illetékes kormányhivatalhoz fordulhat.</p>
+  <p>A fogyasztó fogyasztóvédelmi rendelkezések megsértése esetén a lakóhelye szerint illetékes
+  kormányhivatal fogyasztóvédelmi hatóságához fordulhat. A kormányhivatalok elérhetőségei a
+  <a href="https://kormanyhivatalok.hu/" target="_blank" rel="noopener noreferrer">https://kormanyhivatalok.hu/</a>
+  oldalon találhatók. A békéltető testületi és hatósági eljárás igénybevétele nem érinti a fogyasztó
+  bírósághoz fordulásának jogát.</p>
 
   <h2>10. Szellemi tulajdon</h2>
-  <p>A MonEta termék, a weboldal tartalma és minden kapcsolódó anyag a Szolgáltató szellemi tulajdonát
-  képezi. A Vásárló a termék megvásárlásával nem kizárólagos, át nem ruházható felhasználási jogot
-  szerez saját, illetve vállalkozása használatára. A termék továbbértékesítése, sokszorosítása,
-  nyilvános terjesztése tilos.</p>
+  <h3>Szerzői jog és felhasználási engedély</h3>
+  <p>A MonEta alkalmazás - beleértve a szoftvert, a forráskódot, a felhasználói felületet, a grafikai
+  elemeket, a dokumentációt, valamint a kapcsolódó képi és szöveges tartalmakat - szerzői jogi
+  védelem alatt áll. A szerzői jogok a Szolgáltatót illetik. A vásárlás nem tulajdonjogot, hanem
+  nem kizárólagos, időben nem korlátozott, át nem ruházható felhasználási jogot biztosít.</p>
+  <p>A MonEta kizárólag a Vásárló személyes vagy saját vállalkozási célú használatára szolgál. A
+  felhasználási engedély nincs meghatározott számú eszközhöz kötve: a Vásárló a saját használatában,
+  illetve vállalkozása működésében álló eszközökön használhatja, feltéve, hogy a szoftvert harmadik
+  személy számára nem teszi hozzáférhetővé. A Vásárló saját célú biztonsági másolatot készíthet.</p>
+  <h3>Átruházási és terjesztési tilalom</h3>
+  <p>A MonEta egészben vagy részben nem értékesíthető tovább, nem adható bérbe, nem terjeszthető,
+  nem tehető nyilvánosan hozzáférhetővé, és harmadik személy részére a Szolgáltató előzetes írásbeli
+  engedélye nélkül nem ruházható át. Tilos a szoftver mások részére történő sokszorosítása vagy a
+  letöltési hozzáférés megosztása.</p>
+  <p>A szoftver módosítása, visszafejtése, forráskódjának elemzése vagy abból származtatott termék
+  készítése a jogszabály által kifejezetten megengedett eseteken túl tilos.</p>
+
+  <h3>Rendeltetés és szakmai felelősség</h3>
+  <p>A MonEta pénzügyi nyilvántartó és döntéstámogató alkalmazás. Az alkalmazásban megjelenő
+  kimutatások, számítások és összesítések tájékoztató jellegűek, nem minősülnek könyvelői,
+  adótanácsadói, jogi vagy pénzügyi tanácsadásnak. A MonEta nem helyettesíti könyvelő vagy
+  adótanácsadó szakmai munkáját. A felhasználó felelőssége, hogy pénzügyi döntéseit és adózással
+  kapcsolatos kötelezettségeit a hatályos jogszabályok figyelembevételével, szükség esetén megfelelő
+  szakember bevonásával teljesítse.</p>
+
+  <h3>Helyi adattárolás és biztonsági mentés</h3>
+  <p>A MonEta a felhasználó által az alkalmazásba bevitt pénzügyi adatokat a használt böngésző helyi
+  tárhelyén tárolja. A Szolgáltató ezekhez az adatokhoz nem fér hozzá, azokat nem látja, nem elemzi
+  és nem menti internetes szerverre. A program nem szinkronizál automatikusan különböző eszközök vagy
+  böngészők között.</p>
+  <p>A MonEta nem készít automatikus biztonsági mentést. A rendszeres mentés elkészítése és a mentési
+  fájl biztonságos megőrzése a Vásárló feladata. Javasolt legalább heti rendszerességgel, továbbá
+  jelentősebb adatbevitel, eszköz-, böngésző- vagy programváltás előtt biztonsági mentést készíteni.
+  A Szolgáltató nem felel az olyan adatvesztésért, amely a mentés elmulasztásából, a felhasználó
+  eszközének meghibásodásából, a böngészőadatok törléséből, kártékony programból vagy más, a
+  Szolgáltató ellenőrzési körén kívül eső eseményből ered, kivéve, ha a felelősség kizárását vagy
+  korlátozását jogszabály nem teszi lehetővé.</p>
+
+  <h3>Frissítések és új verziók</h3>
+  <p>A MonEta későbbi verziói hibajavításokat, funkcióbővítéseket vagy jogszabályváltozás miatt
+  szükséges módosításokat tartalmazhatnak. A Szolgáltató fenntartja a szoftver továbbfejlesztésének,
+  módosításának és új verziók kiadásának jogát, azonban - a fogyasztókat megillető, jogszabályon
+  alapuló frissítési és szavatossági jogok kivételével - nem vállal kötelezettséget folyamatos
+  fejlesztésre, új funkciók biztosítására vagy jövőbeli verziók kiadására.</p>
+  <p>A szerződésszerű működés és biztonság fenntartásához a 8. pont szerint kötelezően biztosítandó
+  frissítések nem minősülnek önként vállalt, folyamatos termékfejlesztésnek. Az ezen túl megjelenő új
+  főverziók, külön kiadások vagy bővítmények külön licenc vagy díjfizetés mellett válhatnak
+  elérhetővé. A MonEta nem minősül automatikusan frissülő jogszabálykövető vagy könyvelési
+  rendszernek; a felhasználó felelőssége annak ellenőrzése, hogy az alkalmazott beállítások és a
+  programból levont következtetések megfelelnek-e a mindenkor hatályos jogszabályoknak.</p>
 
   <h2>11. Záró rendelkezések</h2>
   <p>A Szolgáltató fenntartja a jogot a jelen ÁSZF egyoldalú módosítására. A módosítás a weboldalon való
@@ -145,9 +276,8 @@
   szerződésekre a megrendeléskor hatályos ÁSZF vonatkozik.</p>
 
   <div class="note">
-    Ez a dokumentum a MonEta digitális termékhez készült gyakorlati sablon. A megmaradt
-    <span class="fill">KITÖLTENDŐ</span> mezőket a fizetési szolgáltató és a számlázó program
-    kiválasztása után kell véglegesíteni. A tartalom nem minősül jogi tanácsadásnak; élesítés előtt
+    Ez a dokumentum a MonEta digitális termékhez készült Általános Szerződési Feltételek tervezete.
+    A tartalom nem minősül jogi tanácsadásnak; élesítés előtt
     javasolt jogi szakértővel és a fizetési szolgáltató(k) hivatalos követelményeivel egyeztetni.
   </div>
 </div>

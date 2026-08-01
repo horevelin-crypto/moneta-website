@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://js.stripe.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://api.moneta-system.hu https://*.stripe.com; frame-src https://*.stripe.com; base-uri 'self'; form-action 'self' https://*.stripe.com; object-src 'none'">
+  <title>MonEta vásárlás</title>
+  <meta name="description" content="A MonEta teljes verziójának biztonságos, egyszeri megvásárlása.">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/vasarlas/checkout.css">
+  <script src="https://js.stripe.com/v3/"></script>
+  <script defer src="/vasarlas/checkout.js"></script>
+</head>
+<body>
+  <header><a class="brand" href="/" aria-label="Vissza a MonEta főoldalára"><span>M</span>MonEta</a></header>
+  <main>
+    <section class="summary">
+      <a class="back" href="/">← Vissza a főoldalra</a>
+      <p class="eyebrow">Egyszeri vásárlás</p>
+      <h1>MonEta teljes verzió</h1>
+      <p class="lead">A fizetés után azonnal letölthető. Nincs előfizetés és nincs ismétlődő díj.</p>
+      <div class="price"><s>29 900 Ft</s><strong id="current-price">24 900 Ft</strong></div>
+      <p id="intro-status" class="muted">Bevezető ár az első 50 vásárlónak.</p>
+      <ul><li>Offline használat</li><li>Az adatok a saját gépeden maradnak</li><li>Részletes útmutatók a csomagban</li></ul>
+    </section>
+    <section class="payment-card">
+      <div id="consents">
+        <h2>Vásárlás indítása</h2>
+        <label><input id="terms" type="checkbox"> <span>Elolvastam és elfogadom az <a href="/aszf/" target="_blank">Általános Szerződési Feltételeket</a> és az <a href="/adatkezeles/" target="_blank">adatkezelési tájékoztatót</a>.</span></label>
+        <label><input id="digital" type="checkbox"> <span>Kifejezetten kérem, hogy a MonEta digitális tartalom teljesítése a vásárlás után azonnal megkezdődjön. Tudomásul veszem, hogy a digitális tartalomhoz való hozzáférés biztosításával elveszítem a 14 napos elállási jogomat.</span></label>
+        <button id="start-checkout" type="button">Tovább a biztonságos fizetéshez</button>
+        <p class="muted">A következő lépésben a Stripe fizetési felülete nyílik meg. A megrendelést a Stripe felületén található végső fizetési gombbal adod le; annak megnyomása fizetési kötelezettséggel jár.</p>
+        <p id="message" class="message" role="alert"></p>
+      </div>
+      <div id="checkout" hidden></div>
+      <p class="secure">A bankkártyaadatokat a Stripe biztonságos rendszere kezeli.</p>
+    </section>
+  </main>
+</body>
+</html>
