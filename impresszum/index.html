@@ -20,13 +20,21 @@
   table{width:100%;border-collapse:collapse;margin-top:8px;}
   td{padding:11px 12px;border-bottom:1px solid var(--vonal);vertical-align:top;font-size:15px;}
   td.k{width:42%;color:var(--szurke);font-weight:600;}
-  .fill{background:#fff6e6;border:1px dashed #e0b451;border-radius:5px;padding:1px 7px;font-size:13px;color:#8a6100;}
   .note{background:#fff;border:1px solid var(--vonal);border-left:4px solid var(--zold);border-radius:8px;padding:14px 16px;margin-top:30px;font-size:14px;color:var(--szurke);}
   a{color:var(--zold);}
+  .vissza{display:inline-flex;align-items:center;gap:8px;background:var(--zold);color:#fff;text-decoration:none;
+          font-weight:700;font-size:14px;padding:10px 16px;border-radius:10px;margin-bottom:26px;}
+  .vissza:hover{background:#199a60;}
+  .vissza svg{width:16px;height:16px;flex:none;}
+  @media print{.vissza{display:none;}}
 </style>
 </head>
 <body>
 <div class="wrap">
+  <a class="vissza" href="/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+    Vissza a főmenübe
+  </a>
   <div class="brand"><span class="logo">M</span> MonEta</div>
   <h1>Impresszum</h1>
   <div class="updated">Hatályos: 2026. augusztus 1. napjától</div>
@@ -46,14 +54,34 @@
   </table>
 
   <h2>Tárhelyszolgáltató</h2>
+  <p>A weboldal statikus tartalmát az alábbi szolgáltató tárolja:</p>
   <table>
     <tr><td class="k">Név</td><td>GitHub, Inc.</td></tr>
     <tr><td class="k">Cím</td><td>88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, Amerikai Egyesült Államok</td></tr>
     <tr><td class="k">Weboldal</td><td><a href="https://github.com">github.com</a></td></tr>
   </table>
 
+  <h2>Domain-, biztonsági és vásárlási infrastruktúra</h2>
+  <p>A weboldal DNS-szolgáltatását és biztonsági funkcióit, valamint a vásárlási folyamat
+  háttérrendszerét (rendelések technikai tárolása és a digitális termék tárolása) az alábbi
+  szolgáltató biztosítja:</p>
+  <table>
+    <tr><td class="k">Név</td><td>Cloudflare, Inc.</td></tr>
+    <tr><td class="k">Cím</td><td>101 Townsend Street, San Francisco, CA 94107, Amerikai Egyesült Államok</td></tr>
+    <tr><td class="k">Weboldal</td><td><a href="https://www.cloudflare.com" target="_blank" rel="noopener noreferrer">cloudflare.com</a></td></tr>
+  </table>
+
+  <h2>Fizetési szolgáltató</h2>
+  <table>
+    <tr><td class="k">Név</td><td>Stripe Payments Europe, Limited</td></tr>
+    <tr><td class="k">Cím</td><td>1 Grand Canal Street Lower, Grand Canal Dock, Dublin, D02 H210, Írország</td></tr>
+    <tr><td class="k">Weboldal</td><td><a href="https://stripe.com" target="_blank" rel="noopener noreferrer">stripe.com</a></td></tr>
+  </table>
+
   <div class="note">
-    A tartalom nem minősül jogi tanácsadásnak; élesítés előtt javasolt jogi szakértővel véglegesíteni.
+    A weboldal használatával kapcsolatos további tájékoztatást az
+    <a href="/aszf/">Általános Szerződési Feltételek</a> és az
+    <a href="/adatkezeles/">Adatkezelési tájékoztató</a> tartalmaz.
   </div>
 </div>
 </body>

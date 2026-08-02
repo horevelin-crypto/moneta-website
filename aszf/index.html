@@ -19,7 +19,11 @@
   h2{font-size:19px;margin:36px 0 8px;color:var(--zold);}
   h3{font-size:16px;margin:20px 0 6px;}
   p,li{font-size:15px;}
-  .fill{background:#fff6e6;border:1px dashed #e0b451;border-radius:5px;padding:1px 7px;font-size:13px;color:#8a6100;}
+  .vissza{display:inline-flex;align-items:center;gap:8px;background:var(--zold);color:#fff;text-decoration:none;
+          font-weight:700;font-size:14px;padding:10px 16px;border-radius:10px;margin-bottom:26px;}
+  .vissza:hover{background:#199a60;}
+  .vissza svg{width:16px;height:16px;flex:none;}
+  .vissza-alul{margin:38px 0 0;}
   .warn{background:#fff;border:1px solid var(--vonal);border-left:4px solid #e0653c;border-radius:8px;padding:14px 16px;margin:18px 0;font-size:14.5px;}
   .note{background:#fff;border:1px solid var(--vonal);border-left:4px solid var(--zold);border-radius:8px;padding:14px 16px;margin-top:34px;font-size:14px;color:var(--szurke);}
   table{width:100%;border-collapse:collapse;margin-top:8px;}
@@ -34,14 +38,22 @@
     h1,h2,h3{break-after:avoid;}
     table,.warn,.note{break-inside:avoid;}
     a{color:var(--sotet);text-decoration:none;}
+    .vissza{display:none;}
   }
 </style>
 </head>
 <body>
 <div class="wrap">
+  <a class="vissza" href="/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+    Vissza a főmenübe
+  </a>
   <div class="brand"><span class="logo">M</span> MonEta</div>
   <h1>Általános Szerződési Feltételek (ÁSZF)</h1>
-  <div class="updated">Hatályos: 2026. augusztus 1. napjától · Verzió: 1.1</div>
+  <div class="updated">Hatályos: 2026. augusztus 2. napjától · Verzió: 1.2</div>
+  <p>A jelen oldalon olvasható szöveg a hatályos ÁSZF. Elmentéséhez vagy kinyomtatásához a böngésző
+  nyomtatás funkciója is használható (a nyomtatási kép A4-re van optimalizálva).
+  Korábbi változat: <a href="/aszf/MonEta-ASZF-2026-08-01.pdf" target="_blank" rel="noopener noreferrer">ÁSZF 1.1 (2026. augusztus 1.), PDF</a>.</p>
 
   <h2>1. A Szolgáltató adatai</h2>
   <table>
@@ -75,19 +87,20 @@
   offline is működik.</p>
   <table>
     <tr><td class="k">Termék megnevezése</td><td>MonEta – teljes verzió</td></tr>
-    <tr><td class="k">Listaár</td><td>29 900 Ft, egyszeri díj (bruttó)</td></tr>
+    <tr><td class="k">Listaár</td><td>29 900 Ft, egyszeri díj – ez a fizetendő végösszeg</td></tr>
     <tr><td class="k">Bevezető akciós ár</td><td>24 900 Ft – az első 50 vásárló részére</td></tr>
     <tr><td class="k">Díjfizetés gyakorisága</td><td>Egyszeri – nincs havi vagy éves díj</td></tr>
   </table>
   <p>A bevezető akciós ár a készlet (első 50 megrendelés) erejéig, illetve a Szolgáltató által
   meghatározott ideig érvényes; ezt követően a mindenkori listaár az irányadó. A vásárlásra a
   megrendeléskor a weboldalon feltüntetett és visszaigazolt ár vonatkozik.</p>
-  <p>Az árak forintban értendők. A Szolgáltató alanyi adómentes, ezért a feltüntetett árak ÁFÁ-t nem
-  tartalmaznak és nem is tartalmazhatnak.</p>
+  <p>Az árak forintban értendők, és a Vásárló által ténylegesen fizetendő végösszeget jelentik. A
+  Szolgáltató alanyi adómentes, ezért a feltüntetett árak ÁFÁ-t nem tartalmaznak és nem is
+  tartalmazhatnak; a feltüntetett összegen felül további díj nem kerül felszámításra.</p>
 
   <h2>4. A megrendelés menete</h2>
   <ul>
-    <li>A Vásárló a weboldalon a „Megvásárolom” gombra kattint.</li>
+    <li>A Vásárló a weboldal vásárlási oldalán a „Tovább a biztonságos fizetéshez” gombra kattint.</li>
     <li>Áttekinti a termék lényeges tulajdonságait, az aktuális árat és a vásárlási feltételeket.</li>
     <li>Külön jelölőnégyzettel elfogadja a jelen ÁSZF-et és tudomásul veszi az Adatkezelési
       tájékoztatót.</li>
@@ -119,6 +132,27 @@
   <p>A megrendelés akkor minősül kifizetettnek, amikor a Stripe a fizetés sikerességét visszaigazolja
   a Szolgáltató rendszerének. Sikertelen vagy megszakított fizetés esetén a termékhez való hozzáférés
   nem válik elérhetővé.</p>
+
+  <h2>5/A. A termék átadása és a letöltési hivatkozás</h2>
+  <p>A Szolgáltató a sikeres fizetést követően haladéktalanul elérhetővé teszi a MonEta letöltését.
+  A letöltés a Vásárló részére küldött, egyedi és személyre szóló letöltési hivatkozáson keresztül
+  történik, amelyet a Szolgáltató a vásárlás visszaigazolásával együtt e-mailben is megküld.</p>
+  <p>Biztonsági okból - a hivatkozás illetéktelen továbbadásának és a jogosulatlan hozzáférésnek a
+  megakadályozása érdekében - a letöltési hivatkozás korlátozott ideig és korlátozott számban
+  használható:</p>
+  <table>
+    <tr><td class="k">A letöltési hivatkozás érvényessége</td><td>a kiállításától számított 72 óra</td></tr>
+    <tr><td class="k">Letöltések száma</td><td>legfeljebb 3 alkalom</td></tr>
+  </table>
+  <p>Ezek a korlátok kizárólag a letöltési hivatkozásra vonatkoznak, és <strong>nem korlátozzák a
+  megszerzett felhasználási jogot</strong>: a Vásárló a letöltött programot időbeli korlátozás nélkül
+  használhatja, és arról saját célú biztonsági másolatot készíthet.</p>
+  <p>Ha a letöltés a hivatkozás érvényességi idején belül műszaki okból nem sikerül, a hivatkozás
+  lejár, a letöltési keret kimerül, vagy a Vásárló a letöltött fájlt utóbb elveszíti, a Szolgáltató a
+  vásárlás igazolása mellett - a rendelési azonosító megadásával, az
+  <a href="mailto:info@moneta-system.hu">info@moneta-system.hu</a> címen - díjmentesen új letöltési
+  hivatkozást biztosít. A Szolgáltató ezt a lehetőséget a Vásárló számára észszerű ideig fenntartja,
+  és nem tagadja meg pusztán a fenti korlátokra hivatkozva.</p>
 
   <h2>6. Számlázás</h2>
   <p>A Szolgáltató a sikeres fizetésről a NAV Online Számlázó programjában kézzel állít ki
@@ -276,10 +310,16 @@
   szerződésekre a megrendeléskor hatályos ÁSZF vonatkozik.</p>
 
   <div class="note">
-    Ez a dokumentum a MonEta digitális termékhez készült Általános Szerződési Feltételek tervezete.
-    A tartalom nem minősül jogi tanácsadásnak; élesítés előtt
-    javasolt jogi szakértővel és a fizetési szolgáltató(k) hivatalos követelményeivel egyeztetni.
+    Ez a dokumentum a MonEta digitális termék megvásárlására vonatkozó, hatályos Általános Szerződési
+    Feltételeket tartalmazza. Kapcsolódó dokumentumok:
+    <a href="/adatkezeles/">Adatkezelési tájékoztató</a> ·
+    <a href="/impresszum/">Impresszum</a>.
   </div>
+
+  <a class="vissza vissza-alul" href="/">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+    Vissza a főmenübe
+  </a>
 </div>
 </body>
 </html>
