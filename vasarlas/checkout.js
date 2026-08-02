@@ -38,7 +38,10 @@ async function startCheckout() {
     const session = await sessionResponse.json();
     if (!sessionResponse.ok) throw new Error(session.error || 'A fizetés nem indítható.');
     const stripe = Stripe(config.stripePublishableKey);
-    const checkout = await stripe.initEmbeddedCheckout({clientSecret: session.clientSecret});
+    // A Stripe 2026-03-25.dahlia verzioban atnevezte: initEmbeddedCheckout ->
+    // createEmbeddedCheckoutPage. A regi nev IntegrationError-t dob.
+    // A parameterek es a visszaadott objektum (mount) valtozatlanok.
+    const checkout = await stripe.createEmbeddedCheckoutPage({clientSecret: session.clientSecret});
     document.getElementById('consents').hidden = true;
     const container = document.getElementById('checkout');
     container.hidden = false;
