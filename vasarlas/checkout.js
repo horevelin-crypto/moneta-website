@@ -15,7 +15,7 @@ async function loadAvailability() {
       document.querySelector('.price s').hidden = true;
       document.getElementById('intro-status').textContent = 'Egyszeri díj, előfizetés nélkül.';
     } else {
-      document.getElementById('intro-status').textContent = `Bevezető ár - még ${config.introRemaining} kedvezményes példány érhető el.`;
+      document.getElementById('intro-status').textContent = `Bevezető ár - még ${config.introRemaining} vásárló veheti meg ennyiért.`;
     }
   } catch { /* Az ár statikus tartalékkal továbbra is látható. */ }
 }
