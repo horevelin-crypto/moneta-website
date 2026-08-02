@@ -89,6 +89,30 @@
           "@type": "Answer",
           "text": "A felületet kifejezetten hétköznapi vállalkozói használatra terveztük. A fő funkciók gyorsan átláthatók és nem igényelnek külön képzettséget."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "Hogyan tudom megvenni?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bankkártyával, a Stripe biztonságos fizetési felületén. Egyszeri fizetés, nincs előfizetés. Sikeres fizetés után a MonEta azonnal letölthető, a linket e-mailben is megkapod."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Meggondolhatom magam a vásárlás után?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A MonEta azonnal letölthető digitális termék, ezért a vásárláskor külön nyilatkozol arról, hogy a teljesítés rögtön induljon - ezzel a 14 napos elállási jog megszűnik. Ez minden azonnal letölthető szoftvernél így van. Ha a program bármiért nem működik nálad, írj az info@moneta-system.hu címre; a hibás teljesítésre vonatkozó jogaid ettől függetlenül megmaradnak."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Mi van, ha lejár a letöltési link?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A letöltési link biztonsági okból 72 óráig és legfeljebb 3 letöltésig érvényes. Ha lejárna, vagy elveszne a fájl, írj nekünk a rendelési azonosítóddal, és díjmentesen küldünk újat. A programot ettől függetlenül időbeli korlátozás nélkül használhatod."
+        }
       }
     ]
   }
@@ -211,7 +235,7 @@
         <a href="#gyik" class="transition hover:text-mint">GYIK</a>
         <a href="/rolam/" class="transition hover:text-mint">Rólam</a>
       </div>
-      <a href="#vasarlas" class="nav-buy rounded-xl px-5 py-3 text-sm font-semibold text-white">Megvásárolom</a>
+      <a href="/vasarlas/" class="nav-buy rounded-xl px-5 py-3 text-sm font-semibold text-white">Megvásárolom</a>
     </nav>
     <div id="mobileMenu" class="hidden absolute inset-x-0 top-full border-b border-slate-100 bg-white/95 shadow-lg backdrop-blur-xl md:hidden">
       <div class="flex flex-col gap-1 px-5 py-4 text-sm font-medium text-slate-600">
@@ -255,7 +279,7 @@
           </h1>
           <p class="mt-7 max-w-xl text-lg leading-8 text-slate-600">Bevételek, kiadások, készlet és nyereség egyetlen átlátható rendszerben. Kevesebb találgatás, magabiztosabb döntések.</p>
           <div class="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <a href="#vasarlas" class="hero-cta group inline-flex items-center justify-center gap-2 rounded-2xl bg-mint px-7 py-4 font-bold text-white shadow-lg shadow-emerald-200 hover:bg-emerald-600">
+            <a href="/vasarlas/" class="hero-cta group inline-flex items-center justify-center gap-2 rounded-2xl bg-mint px-7 py-4 font-bold text-white shadow-lg shadow-emerald-200 hover:bg-emerald-600">
               Megvásárolom <i data-lucide="arrow-right" class="h-5 w-5 transition group-hover:translate-x-1"></i>
             </a>
             <span class="flex items-center gap-2 px-4 py-3 text-sm font-medium text-slate-500"><i data-lucide="badge-check" class="h-5 w-5 shrink-0 text-mint"></i><span class="flex flex-col leading-snug"><span>Egyszeri vásárlás · <span class="price-strike">29 900 Ft</span></span><span class="font-semibold text-ink">24 900 Ft</span><span class="text-xs text-slate-400">bevezető ár, az első 50 vásárlónak</span></span></span>
@@ -391,6 +415,9 @@
           <details class="group py-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-bold">Van havi vagy éves díja?<span class="faq-icon grid h-8 w-8 shrink-0 place-items-center rounded-full bg-emerald-50 text-mint"><i data-lucide="plus" class="h-4 w-4"></i></span></summary><p class="mt-4 max-w-2xl pr-10 leading-7 text-slate-500">Nincs. A MonEtát egyszer vásárolod meg — bevezető áron most 24 900 Ft (listaár 29 900 Ft) az első 50 vásárlónak, ismétlődő előfizetési díj nélkül.</p></details>
           <details class="group py-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-bold">Hol tárolódnak az adataim?<span class="faq-icon grid h-8 w-8 shrink-0 place-items-center rounded-full bg-emerald-50 text-mint"><i data-lucide="plus" class="h-4 w-4"></i></span></summary><p class="mt-4 max-w-2xl pr-10 leading-7 text-slate-500">Az adataid helyben, a saját eszközödön maradnak. Ez gyors, kényelmes és kiszámítható használatot ad.</p></details>
           <details class="group py-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-bold">Nehéz megtanulni a használatát?<span class="faq-icon grid h-8 w-8 shrink-0 place-items-center rounded-full bg-emerald-50 text-mint"><i data-lucide="plus" class="h-4 w-4"></i></span></summary><p class="mt-4 max-w-2xl pr-10 leading-7 text-slate-500">A felületet kifejezetten hétköznapi vállalkozói használatra terveztük. A fő funkciók gyorsan átláthatók és nem igényelnek külön képzettséget.</p></details>
+          <details class="group py-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-bold">Hogyan tudom megvenni?<span class="faq-icon grid h-8 w-8 shrink-0 place-items-center rounded-full bg-emerald-50 text-mint"><i data-lucide="plus" class="h-4 w-4"></i></span></summary><p class="mt-4 max-w-2xl pr-10 leading-7 text-slate-500">Bankkártyával, a Stripe biztonságos fizetési felületén. Egyszeri fizetés, nincs előfizetés. Sikeres fizetés után a MonEta azonnal letölthető, a linket e-mailben is megkapod.</p></details>
+          <details class="group py-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-bold">Meggondolhatom magam a vásárlás után?<span class="faq-icon grid h-8 w-8 shrink-0 place-items-center rounded-full bg-emerald-50 text-mint"><i data-lucide="plus" class="h-4 w-4"></i></span></summary><p class="mt-4 max-w-2xl pr-10 leading-7 text-slate-500">A MonEta azonnal letölthető digitális termék, ezért a vásárláskor külön nyilatkozol arról, hogy a teljesítés rögtön induljon - ezzel a 14 napos elállási jog megszűnik. Ez minden azonnal letölthető szoftvernél így van. Ha a program bármiért nem működik nálad, írj az info@moneta-system.hu címre; a hibás teljesítésre vonatkozó jogaid ettől függetlenül megmaradnak.</p></details>
+          <details class="group py-5"><summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-bold">Mi van, ha lejár a letöltési link?<span class="faq-icon grid h-8 w-8 shrink-0 place-items-center rounded-full bg-emerald-50 text-mint"><i data-lucide="plus" class="h-4 w-4"></i></span></summary><p class="mt-4 max-w-2xl pr-10 leading-7 text-slate-500">A letöltési link biztonsági okból 72 óráig és legfeljebb 3 letöltésig érvényes. Ha lejárna, vagy elveszne a fájl, írj nekünk a rendelési azonosítóddal, és díjmentesen küldünk újat. A programot ettől függetlenül időbeli korlátozás nélkül használhatod.</p></details>
         </div>
       </div>
     </section>
