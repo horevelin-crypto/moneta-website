@@ -1,28 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  A MonEta weboldal oldalterkepe.
+
+  FONTOS: minden nyilvanos oldalnak szerepelnie kell itt. A Google pontosan
+  annyi oldalrol tud, amennyit ez a fajl felsorol. 2026-08-03-ig csak 5 URL
+  volt benne, ezert a Search Console is csak 5 oldalt ismert a 11-bol.
+
+  UJ OLDAL LETREHOZASAKOR: vedd fel ide is, es frissitsd a lastmod datumot.
+
+  NEM kerul bele a /vasarlas/sikeres/ (vasarlas utani koszonooldal, keresoben
+  ertelmetlen - ott noindex is van), es a belso munkapeldany-mappak.
+
+  A changefreq es priority mezok szandekosan hianyoznak: a Google evek ota
+  figyelmen kivul hagyja oket, csak zajt vinnenek a fajlba.
+-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://moneta-system.hu/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-08-03</lastmod>
   </url>
+
   <url>
     <loc>https://moneta-system.hu/funkciok/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-03</lastmod>
   </url>
+
   <url>
     <loc>https://moneta-system.hu/vallalkozoi-profilok/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-03</lastmod>
   </url>
+
   <url>
     <loc>https://moneta-system.hu/igy-mukodik/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-03</lastmod>
   </url>
+
   <url>
     <loc>https://moneta-system.hu/egyedi-modul/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <lastmod>2026-08-03</lastmod>
   </url>
+
+  <url>
+    <loc>https://moneta-system.hu/technikai-adatok/</loc>
+    <lastmod>2026-08-03</lastmod>
+  </url>
+
+  <url>
+    <loc>https://moneta-system.hu/vasarlas/</loc>
+    <lastmod>2026-08-03</lastmod>
+  </url>
+
+  <url>
+    <loc>https://moneta-system.hu/rolam/</loc>
+    <lastmod>2026-08-03</lastmod>
+  </url>
+
+  <url>
+    <loc>https://moneta-system.hu/impresszum/</loc>
+    <lastmod>2026-08-03</lastmod>
+  </url>
+
+  <url>
+    <loc>https://moneta-system.hu/aszf/</loc>
+    <lastmod>2026-08-03</lastmod>
+  </url>
+
+  <url>
+    <loc>https://moneta-system.hu/adatkezeles/</loc>
+    <lastmod>2026-08-03</lastmod>
+  </url>
+
 </urlset>
