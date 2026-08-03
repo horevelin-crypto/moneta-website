@@ -45,6 +45,58 @@
     "email": "info@moneta-system.hu"
   }
   </script>
+  <!--
+    A megvásárolható termék gépi leírása. Ettől tudja egy kereső vagy egy
+    MI-asszisztens, hogy a MonEta SZOFTVER, mennyibe kerül, és hol vehető meg.
+
+    ⚠️ AZ ÁR BEVEZETŐ ÁR (az első 50 vásárlóig, utána 29 900 Ft).
+    Amikor a bevezető ár elfogy, az itteni "price" értéket ÁT KELL ÍRNI
+    29900-ra - itt ÉS a /vasarlas/ oldal azonos blokkjában. Ha a gépi ár és
+    az oldalon látható ár eltér, azt a Google hibaként kezeli.
+
+    Szándékosan NINCS benne aggregateRating és review: valódi vásárlói
+    vélemény hiányában kitalálni tilos (a Google értékelés-szabályzatába
+    ütközik). Emiatt a Google kiemelt szoftver-találata nem fog megjelenni,
+    a gépi olvashatóság viszont megvan.
+  -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": "https://moneta-system.hu/#moneta-szoftver",
+    "name": "MonEta",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Webböngésző (Windows, macOS, Linux, Android, iOS) — internetkapcsolat nélkül is",
+    "url": "https://moneta-system.hu/",
+    "inLanguage": "hu",
+    "isAccessibleForFree": false,
+    "description": "Pénzügyi áttekintő és tervező alkalmazás egyéni és kisvállalkozóknak. Bevételek, kiadások, készlet, árrés, cashflow és eredmény egy helyen, pénzügyi szaktudás nélkül. Offline is működik, az adatok a felhasználó saját eszközén maradnak.",
+    "featureList": [
+      "Bevételek és kiadások rögzítése",
+      "Havi kimutatás és cashflow",
+      "Készletkezelés",
+      "Árrés és marzs számítás",
+      "ÁFA-nyilvántartás",
+      "Szolgáltatástervezés",
+      "Offline működés, helyi adattárolás"
+    ],
+    "audience": {
+      "@type": "Audience",
+      "audienceType": "Egyéni vállalkozók és kisvállalkozások",
+      "geographicArea": { "@type": "Country", "name": "Magyarország" }
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "24900",
+      "priceCurrency": "HUF",
+      "availability": "https://schema.org/InStock",
+      "url": "https://moneta-system.hu/vasarlas/",
+      "category": "Egyszeri vásárlás, nincs előfizetés",
+      "seller": { "@type": "Organization", "name": "MonEta" }
+    },
+    "publisher": { "@type": "Organization", "name": "MonEta", "url": "https://moneta-system.hu/" }
+  }
+  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",

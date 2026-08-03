@@ -6,6 +6,35 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://js.stripe.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://api.moneta-system.hu https://*.stripe.com; frame-src https://*.stripe.com; base-uri 'self'; form-action 'self' https://*.stripe.com; object-src 'none'">
   <title>MonEta vásárlás</title>
   <meta name="description" content="A MonEta teljes verziójának biztonságos, egyszeri megvásárlása.">
+  <!--
+    Ugyanaz a termek, mint a fooldalon (azonos @id), de itt az ajanlat oldalan.
+    AZ AR BEVEZETO AR. Ha elfogy az 50 hely, a "price" ERTEKET AT KELL IRNI
+    29900-ra ITT ES a fooldal azonos blokkjaban is - a kettonek egyeznie kell
+    egymassal es az oldalon lathato arral.
+  -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": "https://moneta-system.hu/#moneta-szoftver",
+    "name": "MonEta",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Webböngésző (Windows, macOS, Linux, Android, iOS) — internetkapcsolat nélkül is",
+    "url": "https://moneta-system.hu/",
+    "inLanguage": "hu",
+    "isAccessibleForFree": false,
+    "description": "Pénzügyi áttekintő és tervező alkalmazás egyéni és kisvállalkozóknak. Bevételek, kiadások, készlet, árrés, cashflow és eredmény egy helyen. Offline is működik, az adatok a felhasználó saját eszközén maradnak.",
+    "offers": {
+      "@type": "Offer",
+      "price": "24900",
+      "priceCurrency": "HUF",
+      "availability": "https://schema.org/InStock",
+      "url": "https://moneta-system.hu/vasarlas/",
+      "category": "Egyszeri vásárlás, nincs előfizetés",
+      "seller": { "@type": "Organization", "name": "MonEta" }
+    }
+  }
+  </script>
   <link rel="icon" href="/favicon.ico">
   <link rel="stylesheet" href="/fonts/inter.css">
   <link rel="stylesheet" href="/vasarlas/checkout.css">
