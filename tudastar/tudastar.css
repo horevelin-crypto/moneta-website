@@ -38,6 +38,12 @@ article p{font-size:17px;margin:0 0 18px;text-align:justify;-webkit-hyphens:auto
 article strong{font-weight:700}
 
 /* Kiemelt mondat - a cikk gerince. Cikkenkent legfeljebb egy. */
+/* Cikkbeli kep. A width/height attributum a HTML-ben is ott van, hogy a
+   bongeszo betoltes elott lefoglalja a helyet es ne ugorjon a szoveg. */
+.cikk-kep{margin:28px 0;padding:0}
+.cikk-kep img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid var(--vonal)}
+.cikk-kep figcaption{color:var(--halvany);font-size:14px;line-height:1.5;margin-top:10px;text-align:left}
+
 /* A kiemelt mondat NEM sorkizart: rovid szoveg ket sorra torve csunyan
    szetfeszulne. Balra zart marad. */
 .kiemelt{border-left:4px solid var(--zold);background:#fff;border-radius:0 12px 12px 0;
