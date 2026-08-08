@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Biztonsagi fejlec (CSP): korlatozza, honnan tolthet be szkript/stilus. Uj kulso forras eseten ide kell felvenni. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com; base-uri 'self'; form-action 'self'; object-src 'none'">
+  <title>Próbáld ki ingyen | MonEta</title>
+  <meta name="description" content="Töltsd le a MonEta ingyenes próbaverzióját, és nézd meg a saját bevételeiden és kiadásaidon, hogyan működik. Regisztráció nélkül.">
+  <link rel="canonical" href="https://moneta-system.hu/probaverzio/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="hu_HU">
+  <meta property="og:site_name" content="MonEta">
+  <meta property="og:title" content="Próbáld ki ingyen | MonEta">
+  <meta property="og:description" content="Ingyenes próbaverzió: töltsd le, és nézd meg a saját számaidon, hogyan működik a MonEta.">
+  <meta property="og:url" content="https://moneta-system.hu/probaverzio/">
+  <meta property="og:image" content="https://moneta-system.hu/og-image.png">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <meta name="theme-color" content="#22B573">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"MonEta próbaverzió",
+    "url":"https://moneta-system.hu/probaverzio/",
+    "description":"A MonEta ingyenes próbaverziójának letöltése és tudnivalói.",
+    "isPartOf":{"@type":"WebSite","name":"MonEta","url":"https://moneta-system.hu/"}
+  }
+  </script>
+  <link rel="stylesheet" href="/fonts/inter.css">
+  <link rel="stylesheet" href="/styles.css?v=10">
+  <link rel="stylesheet" href="/moneta-kozos-navigacio.css">
+  <script src="/moneta-kozos-navigacio.js" defer></script>
+  <script src="/lucide.min.js"></script>
+  <style>
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;background:#f8faf9;color:#102A2A;font-family:Inter,system-ui,sans-serif}button,a{font:inherit}
+    .shell{min-height:100vh;display:grid;grid-template-columns:250px minmax(0,1fr)}
+    .sidebar{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;background:#fff;border-right:1px solid #e8efeb}
+    .brand{display:flex;align-items:center;gap:12px;padding:22px 20px;border-bottom:1px solid #eef3f0;text-decoration:none;color:#102A2A}.brand-mark{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;color:#fff;font-weight:800;background:linear-gradient(135deg,#34d399,#16a36a);box-shadow:0 8px 20px rgba(34,181,115,.2)}.brand small{display:block;margin-top:2px;color:#94a3b8;font-size:11px;font-weight:500}
+    .side-nav{padding:18px 12px;display:grid;gap:4px}.side-nav a{display:flex;align-items:center;gap:12px;min-height:48px;padding:8px 12px;border-radius:13px;color:#64748b;text-decoration:none;font-size:14px;font-weight:600}.side-nav a:hover{background:#f2faf6;color:#138557}.side-nav a.active{background:#22B573;color:#fff;box-shadow:0 8px 20px rgba(34,181,115,.18)}.nav-icon{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;background:#eefaf4;color:#22B573}.side-nav a.active .nav-icon{background:rgba(255,255,255,.18);color:#fff}.sidebar-bottom{margin-top:auto;padding:14px 12px 18px;border-top:1px solid #eef3f0}.back{display:flex;align-items:center;gap:10px;padding:11px 12px;border-radius:12px;color:#64748b;text-decoration:none;font-size:13px;font-weight:600}.back:hover{background:#f8faf9;color:#102A2A}
+    .mobilebar{display:none;position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);border-bottom:1px solid #e8efeb;backdrop-filter:blur(16px)}.mobilebar-row{height:70px;display:flex;align-items:center;justify-content:space-between;padding:0 18px}.mobile-menu{display:none;padding:0 14px 14px}.mobile-menu.open{display:grid;gap:4px}.mobile-menu a{padding:11px 12px;border-radius:11px;color:#64748b;text-decoration:none;font-size:14px;font-weight:600}.mobile-menu a.active{background:#ecf9f2;color:#16895b}
+    .main{min-width:0;padding:42px clamp(22px,5vw,72px) 72px}.topline{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:36px}.topline p{margin:0;color:#94a3b8;font-size:13px;font-weight:600}.buy{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:12px;background:#22B573;color:#fff;text-decoration:none;font-size:14px;font-weight:600;box-shadow:0 8px 22px rgba(34,181,115,.22);transition:.25s ease}.buy:hover{background:#18a467;transform:translateY(-3px);box-shadow:0 14px 30px rgba(34,181,115,.38)}
+    .heading{max-width:790px}.eyebrow{margin:0 0 12px;color:#22B573;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.16em}.heading h1{margin:0;font-size:36px;line-height:1.111;font-weight:800;letter-spacing:-.025em}.lead{margin:22px 0 0;color:#64748b;font-size:18px;line-height:1.75}
+    @media(min-width:640px){.heading h1{font-size:48px;line-height:1}}
+
+    /* Letoltes-kartya */
+    .dl-card{margin-top:38px;max-width:720px;padding:30px;border:1px solid rgba(34,181,115,.42);border-radius:24px;background:linear-gradient(160deg,#f2fbf6,#fff);box-shadow:0 16px 40px rgba(34,181,115,.10)}
+    .dl-card h2{margin:0 0 8px;font-size:22px;line-height:1.35;font-weight:800}
+    .dl-card p{margin:0;color:#64748b;font-size:15px;line-height:1.7}
+    .dl-btn{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:15px 26px;border-radius:14px;background:#22B573;color:#fff;text-decoration:none;font-size:16px;font-weight:800;box-shadow:0 10px 26px rgba(34,181,115,.28);transition:.25s ease}
+    .dl-btn:hover{background:#18a467;transform:translateY(-3px);box-shadow:0 16px 34px rgba(34,181,115,.38)}
+    .dl-meta{margin-top:14px;color:#94a3b8;font-size:13px}
+
+    /* Mit tud / mit nem */
+    .cmp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:38px;max-width:900px}
+    .cmp-box{padding:24px;border-radius:20px;border:1px solid #e6ece9;background:#fff;box-shadow:0 12px 30px rgba(11,31,58,.05)}
+    .cmp-box h3{margin:0 0 14px;font-size:17px;font-weight:700;display:flex;align-items:center;gap:9px}
+    .cmp-box ul{margin:0;padding:0;list-style:none;display:grid;gap:11px}
+    .cmp-box li{display:flex;align-items:flex-start;gap:9px;color:#475569;font-size:14.5px;line-height:1.6}
+    .tick{flex:0 0 auto;width:21px;height:21px;border-radius:50%;display:grid;place-items:center;background:#dff5e9;color:#16895b}
+    .cross{flex:0 0 auto;width:21px;height:21px;border-radius:50%;display:grid;place-items:center;background:#fdeaea;color:#c2410c}
+    .cmp-box.yes{border-color:rgba(34,181,115,.4)}
+    .cmp-box.no{border-color:rgba(245,158,11,.4)}
+
+    .note{margin-top:34px;max-width:900px;padding:22px 24px;border-left:4px solid #22B573;border-radius:0 18px 18px 0;background:#eef9f3;font-size:15px;line-height:1.7;color:#334155}
+    .note h3{margin:0 0 8px;font-size:16px}
+    .warn{margin-top:16px;max-width:900px;padding:22px 24px;border-left:4px solid #d9a441;border-radius:0 18px 18px 0;background:#fff8ec;font-size:15px;line-height:1.7;color:#6b4e0f}
+    .warn h3{margin:0 0 8px;font-size:16px}
+
+    .final{margin-top:38px;max-width:900px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:18px;padding:26px 28px;border:1px solid #cbeedd;border-radius:20px;background:#eef9f3}
+    .final-icon{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;background:#22B573;color:#fff}
+    .final h2{margin:0 0 6px;font-size:20px;line-height:1.4;font-weight:700}.final p{margin:0;color:#475569;line-height:1.65;font-size:15px}
+    .final a{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;background:#22B573;color:#fff;text-decoration:none;font-size:14px;font-weight:700;box-shadow:0 8px 22px rgba(34,181,115,.22)}
+    .final a:hover{background:#18a467}
+
+    @media(max-width:960px){.shell{grid-template-columns:210px minmax(0,1fr)}.main{padding-left:28px;padding-right:28px}}
+    @media(max-width:760px){.shell{display:block}.sidebar{display:none}.mobilebar{display:block}.main{padding:28px 16px 54px}.topline{display:none}.cmp{grid-template-columns:1fr}.dl-card{padding:24px 20px}.final{grid-template-columns:1fr}.final a{grid-column:1;justify-self:start}}
+  </style>
+</head>
+<body>
+  <div class="mobilebar"><div class="mobilebar-row"><a href="/" class="brand" style="padding:0;border:0"><span class="brand-mark">M</span><strong>MonEta</strong></a><button id="menuButton" type="button" aria-expanded="false" aria-controls="mobileMenu" style="border:1px solid #dfe9e3;background:#fff;border-radius:11px;padding:10px;display:grid;place-items:center"><i data-lucide="menu"></i></button></div><nav id="mobileMenu" class="mobile-menu"><a href="/">Vissza a főoldalra</a><a href="/funkciok/">Funkciók</a><a href="/vallalkozoi-profilok/">Vállalkozói profilok</a><a href="/igy-mukodik/">Így működik</a><a href="/technikai-adatok/">Technikai adatok</a><a href="/egyedi-modul/">Egyedi modul</a><a href="/probaverzio/" class="mobile-proba active">Próbáld ki ingyen</a></nav></div>
+  <div class="shell">
+    <aside class="sidebar"><a href="/" class="brand"><span class="brand-mark">M</span><span><strong>MonEta</strong><small>Interaktív bemutató</small></span></a><nav class="side-nav"><a href="/"><span class="nav-icon"><i data-lucide="layout-dashboard"></i></span>Áttekintés</a><a href="/funkciok/"><span class="nav-icon"><i data-lucide="blocks"></i></span>Funkciók</a><a href="/vallalkozoi-profilok/"><span class="nav-icon"><i data-lucide="users"></i></span>Vállalkozói profilok</a><a href="/igy-mukodik/"><span class="nav-icon"><i data-lucide="play-circle"></i></span>Így működik</a><a href="/technikai-adatok/"><span class="nav-icon"><i data-lucide="cpu"></i></span>Technikai adatok</a><a href="/egyedi-modul/"><span class="nav-icon"><i data-lucide="puzzle"></i></span>Egyedi modul</a></nav><a href="/probaverzio/" class="side-proba side-proba-active"><span class="side-proba-icon"><i data-lucide="download"></i></span><span><strong>Próbáld ki ingyen</strong><small>Regisztráció nélküli letöltés</small></span></a><div class="sidebar-bottom"><a href="/" class="back"><i data-lucide="arrow-left"></i>Vissza a főoldalra</a></div></aside>
+    <main class="main">
+      <div class="topline"><p>Próbaverzió</p><a href="/vasarlas/" class="buy">Megvásárolom <i data-lucide="arrow-right"></i></a></div>
+      <header class="heading">
+        <p class="eyebrow">Ingyenes, regisztráció nélkül</p>
+        <h1>Próbáld ki a saját számaidon.</h1>
+        <p class="lead">Nem videót nézel, és nem egy bemutatót kattintgatsz: letöltöd, megnyitod, és beírod a saját bevételeidet és kiadásaidat. Néhány perc alatt látod, mit mutatna neked a MonEta.</p>
+      </header>
+
+      <div class="dl-card">
+        <h2>MonEta próbaverzió letöltése</h2>
+        <p>Csomagold ki, és kattints duplán a benne lévő fájlra. Nincs telepítés, nincs regisztráció, nincs fizetési kötelezettség.</p>
+        <a class="dl-btn" href="/MonEta_proba.zip" download><i data-lucide="download"></i> Próbaverzió letöltése</a>
+        <p class="dl-meta">ZIP-fájl, 4,5 MB &middot; Windows, Mac és Linux &middot; Chrome, Firefox, Edge vagy Safari</p>
+      </div>
+
+      <div class="cmp">
+        <div class="cmp-box yes">
+          <h3><span class="tick"><i data-lucide="check" style="width:13px;height:13px"></i></span> Amit a próbában megtehetsz</h3>
+          <ul>
+            <li><span class="tick"><i data-lucide="check" style="width:13px;height:13px"></i></span> Bevételek és kiadások rögzítése, saját kategóriákkal</li>
+            <li><span class="tick"><i data-lucide="check" style="width:13px;height:13px"></i></span> Excel- és CSV-fájl betöltése a meglévő adataidból</li>
+            <li><span class="tick"><i data-lucide="check" style="width:13px;height:13px"></i></span> Terméklista importálása</li>
+            <li><span class="tick"><i data-lucide="check" style="width:13px;height:13px"></i></span> Minden számítás, grafikon és kimutatás</li>
+            <li><span class="tick"><i data-lucide="check" style="width:13px;height:13px"></i></span> Bemutató adatokkal való gyakorlás</li>
+            <li><span class="tick"><i data-lucide="check" style="width:13px;height:13px"></i></span> Mentés letöltése, amit a teljes verzióban folytathatsz</li>
+          </ul>
+        </div>
+        <div class="cmp-box no">
+          <h3><span class="cross"><i data-lucide="x" style="width:13px;height:13px"></i></span> Amit csak a teljes verzió tud</h3>
+          <ul>
+            <li><span class="cross"><i data-lucide="x" style="width:13px;height:13px"></i></span> Az adatok megőrzése bezárás után</li>
+            <li><span class="cross"><i data-lucide="x" style="width:13px;height:13px"></i></span> Excel-export</li>
+            <li><span class="cross"><i data-lucide="x" style="width:13px;height:13px"></i></span> CSV-export</li>
+            <li><span class="cross"><i data-lucide="x" style="width:13px;height:13px"></i></span> Visszaállítás korábbi mentésből</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="warn">
+        <h3>Egy dolgot tudj előre</h3>
+        <p>A próbaverzió <strong>bezáráskor nem őrzi meg az adatokat</strong>. Ez szándékos: így nyugodtan tesztelheted, nem hagy nyomot a gépeden. Ha viszont megtetszik, amit beállítottál, a <strong>Beállítások → Mentés letöltése</strong> a próbában is működik. Ezt a mentést a teljes verzióban be tudod tölteni, és onnan folytathatod.</p>
+      </div>
+
+      <div class="note">
+        <h3>Kezdd az útmutatóval</h3>
+        <p>A csomagban két dokumentum van: a <strong>Gyorsindító</strong>, amivel néhány perc alatt elindulsz, és a <strong>részletes használati útmutató</strong>. Érdemes ezekkel kezdeni, mielőtt a saját adataidat viszed be - a MonEta sokat tud, és így hamarabb megtalálod, ami neked kell.</p>
+        <p style="margin-top:12px">Fontos: <strong>a próbaverzióhoz nem készült külön útmutató</strong>, a csomagban a teljes verzió dokumentumai vannak. Ezért olyan funkciókat is leírnak (mentés, Excel- és CSV-export, visszaállítás), amelyek a próbában nem működnek.</p>
+      </div>
+
+      <div class="note">
+        <h3>Az adataid a te gépeden maradnak</h3>
+        <p>A próbaverzió is ugyanúgy működik, mint a teljes: nem küld el semmit, nem kér regisztrációt, és internetkapcsolat nélkül is fut.</p>
+      </div>
+
+      <div class="final">
+        <span class="final-icon"><i data-lucide="sparkles"></i></span>
+        <div><h2>Ha bevált, folytasd ott, ahol abbahagytad</h2><p>A teljes verzió egyszeri díjas, nincs előfizetés és nincs havidíj. A próbában készített mentésedet be tudod tölteni.</p></div>
+        <a href="/vasarlas/">Megvásárolom <i data-lucide="arrow-right"></i></a>
+      </div>
+    </main>
+  </div>
+  <script>
+    const menuButton=document.getElementById('menuButton');
+    const mobileMenu=document.getElementById('mobileMenu');
+    if(menuButton){menuButton.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')==='true';menuButton.setAttribute('aria-expanded',String(!open));mobileMenu.classList.toggle('open',!open)});}
+    lucide.createIcons();
+  </script>
+</body>
+</html>
