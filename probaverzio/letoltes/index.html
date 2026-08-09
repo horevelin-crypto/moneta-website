@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Biztonsagi fejlec (CSP): korlatozza, honnan tolthet be szkript/stilus. Uj kulso forras eseten ide kell felvenni. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://cloudflareinsights.com; base-uri 'self'; form-action 'self'; object-src 'none'">
+  <title>A letöltés elindult | MonEta</title>
+  <!-- Atmeneti segedoldal: NE kerulejon a keresobe. A letoltesszamlalas miatt letezik:
+       ez egy rendes oldalletoltes, amit a webanalitika mar lat (a ZIP-et nem latna). -->
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <meta name="theme-color" content="#22B573">
+  <link rel="stylesheet" href="/fonts/inter.css">
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;background:#f8faf9;color:#102A2A;
+      font-family:Inter,system-ui,sans-serif;display:grid;place-items:center;padding:28px 18px}
+    .card{width:100%;max-width:560px;background:#fff;border:1px solid rgba(34,181,115,.35);
+      border-radius:24px;padding:38px 34px;box-shadow:0 18px 44px rgba(16,42,42,.09);text-align:center}
+    .mark{width:56px;height:56px;margin:0 auto 22px;border-radius:18px;display:grid;place-items:center;
+      background:linear-gradient(135deg,#34d399,#16a36a);color:#fff;font-weight:800;font-size:24px;
+      box-shadow:0 10px 24px rgba(34,181,115,.28)}
+    h1{margin:0 0 10px;font-size:26px;line-height:1.25;font-weight:800;letter-spacing:-.02em}
+    .lead{margin:0;color:#64748b;font-size:16px;line-height:1.7}
+    .tip{margin-top:26px;padding:18px 20px;border-left:4px solid #22B573;border-radius:0 14px 14px 0;
+      background:#eef9f3;text-align:left;font-size:14.5px;line-height:1.65;color:#334155}
+    .tip strong{color:#102A2A}
+    .manual{margin-top:24px;font-size:14px;color:#64748b;line-height:1.6}
+    .manual a{color:#16895b;font-weight:700}
+    .back{display:inline-flex;align-items:center;gap:8px;margin-top:26px;padding:12px 20px;
+      border-radius:12px;background:#22B573;color:#fff;text-decoration:none;font-size:14px;font-weight:700;
+      box-shadow:0 8px 22px rgba(34,181,115,.22)}
+    .back:hover{background:#18a467}
+    @media(max-width:520px){.card{padding:30px 22px}h1{font-size:22px}}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="mark">M</div>
+    <h1>A letöltés elindult</h1>
+    <p class="lead">Ha a böngésződ rákérdez, engedélyezd a mentést. A fájl neve: <strong>MonEta_proba.zip</strong></p>
+
+    <div class="tip">
+      <p style="margin:0"><strong>Kezdd a Gyorsindítóval.</strong> A csomagban két PDF is van: a Gyorsindító néhány perc alatt átnézhető, a részletes útmutató pedig mindent leír. Érdemes ezekkel kezdeni, mielőtt a saját adataidat viszed be.</p>
+      <p style="margin:10px 0 0">A csomagban a <strong>teljes verzió</strong> útmutatói vannak, ezért olyan funkciókat is leírnak (mentés, export, visszaállítás), amelyek a próbában nem működnek.</p>
+    </div>
+
+    <p class="manual">Ha nem indult el magától:
+      <a id="kezi" href="/MonEta_proba.zip" download>kattints ide a letöltéshez</a>.</p>
+
+    <a class="back" href="/probaverzio/">Vissza a próbaverzió oldalra</a>
+  </div>
+
+<script>
+  // A letoltes inditasa. Kis kesleltetes, hogy az oldal (es a meres) biztosan betoltodjon.
+  setTimeout(function () {
+    window.location.href = '/MonEta_proba.zip';
+  }, 700);
+</script>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "14641293484647b79aa218b7384dfee0"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

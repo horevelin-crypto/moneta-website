@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://js.stripe.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://api.moneta-system.hu https://*.stripe.com; frame-src https://*.stripe.com; base-uri 'self'; form-action 'self' https://*.stripe.com; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://js.stripe.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://api.moneta-system.hu https://*.stripe.com https://cloudflareinsights.com; frame-src https://*.stripe.com; base-uri 'self'; form-action 'self' https://*.stripe.com; object-src 'none'">
   <title>MonEta vásárlás</title>
   <meta name="description" content="A MonEta teljes verziójának biztonságos, egyszeri megvásárlása.">
   <link rel="canonical" href="https://moneta-system.hu/vasarlas/">
@@ -74,5 +74,6 @@
       <p class="secure">A bankkártyaadatokat a Stripe biztonságos rendszere kezeli.</p>
     </section>
   </main>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "14641293484647b79aa218b7384dfee0"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>
