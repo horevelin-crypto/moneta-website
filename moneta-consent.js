@@ -75,14 +75,12 @@
     szoveg.className = 'moneta-consent-text';
 
     var cim = document.createElement('strong');
-    cim.textContent = 'Sütik a MonEta oldalán';
+    cim.textContent = 'Segítesz, hogy lássuk, honnan érkeztél?';
     szoveg.appendChild(cim);
 
     szoveg.appendChild(document.createTextNode(
-      'A weboldal működéséhez szükséges sütiket mindig használjuk. ' +
-      'Ezen felül szeretnénk mérni, hogy a hirdetéseinkből hányan jutnak el ide, ' +
-      'ehhez a Meta (Facebook) mérőkódját használnánk. Ez csak a te ' +
-      'hozzájárulásoddal indul el. Részletek az '
+      'Szeretnénk tudni, hogy a hirdetéseinkből találtál-e el hozzánk. Ehhez a Meta ' +
+      '(Facebook) mérőkódját használjuk, de csak a hozzájárulásoddal. Részletek az '
     ));
 
     var link = document.createElement('a');
