@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://js.stripe.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://api.moneta-system.hu https://*.stripe.com https://cloudflareinsights.com; frame-src https://*.stripe.com; base-uri 'self'; form-action 'self' https://*.stripe.com; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://js.stripe.com https://static.cloudflareinsights.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https://www.facebook.com; connect-src 'self' https://api.moneta-system.hu https://*.stripe.com https://cloudflareinsights.com https://www.facebook.com; frame-src https://*.stripe.com; base-uri 'self'; form-action 'self' https://*.stripe.com; object-src 'none'">
   <title>MonEta vásárlás</title>
   <meta name="description" content="A MonEta teljes verziójának biztonságos, egyszeri megvásárlása.">
   <link rel="canonical" href="https://moneta-system.hu/vasarlas/">
@@ -41,6 +41,8 @@
   <link rel="stylesheet" href="/vasarlas/checkout.css">
   <script src="https://js.stripe.com/v3/"></script>
   <script defer src="/vasarlas/checkout.js"></script>
+  <link rel="stylesheet" href="/moneta-consent.css">
+  <script src="/moneta-consent.js" defer></script>
 </head>
 <body>
   <header><a class="brand" href="/" aria-label="Vissza a MonEta főoldalára"><span>M</span>MonEta</a></header>

@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Biztonsagi fejlec (CSP): korlatozza, honnan tolthet be szkript/stilus. Uj kulso forras eseten ide kell felvenni. -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com; base-uri 'self'; form-action 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://www.facebook.com; base-uri 'self'; form-action 'self'; object-src 'none'">
   <title>Próbáld ki ingyen | MonEta</title>
   <meta name="description" content="Töltsd le a MonEta ingyenes próbaverzióját, és nézd meg a saját bevételeiden és kiadásaidon, hogyan működik. Regisztráció nélkül.">
   <link rel="canonical" href="https://moneta-system.hu/probaverzio/">
@@ -76,6 +76,8 @@
     @media(max-width:960px){.shell{grid-template-columns:210px minmax(0,1fr)}.main{padding-left:28px;padding-right:28px}}
     @media(max-width:760px){.shell{display:block}.sidebar{display:none}.mobilebar{display:block}.main{padding:28px 16px 54px}.topline{display:none}.cmp{grid-template-columns:1fr}.dl-card{padding:24px 20px}.final{grid-template-columns:1fr}.final a{grid-column:1;justify-self:start}}
   </style>
+  <link rel="stylesheet" href="/moneta-consent.css">
+  <script src="/moneta-consent.js" defer></script>
 </head>
 <body>
   <div class="mobilebar"><div class="mobilebar-row"><a href="/" class="brand" style="padding:0;border:0"><span class="brand-mark">M</span><strong>MonEta</strong></a><button id="menuButton" type="button" aria-expanded="false" aria-controls="mobileMenu" style="border:1px solid #dfe9e3;background:#fff;border-radius:11px;padding:10px;display:grid;place-items:center"><i data-lucide="menu"></i></button></div><nav id="mobileMenu" class="mobile-menu"><a href="/">Vissza a főoldalra</a><a href="/funkciok/">Funkciók</a><a href="/vallalkozoi-profilok/">Vállalkozói profilok</a><a href="/igy-mukodik/">Így működik</a><a href="/technikai-adatok/">Technikai adatok</a><a href="/egyedi-modul/">Egyedi modul</a><a href="/probaverzio/" class="mobile-proba active">Próbáld ki ingyen</a></nav></div>

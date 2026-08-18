@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <!-- Biztonsagi fejlec (CSP): korlatozza, honnan tolthet be szkript/stilus. Uj kulso forras eseten ide kell felvenni. -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com; base-uri 'self'; form-action 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://www.facebook.com; base-uri 'self'; form-action 'self'; object-src 'none'">
   <title>Egyedi MonEta modul vállalkozásodhoz | Ajánlatkérés</title>
   <meta name="description" content="Olyan speciális MonEta modulra van szükséged, amely a saját vállalkozásod működéséhez igazodik? Írd le az elképzelésed és kérj egyedi ajánlatot.">
   <link rel="canonical" href="https://moneta-system.hu/egyedi-modul/">
@@ -108,6 +108,8 @@
     @media(max-width:960px){.shell{grid-template-columns:210px minmax(0,1fr)}.main{padding-left:28px;padding-right:28px}.intro-cards{grid-template-columns:1fr}}
     @media(max-width:760px){.shell{display:block}.sidebar{display:none}.mobilebar{display:block}.main{padding:28px 16px 54px}.topline{display:none}.content-layout{margin-top:28px}.form-head,form{padding:22px 20px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.form-footer{align-items:stretch;flex-direction:column}.submit{width:100%}.process{margin-top:48px}.section-heading h2{font-size:28px}.process-grid{grid-template-columns:1fr}.clarification{grid-template-columns:1fr}.answer{padding:22px 20px}}
   </style>
+  <link rel="stylesheet" href="/moneta-consent.css">
+  <script src="/moneta-consent.js" defer></script>
 </head>
 <body>
   <div class="mobilebar">

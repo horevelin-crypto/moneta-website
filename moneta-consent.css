@@ -1,0 +1,74 @@
+/* MonEta suti-hozzajarulas (consent) sav — GDPR
+   Kulon fajlban van, hogy a szigorubb CSP-s oldalakon is mukodjon,
+   ahol a style-src nem engedi az 'unsafe-inline'-t. */
+
+.moneta-consent{
+  position:fixed;
+  left:0; right:0; bottom:0;
+  z-index:9999;
+  background:#ffffff;
+  border-top:1px solid #e5ebf0;
+  box-shadow:0 -4px 24px rgba(15,34,51,.12);
+  padding:18px 20px;
+  font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  color:#0f2233;
+  line-height:1.55;
+}
+
+.moneta-consent[hidden]{display:none}
+
+.moneta-consent-inner{
+  max-width:1100px;
+  margin:0 auto;
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:16px;
+}
+
+.moneta-consent-text{
+  flex:1 1 420px;
+  min-width:260px;
+  font-size:14px;
+  margin:0;
+}
+
+.moneta-consent-text strong{display:block;margin-bottom:4px;font-size:15px}
+
+.moneta-consent-text a{color:#22B573;text-decoration:underline}
+
+.moneta-consent-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  flex:0 0 auto;
+}
+
+/* A ket gomb szandekosan azonos sulyu: a GDPR szerint az elutasitas
+   nem lehet nehezebb, mint az elfogadas. */
+.moneta-consent-btn{
+  font:inherit;
+  font-size:14px;
+  font-weight:600;
+  padding:11px 22px;
+  border-radius:10px;
+  cursor:pointer;
+  border:1px solid #22B573;
+  min-width:132px;
+  text-align:center;
+}
+
+.moneta-consent-btn-accept{background:#22B573;color:#fff}
+.moneta-consent-btn-accept:hover{background:#1da565}
+
+.moneta-consent-btn-reject{background:#fff;color:#0f2233;border-color:#c8d4dd}
+.moneta-consent-btn-reject:hover{background:#f2f6f9}
+
+.moneta-consent-btn:focus-visible{outline:3px solid #0f2233;outline-offset:2px}
+
+@media (max-width:640px){
+  .moneta-consent{padding:16px 14px}
+  .moneta-consent-inner{gap:12px}
+  .moneta-consent-actions{width:100%}
+  .moneta-consent-btn{flex:1 1 0;min-width:0}
+}

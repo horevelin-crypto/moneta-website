@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Biztonsagi fejlec (CSP): korlatozza, honnan tolthet be szkript/stilus. Uj kulso forras eseten ide kell felvenni. -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self' https://cloudflareinsights.com; base-uri 'self'; form-action 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://static.cloudflareinsights.com https://connect.facebook.net; style-src 'self'; font-src 'self'; img-src 'self' data: https://www.facebook.com; connect-src 'self' https://cloudflareinsights.com https://www.facebook.com; base-uri 'self'; form-action 'self'; object-src 'none'">
   <title>Tudástár | MonEta</title>
   <meta name="description" content="Gyakorlati írások vállalkozói pénzügyekről. Nem könyvelés, hanem a mindennapi helyzetek, amikben a vállalkozók elakadnak.">
   <link rel="canonical" href="https://moneta-system.hu/tudastar/">
@@ -38,6 +38,8 @@
 
   <link rel="stylesheet" href="/fonts/inter.css">
   <link rel="stylesheet" href="/tudastar/tudastar.css">
+  <link rel="stylesheet" href="/moneta-consent.css">
+  <script src="/moneta-consent.js" defer></script>
 </head>
 <body>
 <header><a class="brand" href="/"><span>M</span>MonEta</a></header>

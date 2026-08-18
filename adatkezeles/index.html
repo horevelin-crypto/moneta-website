@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Biztonsagi fejlec (CSP): korlatozza, honnan tolthet be szkript/stilus. Uj kulso forras eseten ide kell felvenni. -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com; base-uri 'self'; form-action 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://static.cloudflareinsights.com https://connect.facebook.net; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://cloudflareinsights.com https://www.facebook.com; base-uri 'self'; form-action 'self'; object-src 'none'">
 <title>Adatkezelési tájékoztató – MonEta</title>
 <meta name="description" content="Hogyan kezeli a MonEta a személyes adatokat: adatkezelő, célok és jogalapok, adatfeldolgozók, sütik, megőrzési idő és az érintett jogai.">
 <link rel="canonical" href="https://moneta-system.hu/adatkezeles/">
@@ -35,6 +35,8 @@
   a{color:var(--zold);}
   ul{margin:8px 0;padding-left:22px;}
 </style>
+  <link rel="stylesheet" href="/moneta-consent.css">
+  <script src="/moneta-consent.js" defer></script>
 </head>
 <body>
 <div class="wrap">
@@ -134,6 +136,17 @@
         technikai adatok és naplók</td>
     </tr>
     <tr>
+      <td>Meta Platforms Ireland Limited<br>
+        Merrion Road, Dublin 4, D04 X2K5, Írország</td>
+      <td>A Meta-képpont (Facebook Pixel) működtetése a hirdetések eredményességének mérése és
+        hirdetési célközönségek kialakítása céljából. Ez az adatkezelés kizárólag a látogató
+        előzetes, kifejezett hozzájárulása esetén valósul meg; hozzájárulás hiányában a mérőkód
+        el sem indul.</td>
+      <td>IP-cím, eszköz- és böngészőadatok, a meglátogatott oldalak címe, a Meta által elhelyezett
+        azonosítók és sütik, valamint - amennyiben a látogató Meta-fiókkal rendelkezik - a
+        fiókjához rendelhető azonosító</td>
+    </tr>
+    <tr>
       <td>Nemzeti Adó- és Vámhivatal (NAV) - Online Számlázó program</td>
       <td>A számla kézi kiállítása, a számlaadatok jogszabály szerinti kezelése és továbbítása.
         A NAV hatósági címzettként, jogszabályban meghatározott feladatai ellátása érdekében kezeli
@@ -165,24 +178,46 @@
   folyamat során keletkező adatokat.</p>
 
   <h2>5. Sütik (cookie-k)</h2>
-  <p>A MonEta weboldal saját célú marketing sütiket nem használ. A weboldal teljesítményének mérésére
-  a Cloudflare Web Analytics szolgáltatást használjuk. A Cloudflare tájékoztatása szerint ez a
-  szolgáltatás sütik és a látogatók személyes adatainak gyűjtése nélkül készít összesített
-  teljesítményméréseket.</p>
+  <p>A weboldal teljesítményének mérésére a Cloudflare Web Analytics szolgáltatást használjuk.
+  A Cloudflare tájékoztatása szerint ez a szolgáltatás sütik és a látogatók személyes adatainak
+  gyűjtése nélkül készít összesített teljesítményméréseket. Ez a mérés a weboldal biztonságos és
+  megbízható működtetéséhez fűződő jogos érdeken alapul, és nem igényel hozzájárulást.</p>
+
+  <h3>Marketingcélú mérés (Meta-képpont)</h3>
+  <p>A weboldalon a Meta Platforms Ireland Limited által biztosított Meta-képpont (Facebook Pixel)
+  mérőkód működik, amelynek célja annak mérése, hogy a hirdetéseinkből hányan látogatnak el a
+  weboldalra és milyen műveleteket végeznek ott, valamint hirdetési célközönségek kialakítása.</p>
+  <p><strong>Ez a mérőkód kizárólag a látogató előzetes, kifejezett hozzájárulása esetén indul el.</strong>
+  A weboldal első megnyitásakor a látogató tájékoztatást és választási lehetőséget kap: az
+  elfogadás és az elutasítás egyenrangú, azonos módon elérhető lehetőség. Amennyiben a látogató
+  az elutasítást választja, vagy nem nyilatkozik, a Meta-képpont nem töltődik be, és semmilyen
+  adatot nem továbbít a Meta részére.</p>
+  <p>Az adatkezelés jogalapja a látogató hozzájárulása (GDPR 6. cikk (1) bekezdés a) pont).
+  A hozzájárulás bármikor, indokolás nélkül visszavonható. A visszavonás a böngészőben tárolt
+  hozzájárulás törlésével történik, amely után a weboldal ismét felkínálja a választás
+  lehetőségét. A hozzájárulás visszavonása nem érinti a visszavonás előtti adatkezelés
+  jogszerűségét.</p>
+  <p>A Meta-képponton keresztül gyűjtött adatok kezeléséről a
+  <a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener noreferrer">Meta adatvédelmi szabályzata</a>
+  ad részletes tájékoztatást. A Meta a saját tájékoztatása szerint bizonyos adatkezelési műveletek
+  tekintetében a Szolgáltatóval közös adatkezelőnek minősül.</p>
   <p>A vásárlási folyamatban a Stripe a fizetés biztonságos lebonyolításához, a munkamenet
   fenntartásához, a hitelesítéshez és a csalások megelőzéséhez technikailag szükséges, ideiglenes
   vagy tartós sütiket és hasonló technológiákat alkalmazhat. Ezek nélkül az online bankkártyás
   fizetés nem vagy nem biztonságosan működne. A Stripe által használt sütikről és azok élettartamáról
   a <a href="https://stripe.com/cookies-policy/legal" target="_blank" rel="noopener noreferrer">Stripe sütikre vonatkozó szabályzata</a>
   ad részletes tájékoztatást.</p>
-  <p>Ha a weboldalon a későbbiekben hozzájárulást igénylő statisztikai vagy marketingtechnológia
-  kerül bevezetésre, annak használata előtt a látogató külön tájékoztatást és választási lehetőséget
-  kap.</p>
+  <p>Ha a weboldalon a későbbiekben további, hozzájárulást igénylő statisztikai vagy
+  marketingtechnológia kerül bevezetésre, annak használata előtt a látogató szintén külön
+  tájékoztatást és választási lehetőséget kap.</p>
 
   <h2>6. Adattovábbítás harmadik országba</h2>
   <p>A fenti szolgáltatók egy része az Egyesült Államokban működik, vagy ott is kezel adatokat
   (GitHub, Inc., Cloudflare, Inc., Resend), illetve a Stripe esetében a fizetés lebonyolításában
-  a Stripe-csoport Európai Unión kívüli tagjai is közreműködhetnek. Ez azt jelenti, hogy a
+  a Stripe-csoport Európai Unión kívüli tagjai is közreműködhetnek. A Meta-képpont használata
+  esetén - vagyis kizárólag a látogató hozzájárulása mellett - a Meta Platforms Ireland Limited
+  az adatokat a Meta-csoport Európai Unión kívüli tagjai, így az Egyesült Államokban működő
+  Meta Platforms, Inc. részére is továbbíthatja. Ez azt jelenti, hogy a
   személyes adatok az Európai Gazdasági Térségen kívülre is továbbításra kerülhetnek.</p>
   <p>Az ilyen továbbítás a GDPR V. fejezete szerinti garanciák mellett történik. Ez a gyakorlatban
   az érintett szolgáltatóval kötött adatfeldolgozói szerződésben szereplő, az Európai Bizottság
