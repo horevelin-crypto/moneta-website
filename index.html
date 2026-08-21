@@ -232,6 +232,14 @@
     .side-proba-icon{flex:0 0 auto;width:34px;height:34px;border-radius:11px;display:grid;place-items:center;background:#22B573;color:#fff}
     .side-proba-icon svg{width:17px;height:17px}
     .mobile-proba{border:1.5px solid rgba(34,181,115,.45);background:#f0fbf5;color:#16895b!important;font-weight:800!important}
+    /* Fejléc-gomb csere MOBILON (2026-08-21, Evelin jóváhagyásával). 760px alatt a
+       fejléc gombja a "Megvásárolom" helyett az ingyenes próba: a hirdetésből érkező
+       hideg forgalomnak az a hihetőbb első lépés, és a fixált fejléc miatt az egész
+       (kb. 13 képernyőnyi) görgetés alatt kézben marad. A vásárlás gomb NEM tűnik el:
+       a hero közepén és az oldal alján továbbra is ott van. FIGYELEM: a két gomb
+       szándékosan távol van egymástól (fejléc vs. hero), hogy félrenyomni ne lehessen.
+       Asztali nézetben semmi nem változik - ott a .nav-proba végig display:none. */
+    .nav-proba{display:none}
     @media(min-width:761px){
       .home-sidebar{display:flex}
       body>main,body>footer{margin-left:var(--home-sidebar)}
@@ -251,6 +259,12 @@
       .side-proba>span:last-child{display:none}
     }
     @media(max-width:760px){
+      .nav-buy-wide{display:none!important}
+      .nav-proba{display:inline-flex!important;align-items:center;white-space:nowrap;
+        padding:11px 14px;border-radius:12px;border:1.5px solid rgba(34,181,115,.55);
+        background:#fff;color:#16895b;font-size:13.5px;font-weight:800;
+        text-decoration:none;box-shadow:0 6px 16px rgba(34,181,115,.10)}
+      .nav-proba:active{transform:scale(.98)}
       .home-sidebar{display:none!important}
       body>main,body>footer{margin-left:0!important}
       header nav.mx-auto{padding-left:1.25rem!important}
@@ -263,6 +277,13 @@
       .dash-float-chart{height:36px!important;margin-top:8px!important}
       .price-row .price-strike{font-size:20px!important}
       .price-row .price-main{font-size:30px!important}
+    }
+    /* Nagyon keskeny telefonokon (360px és alatta) a fejlécben nem fér el egyszerre
+       a "MonEta" felirat és a próba gomb - a gomb jobb széle lelógna a képernyőről.
+       Ilyenkor a márkanév szövege eltűnik, az "M" jel marad; a név így is ott van
+       közvetlenül alatta a hero címében. 375px-en (iPhone) még mindkettő kifér. */
+    @media(max-width:369px){
+      .header-inline-logo span:last-child{display:none}
     }
   </style>
   <link rel="stylesheet" href="/moneta-consent.css">
@@ -305,7 +326,8 @@
         <a href="/tudastar/" class="transition hover:text-mint">Tudástár</a>
         <a href="/rolam/" class="transition hover:text-mint">Rólam</a>
       </div>
-      <a href="/vasarlas/" class="nav-buy rounded-xl px-5 py-3 text-sm font-semibold text-white">Megvásárolom</a>
+      <a href="/vasarlas/" class="nav-buy nav-buy-wide rounded-xl px-5 py-3 text-sm font-semibold text-white">Megvásárolom</a>
+      <a href="/probaverzio/" class="nav-proba">Próbáld ki ingyen</a>
     </nav>
     <div id="mobileMenu" class="hidden absolute inset-x-0 top-full border-b border-slate-100 bg-white/95 shadow-lg backdrop-blur-xl md:hidden">
       <div class="flex flex-col gap-1 px-5 py-4 text-sm font-medium text-slate-600">
