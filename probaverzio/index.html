@@ -50,6 +50,14 @@
     .dl-btn{display:inline-flex;align-items:center;gap:10px;margin-top:22px;padding:15px 26px;border-radius:14px;background:#22B573;color:#fff;text-decoration:none;font-size:16px;font-weight:800;box-shadow:0 10px 26px rgba(34,181,115,.28);transition:.25s ease}
     .dl-btn:hover{background:#18a467;transform:translateY(-3px);box-shadow:0 16px 34px rgba(34,181,115,.38)}
     .dl-meta{margin-top:14px;color:#94a3b8;font-size:13px}
+    /* Számítógép-figyelmeztető (2026-08-21): a MonEta asztali használatra készült, a
+       látogatók kétharmada viszont mobilon érkezik. Alapból rejtve, csak a 760px-es
+       blokk kapcsolja be - asztali nézetben tehát nem látszik. */
+    .dl-desktop-note{display:none}
+    .ddn-title{margin:0;font-size:14.5px;font-weight:800;color:#78350f;line-height:1.4}
+    .ddn-body{margin:7px 0 0;font-size:13.5px;color:#92400e;line-height:1.55}
+    .ddn-btn{margin-top:13px;width:100%;padding:12px 14px;border-radius:11px;border:1.5px solid #d97706;background:#fff;color:#b45309;font-family:inherit;font-size:14px;font-weight:800;cursor:pointer}
+    .ddn-btn:active{transform:scale(.99)}
 
     /* Mit tud / mit nem */
     .cmp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:38px;max-width:900px}
@@ -74,7 +82,7 @@
     .final a:hover{background:#18a467}
 
     @media(max-width:960px){.shell{grid-template-columns:210px minmax(0,1fr)}.main{padding-left:28px;padding-right:28px}}
-    @media(max-width:760px){.shell{display:block}.sidebar{display:none}.mobilebar{display:block}.main{padding:28px 16px 54px}.topline{display:none}.cmp{grid-template-columns:1fr}.dl-card{padding:24px 20px}.final{grid-template-columns:1fr}.final a{grid-column:1;justify-self:start}}
+    @media(max-width:760px){.dl-desktop-note{display:block;margin-top:20px;padding:16px 16px 18px;border-radius:14px;background:#fffbeb;border:1px solid #fde68a;text-align:left}.shell{display:block}.sidebar{display:none}.mobilebar{display:block}.main{padding:28px 16px 54px}.topline{display:none}.cmp{grid-template-columns:1fr}.dl-card{padding:24px 20px}.final{grid-template-columns:1fr}.final a{grid-column:1;justify-self:start}}
   </style>
   <link rel="stylesheet" href="/moneta-consent.css">
   <script src="/moneta-consent.js" defer></script>
@@ -94,6 +102,11 @@
       <div class="dl-card">
         <h2>MonEta próbaverzió letöltése</h2>
         <p>Csomagold ki, és kattints duplán a benne lévő fájlra. Nincs telepítés, nincs regisztráció, nincs fizetési kötelezettség.</p>
+        <div class="dl-desktop-note">
+          <p class="ddn-title">A MonEta elsődlegesen számítógépre készült.</p>
+          <p class="ddn-body">Nyisd meg ezt az oldalt a laptopodon, vagy küldd el magadnak a linket.</p>
+          <button type="button" id="sendLinkBtn" class="ddn-btn">Link küldése magamnak</button>
+        </div>
         <a class="dl-btn" href="/probaverzio/letoltes/"><i data-lucide="download"></i> Próbaverzió letöltése</a>
         <p class="dl-meta">ZIP-fájl, 4,5 MB &middot; Windows, Mac és Linux &middot; Chrome, Firefox, Edge vagy Safari</p>
       </div>
@@ -149,6 +162,20 @@
     const mobileMenu=document.getElementById('mobileMenu');
     if(menuButton){menuButton.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')==='true';menuButton.setAttribute('aria-expanded',String(!open));mobileMenu.classList.toggle('open',!open)});}
     lucide.createIcons();
+    /* "Link küldése magamnak": telefonon a natív megosztó panel (e-mail, üzenet,
+       bármi); ahol nincs Web Share API, ott e-mail piszkozat nyílik. Semmit nem
+       küldünk a szerverről, és e-mail címet sem kérünk el. */
+    (function(){
+      var b=document.getElementById('sendLinkBtn');
+      if(!b)return;
+      var url='https://moneta-system.hu/probaverzio/';
+      var title='MonEta - ingyenes próbaverzió';
+      var text='A MonEta próbaverziójának letöltése számítógépre:';
+      b.addEventListener('click',function(){
+        if(navigator.share){navigator.share({title:title,text:text,url:url}).catch(function(){});}
+        else{window.location.href='mailto:?subject='+encodeURIComponent(title)+'&body='+encodeURIComponent(text)+'%0A%0A'+encodeURIComponent(url);}
+      });
+    })();
   </script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "14641293484647b79aa218b7384dfee0"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
