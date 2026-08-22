@@ -32,6 +32,12 @@
     /* Telefonon a többoszlopos táblázat szélesebb a kijelzőnél, és vízszintesen
        elhúzná az egész oldalt - így csak a táblázat görgül. (2026-08-21) */
     @media(max-width:640px){
+      /* MOBILON a mélyebb, "neonos" M (Evelin választása, 2026-08-21):
+         telítettebb zöld végszín és világoszöld, erősebb árnyék.
+         Asztali nézetben marad a halványabb közös mérce. */
+      .logo{border-radius:12px;font-size:18px;
+        background:linear-gradient(to bottom right,#34d399,#059669);
+        box-shadow:0 10px 15px -3px rgba(167,243,208,.7),0 4px 6px -4px rgba(167,243,208,.7)}
       table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;white-space:nowrap}
     }
   td{padding:9px 12px;border-bottom:1px solid var(--vonal);vertical-align:top;font-size:14.5px;}

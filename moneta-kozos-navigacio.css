@@ -1,4 +1,9 @@
 :root{--preview-sidebar:214px}
+/* A márkanév felirata MINDEN előfordulásnál a közös mérce szerint (2026-08-21).
+   Korábban csak a `.sidebar .brand strong` kapott 19px-et, ezért a MOBIL fejlécben
+   a "MonEta" az örökölt 16px-cel jelent meg - hajszálnyival kisebben, mint bárhol máshol. */
+.brand strong,.demo-brand strong{font-size:19px;font-weight:800;letter-spacing:-.025em;
+  font-family:Inter,ui-sans-serif,system-ui,sans-serif}
 html,body{overflow-x:hidden}
 .demo-shell,.shell{grid-template-columns:var(--preview-sidebar) minmax(0,1fr)!important}
 .demo-main,.main{min-width:0;overflow-x:clip;padding-top:122px!important}
@@ -39,6 +44,13 @@ html,body{overflow-x:hidden}
   .demo-topline,.topline{padding-left:22px;padding-right:22px}
 }
 @media(max-width:760px){
+  /* MOBILON a mélyebb, "neonos" M: telítettebb zöld végszín (#059669) és világoszöld,
+     erősebb árnyék. Ez a főoldal mobil logójának stílusa - Evelin ezt választotta
+     telefonra minden oldalon (2026-08-21). Asztali nézetben marad a halványabb mérce. */
+  .brand-mark,.demo-brand-mark{border-radius:12px!important;font-size:18px!important;
+    background:linear-gradient(to bottom right,#34d399,#059669)!important;
+    box-shadow:0 10px 15px -3px rgba(167,243,208,.7),0 4px 6px -4px rgba(167,243,208,.7)!important}
+
   :root{--preview-sidebar:0px}
   .demo-shell,.shell{display:block!important}
   .demo-sidebar,.sidebar{display:none!important}

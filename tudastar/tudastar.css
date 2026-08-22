@@ -91,3 +91,11 @@ article li{font-size:17px;margin:0 0 10px}
   .koltseglista .ossz{color:var(--szurke)}
   .koltseglista li:last-child .ossz{color:inherit}
 }
+
+/* MOBILON a mélyebb, "neonos" M (Evelin választása, 2026-08-21): telítettebb zöld
+   végszín és világoszöld, erősebb árnyék. Asztalin marad a halványabb mérce. */
+@media(max-width:640px){
+  .brand span{border-radius:12px;font-size:18px;
+    background:linear-gradient(to bottom right,#34d399,#059669);
+    box-shadow:0 10px 15px -3px rgba(167,243,208,.7),0 4px 6px -4px rgba(167,243,208,.7)}
+}

@@ -232,6 +232,14 @@
     .side-proba-icon{flex:0 0 auto;width:34px;height:34px;border-radius:11px;display:grid;place-items:center;background:#22B573;color:#fff}
     .side-proba-icon svg{width:17px;height:17px}
     .mobile-proba{border:1.5px solid rgba(34,181,115,.45);background:#f0fbf5;color:#16895b!important;font-weight:800!important}
+    /* A főoldal MOBIL M-jele SZÁNDÉKOSAN eltér az asztali .home-brand-mark-tól:
+       mélyebb, telítettebb zöldben végződik (emerald-600 = #059669) és világoszöld,
+       erősebb árnyékot kap - ez adja azt a "neonosabb" hatást, amit Evelin jobban szeret.
+       NE hozd a közös mércére: 2026-08-21-én egyszer már megtettem, és vissza kellett vonni.
+       Az ikon stílusát a Tailwind-osztályok adják a HTML-ben (rounded-xl, bg-gradient-to-br,
+       from-emerald-400, to-emerald-600, text-lg, shadow-lg, shadow-emerald-200/70).
+       Csak a FELIRAT mérete igazodik a többi oldalhoz. */
+    .header-inline-logo>span:last-child{font-size:19px;letter-spacing:-.025em}
     /* Fejléc-gomb csere MOBILON (2026-08-21, Evelin jóváhagyásával). 760px alatt a
        fejléc gombja a "Megvásárolom" helyett az ingyenes próba: a hirdetésből érkező
        hideg forgalomnak az a hihetőbb első lépés, és a fixált fejléc miatt az egész
