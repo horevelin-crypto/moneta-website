@@ -41,6 +41,11 @@
   .vissza svg{width:16px;height:16px;flex:none;}
   @media print{.vissza{display:none;}}
 </style>
+  <!-- Inter betűtípus: CSAK a márkajel feliratához kell (.brand), hogy a "MonEta"
+       szó egyezzen a többi oldallal. Az oldal törzsszövege szándékosan marad a
+       rendszerbetűnél (body font-family) - Evelin döntése, 2026-08-21.
+       A fájl helyben van, a CSP font-src 'self'-je engedi. -->
+  <link rel="stylesheet" href="/fonts/inter.css">
   <link rel="stylesheet" href="/moneta-consent.css">
   <script src="/moneta-consent.js" defer></script>
 </head>
