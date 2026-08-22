@@ -320,6 +320,14 @@
          téglalapján BELÜL maradnak, tehát a vonal nem lóg ki mellőlük. */
       .node-fodrasz,.node-szerelo{left:6%}
       .node-webshop,.node-szolgaltato{right:6%}
+      /* A középső két csomópont (taxis, kávézó) is beljebb, hogy ne érjenek a
+         téglalap széléhez (Evelin, 2026-08-21). Ehhez a középső doboz mobilon
+         128 -> 112px, különben nem férnek el: jobb oldalon mindössze 8px volt a
+         hézag a kávézó és a középső doboz között. Így mindkét oldalon 8px szabadul
+         fel, a beszúrás után is marad ~10px és ~22px hézag. */
+      .node-center{width:112px}
+      .node-taxis{left:2%}
+      .node-kavezo{right:2%}
     }
   </style>
   <link rel="stylesheet" href="/moneta-consent.css">
@@ -437,7 +445,7 @@
               <path d="M500 250 C620 160 735 100 845 92"/><path d="M500 250 C650 250 765 250 890 250"/><path d="M500 250 C620 350 715 405 835 414"/>
             </g>
           </svg>
-          <div class="absolute left-1/2 top-1/2 z-10 w-32 -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-emerald-200 bg-white p-3 text-center shadow-soft sm:w-48 sm:rounded-3xl sm:p-5">
+          <div class="node-center absolute left-1/2 top-1/2 z-10 w-32 -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-emerald-200 bg-white p-3 text-center shadow-soft sm:w-48 sm:rounded-3xl sm:p-5">
             <span class="mx-auto grid h-9 w-9 place-items-center rounded-xl bg-mint text-white sm:h-14 sm:w-14 sm:rounded-2xl"><i data-lucide="layout-dashboard" class="h-4 w-4 sm:h-7 sm:w-7"></i></span>
             <p class="mt-2 text-xs font-bold sm:mt-3 sm:text-base">A teljes kép</p><p class="mt-1 hidden text-xs text-slate-400 sm:block">Minden egy helyen</p>
           </div>

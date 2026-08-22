@@ -6,8 +6,8 @@ html,body{overflow-x:hidden}
 .demo-topline p,.topline p{color:#102A2A!important;font-size:18px!important;font-weight:700!important;letter-spacing:-.01em}
 .demo-sidebar,.sidebar{width:var(--preview-sidebar);font-family:Inter,system-ui,sans-serif}
 .demo-sidebar .demo-brand,.sidebar .brand{min-height:110px;padding:0 18px!important;gap:13px!important}
-.demo-sidebar .demo-brand-mark,.sidebar .brand-mark{width:50px!important;height:50px!important;border-radius:15px!important;font-size:19px!important}
-.demo-sidebar .demo-brand strong,.sidebar .brand strong{font-size:20px;font-weight:800;letter-spacing:-.025em;font-family:Inter,ui-sans-serif,system-ui,sans-serif}
+.demo-sidebar .demo-brand-mark,.sidebar .brand-mark{width:40px!important;height:40px!important;border-radius:13px!important;font-size:17px!important}
+.demo-sidebar .demo-brand strong,.sidebar .brand strong{font-size:19px;font-weight:800;letter-spacing:-.025em;font-family:Inter,ui-sans-serif,system-ui,sans-serif}
 .demo-sidebar .demo-brand small,.sidebar .brand small{margin-top:5px!important;font-size:12px!important}
 .demo-sidebar .demo-nav,.sidebar .side-nav{gap:5px!important;padding:28px 12px!important}
 .demo-sidebar .demo-nav a,.sidebar .side-nav a{min-height:60px!important;gap:12px!important;padding:8px 4px 8px 12px!important;border-radius:15px!important;white-space:nowrap;font-size:14px!important;font-weight:700!important}
@@ -28,7 +28,7 @@ html,body{overflow-x:hidden}
 @media(min-width:761px) and (max-width:1200px){
   :root{--preview-sidebar:82px}
   .demo-sidebar .demo-brand,.sidebar .brand{min-height:96px;justify-content:center;padding:0!important}
-  .demo-sidebar .demo-brand-mark,.sidebar .brand-mark{width:46px!important;height:46px!important}
+  .demo-sidebar .demo-brand-mark,.sidebar .brand-mark{width:40px!important;height:40px!important}
   .demo-sidebar .demo-brand>span:last-child,.sidebar .brand>span:last-child{display:none}
   .demo-sidebar .demo-nav,.sidebar .side-nav{padding:22px 10px!important}
   .demo-sidebar .demo-nav a,.sidebar .side-nav a{position:relative;width:62px;min-height:58px!important;justify-content:center;gap:0!important;padding:9px!important;font-size:0!important}
