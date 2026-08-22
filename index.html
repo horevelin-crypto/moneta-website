@@ -173,7 +173,7 @@
   }
   </script>
   <link rel="stylesheet" href="/fonts/inter.css">
-  <link rel="stylesheet" href="/styles.css?v=10">
+  <link rel="stylesheet" href="/styles.css?v=11">
   <script src="/lucide.min.js"></script>
   <style>
     /* Ár-sor (a "Vállalkozz tisztábban" zöld dobozban): "Ft" soha ne törjön külön
@@ -278,12 +278,48 @@
       .price-row .price-strike{font-size:20px!important}
       .price-row .price-main{font-size:30px!important}
     }
-    /* Nagyon keskeny telefonokon (360px és alatta) a fejlécben nem fér el egyszerre
-       a "MonEta" felirat és a próba gomb - a gomb jobb széle lelógna a képernyőről.
-       Ilyenkor a márkanév szövege eltűnik, az "M" jel marad; a név így is ott van
-       közvetlenül alatta a hero címében. 375px-en (iPhone) még mindkettő kifér. */
-    @media(max-width:369px){
+    /* Keskenyebb telefonokon a fejlécben nem fér el kényelmesen egyszerre a "MonEta"
+       felirat, a próba gomb és a jobb szélre került hamburger. Ilyenkor a márkanév
+       szövege eltűnik, az "M" jel marad; a név így is ott van közvetlenül alatta a
+       hero címében. A 389px-es határ mért: 375px-en (iPhone SE/mini) a hézagok
+       12-13px-re szűkülnek és zsúfolt lesz, 393px-től (iPhone 15) viszont 21px a
+       hézag, ott már kifér a név is. */
+    @media(max-width:389px){
       .header-inline-logo span:last-child{display:none}
+    }
+    /* "Egy közös kép" ábra - a négy sarok-csomópont közelebb a középhez, MOBILON.
+       (2026-08-21, Evelin kérése: a felső kettő és az alsó kettő túl messze volt.)
+
+       Az ok: az SVG preserveAspectRatio="none"-nal feszül a dobozra, így a 2:1 arányú
+       rajz a keskeny, magas mobil dobozon függőlegesen megnyúlik. A kötővonalak vége
+       a doboz magasságának 18,4% és 82,8%-ánál van, a csomópontok viszont 6% / 4%-nál
+       álltak - vagyis 34-41px-rel TÚLLÓGTAK a vonal végén, ezért lógtak a levegőben.
+       Számítás (H=460px doboz, 42px magas csomópont): felső = 18,4% - 21/H = 13,7%,
+       alsó = 17,2% - 21/H = 12,8%, oldalsó = 50% - 21/H = 45,4%.
+
+       Miért itt és nem az input.css-ben: a főoldal saját, egyedi stílusai hagyományosan
+       ebben a blokkban vannak (lásd .side-proba, .home-sidebar), így nem kell buildelni
+       egy pozíció-finomításért. Ez a blokk a styles.css linkje UTÁN jön, ezért felülírja azt.
+       A max-width:639px azért kell, hogy a styles.css 640px-es (sm:) szabályait ne írjuk felül. */
+    @media(max-width:639px){
+      /* A doboz alacsonyabb, mint asztalin: az 500px-es arány a keskeny mobil dobozon
+         túl sok üres helyet hagyott felül-alul (Evelin, 2026-08-21). */
+      .node-map{min-height:380px}
+      /* Függőleges: a négy sarok-csomópont a kötővonal VÉGÉRE igazítva.
+         Képlet (H=380px doboz, 42px magas csomópont, felé = 21px):
+           felső  = 18,4% - 21/H = 12,87%
+           oldalsó = 50,0% - 21/H = 44,47%
+           alsó   = 17,2% - 21/H = 11,67%
+         Ha a doboz magassága változik, EZEKET IS ÚJRA KELL SZÁMOLNI. */
+      .node-fodrasz,.node-webshop{top:12.87%}
+      .node-taxis,.node-kavezo{top:44.47%}
+      .node-szerelo,.node-szolgaltato{bottom:11.67%}
+      /* Vízszintes: a felső és alsó négy csomópont beljebb húvva a doboz szélétől.
+         A középső kettő (taxis, kávézó) marad a szélen, ott nincs rá hely.
+         Ellenőrzött: a vonalvégek (15,5% / 16,5% / 83,5% / 84,5%) így is a csomópontok
+         téglalapján BELÜL maradnak, tehát a vonal nem lóg ki mellőlük. */
+      .node-fodrasz,.node-szerelo{left:6%}
+      .node-webshop,.node-szolgaltato{right:6%}
     }
   </style>
   <link rel="stylesheet" href="/moneta-consent.css">
@@ -310,10 +346,6 @@
     </a>
     <nav class="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8" aria-label="Fő navigáció">
       <div class="flex items-center gap-2">
-        <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="relative grid h-10 w-10 place-items-center rounded-lg text-ink md:hidden" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="mobileMenu">
-          <i data-lucide="menu" class="h-6 w-6" id="menuIconOpen"></i>
-          <i data-lucide="x" class="hidden h-6 w-6" id="menuIconClose"></i>
-        </button>
         <a href="#" class="header-inline-logo flex items-center gap-3" aria-label="MonEta főoldal">
           <span class="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-emerald-400 to-emerald-600 text-lg font-extrabold text-white shadow-lg shadow-emerald-200/70">M</span>
           <span class="text-xl font-extrabold tracking-tight">MonEta</span>
@@ -328,6 +360,10 @@
       </div>
       <a href="/vasarlas/" class="nav-buy nav-buy-wide rounded-xl px-5 py-3 text-sm font-semibold text-white">Megvásárolom</a>
       <a href="/probaverzio/" class="nav-proba">Próbáld ki ingyen</a>
+      <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="relative grid h-10 w-10 place-items-center rounded-lg text-ink md:hidden" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="mobileMenu">
+        <i data-lucide="menu" class="h-6 w-6" id="menuIconOpen"></i>
+        <i data-lucide="x" class="hidden h-6 w-6" id="menuIconClose"></i>
+      </button>
     </nav>
     <div id="mobileMenu" class="hidden absolute inset-x-0 top-full border-b border-slate-100 bg-white/95 shadow-lg backdrop-blur-xl md:hidden">
       <div class="flex flex-col gap-1 px-5 py-4 text-sm font-medium text-slate-600">
@@ -394,7 +430,7 @@
           <h2 class="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">Egy közös kép. Bármit is építesz.</h2>
           <p class="mt-5 text-lg leading-8 text-slate-600">A MonEta összeköti a napi működés apró részleteit azzal, ami igazán számít: vállalkozásod pénzügyi helyzetével.</p>
         </div>
-        <div class="relative mx-auto mt-16 min-h-[460px] max-w-5xl overflow-hidden rounded-[32px] border border-slate-200 bg-white p-6 shadow-card sm:min-h-[500px]">
+        <div class="node-map relative mx-auto mt-16 min-h-[460px] max-w-5xl overflow-hidden rounded-[32px] border border-slate-200 bg-white p-6 shadow-card sm:min-h-[500px]">
           <svg class="absolute inset-0 h-full w-full" viewBox="0 0 1000 500" preserveAspectRatio="none" aria-hidden="true">
             <g fill="none" stroke="#BDEAD5" stroke-width="1.5" stroke-dasharray="5 8">
               <path d="M500 250 C380 160 265 100 155 92"/><path d="M500 250 C350 250 235 250 110 250"/><path d="M500 250 C380 350 285 405 165 414"/>

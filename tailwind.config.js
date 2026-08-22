@@ -1,6 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html"],
+  // FIGYELEM: a styles.css-t MINDEN oldal használja, ezért itt minden oldalnak
+  // szerepelnie kell. Ha csak az index.html van felsorolva, a build kitörli az
+  // aloldalak osztályait. (2026-08-21: emiatt hiányzott a .pt-3 és a .tracking-wide.)
+  // A _mockup-* mappa belső munkapéldány, nem kell bele.
+  content: [
+    "./index.html",
+    "./*/index.html",
+    "./*/*/index.html",
+    "!./_mockup-fooldal-oldalsav/**",
+    "!./node_modules/**"
+  ],
   theme: {
     extend: {
       colors: { ink: '#0B1F3A', mint: '#22B573', mist: '#F6F9FC' },
