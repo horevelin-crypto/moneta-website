@@ -99,3 +99,25 @@ article li{font-size:17px;margin:0 0 10px}
     background:linear-gradient(to bottom right,#34d399,#059669);
     box-shadow:0 10px 15px -3px rgba(167,243,208,.7),0 4px 6px -4px rgba(167,243,208,.7)}
 }
+
+/* Alcim a cikkben. Az ev vegi zaras cikk hozta be: ott a "negy hiba" szakasz
+   negy kis alfejezetre bomlik, azokat kell elvalasztani a h2-tol. Kisebb es
+   nem all olyan tavol a szovegtol, mint a h2. */
+article h3{font-size:19px;font-weight:800;letter-spacing:-.015em;margin:28px 0 10px;line-height:1.3}
+
+/* Ellenorzolista - feher kartyan, pipa jellel. A pontok kerdesek, ezert nincs
+   szamozas: nem sorrend, hanem atnezni valo lista. A ::before a pipa, a
+   list-style ezert ki van kapcsolva. */
+.ellenorzo{list-style:none;background:#fff;border:1px solid var(--vonal);border-radius:16px;
+  padding:8px 24px;margin:28px 0}
+.ellenorzo li{position:relative;padding:14px 0 14px 30px;margin:0;
+  border-bottom:1px solid var(--vonal)}
+.ellenorzo li:last-child{border-bottom:none}
+.ellenorzo li::before{content:"";position:absolute;left:2px;top:22px;width:12px;height:7px;
+  border-left:2.5px solid var(--zold);border-bottom:2.5px solid var(--zold);
+  transform:rotate(-45deg)}
+
+/* Jogi/tajekoztato zaro megjegyzes a cikk vegen. Kisebb es halvanyabb, mint a
+   szoveg, mert nem resze a cikknek, csak kell. */
+.megjegyzes{font-size:15px;color:var(--halvany);line-height:1.6;margin:24px 0 0;
+  text-align:left;hyphens:none}
