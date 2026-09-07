@@ -54,12 +54,27 @@
     <a class="back" href="/probaverzio/">Vissza a próbaverzió oldalra</a>
   </div>
 
-<script>
-  // A letoltes inditasa. Kis kesleltetes, hogy az oldal (es a meres) biztosan betoltodjon.
-  setTimeout(function () {
-    window.location.href = '/MonEta_proba.zip';
-  }, 700);
-</script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "14641293484647b79aa218b7384dfee0"}'></script><!-- End Cloudflare Web Analytics -->
+<script>
+  // Ennek az oldalnak a megtekintesszama = a letoltesinditasok szama, ezert a
+  // meresnek le KELL futnia, mielott a letoltes elindul. A ZIP letoltesként
+  // erkezik (application/x-zip-compressed), az oldal tehat nem navigal el, de
+  // amig a navigacio fuggoben van, egyes bongeszok megszakitjak a meg be nem
+  // fejezett hatterkereseket - lassu mobilneten pont a merokod ilyen.
+  // Ezert fix 700 ms helyett a window load esemenyre varunk (ekkor a merokod
+  // mar betoltodott es elkuldte az adatot), plusz egy rovid raadas.
+  // Tartalek ido: ha a merokod nem jon meg (hirdetesblokkolo, halozati hiba),
+  // a letoltes akkor is elindul, csak keslekedve.
+  (function () {
+    var elindult = false;
+    function inditas() {
+      if (elindult) return;
+      elindult = true;
+      window.location.href = '/MonEta_proba.zip';
+    }
+    window.addEventListener('load', function () { setTimeout(inditas, 300); });
+    setTimeout(inditas, 2500);
+  })();
+</script>
 </body>
 </html>
