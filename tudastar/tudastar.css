@@ -121,3 +121,13 @@ article h3{font-size:19px;font-weight:800;letter-spacing:-.015em;margin:28px 0 1
    szoveg, mert nem resze a cikknek, csak kell. */
 .megjegyzes{font-size:15px;color:var(--halvany);line-height:1.6;margin:24px 0 0;
   text-align:left;hyphens:none}
+
+/* Kapcsolodo irasok - a cikkek egymasra hivatkoznak (2026-09-15). A Google igy
+   konnyebben osszekoti oket, az olvaso pedig az oldalon marad. Szandekosan
+   visszafogott: nem kartya, csak egy linklista a zaro doboz alatt. */
+.kapcsolodo{margin-top:36px}
+.kapcsolodo h2{font-size:18px;margin:0 0 10px}
+.kapcsolodo ul{list-style:none;padding:0;margin:0}
+.kapcsolodo li{margin:0 0 8px;font-size:16px;line-height:1.5}
+.kapcsolodo a{color:var(--zold-sotet);font-weight:600;text-decoration:none}
+.kapcsolodo a:hover{text-decoration:underline}
