@@ -19,6 +19,14 @@ header{height:76px;background:#fff;border-bottom:1px solid #e6eeeb;display:flex;
 
 .wrap{max-width:740px;margin:0 auto;padding:40px 24px 80px}
 
+/* Szovegkozi linkek a cikk torzseben: markazold, ne a bongeszo alapertelmezett kekje.
+   A valaszto SZANDEKOSAN 'article a' (elem+elem, alacsony specificitas): a .vissza gomb
+   a wrapben van, az article-on KIVUL, igy nem erinti; a .kapcsolodo a es a .lista a pedig
+   osztalyos valasztok, azok felulirjak ezt. 2026-10-13: eloszor '.wrap a'-val probaltam,
+   es az elrontotta a 'Vissza a Tudastarhoz' gomb feher feliratat. */
+article a{color:var(--zold-sotet);font-weight:600}
+article a:hover{text-decoration:none}
+
 .vissza{display:inline-flex;align-items:center;gap:8px;background:var(--zold);color:#fff;text-decoration:none;
   font-weight:700;font-size:14px;line-height:1.55;padding:10px 16px;border-radius:10px;margin-bottom:28px}
 .vissza:hover{background:var(--zold-sotet)}
